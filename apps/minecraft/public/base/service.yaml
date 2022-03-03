@@ -13,5 +13,5 @@ spec:
     protocol: UDP
     targetPort: 19132
   selector:
-    app.kubernetes.io/name: minecraft-public
+    app: minecraft-public
   type: NodePort
