@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
+  name: minecraft-public
 spec:
   storageClassName: nfs-client
   accessModes:
