@@ -35,13 +35,13 @@ spec:
         terminationMessagePolicy: File
         volumeMounts:
         - mountPath: /data
-          name: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
+          name: minecraft-public
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
       volumes:
-      - name: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
+      - name: minecraft-public
         persistentVolumeClaim:
-          claimName: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
+          claimName: minecraft-public
