@@ -1,0 +1,52 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nfs-client-provisioner
+  name: nfs-client-provisioner
+  namespace: kube-system
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nfs-client-provisioner
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nfs-client-provisioner
+    spec:
+      containers:
+      - env:
+        - name: PROVISIONER_NAME
+          value: nfs-storage
+        - name: NFS_SERVER
+          value: 10.0.1.6
+        - name: NFS_PATH
+          value: /volume2/microk8s
+        image: quay.io/external_storage/nfs-client-provisioner:latest
+        imagePullPolicy: Always
+        name: nfs-client-provisioner
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /persistentvolumes
+          name: nfs-client-root
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: nfs-client-provisioner
+      serviceAccountName: nfs-client-provisioner
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: nfs-client-root
+        nfs:
+          path: /volume2/microk8s
+          server: 10.0.1.6
