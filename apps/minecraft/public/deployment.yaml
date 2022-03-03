@@ -1,0 +1,48 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: minecraft-public
+  name: minecraft-public
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: minecraft-public
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 100%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: minecraft-public
+    spec:
+      containers:
+      - env:
+        - name: EULA
+          value: "TRUE"
+        image: itzg/minecraft-bedrock-server
+        imagePullPolicy: Always
+        name: minecraft-public
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /data
+          name: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
+        persistentVolumeClaim:
+          claimName: minecraft-public-cc2098dd-3423-425c-8680-8bda2c54250b
