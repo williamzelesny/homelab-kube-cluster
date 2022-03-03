@@ -37,4 +37,4 @@ spec:
         - name: nfs-client-root
           nfs:
             server: 10.0.1.6
-            path: /volume2/microk8s
+            path: /volume2/k3s
