@@ -2,3 +2,4 @@ namespace: kube-system
 resources:
 - deployment.yaml
 - rbac.yaml
+- class.yaml
