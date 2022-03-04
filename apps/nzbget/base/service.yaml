@@ -7,6 +7,7 @@ spec:
   - protocol: TCP
     port: 6789
     targetPort: 6789
+    nodePort: 30556
   selector:
     app: nzbget
   type: NodePort
