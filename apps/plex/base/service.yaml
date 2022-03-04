@@ -4,7 +4,7 @@ metadata:
   name: plex
 spec:
   ports:
-  - protocol: UDP
+  - protocol: TCP
     port: 32400
     targetPort: 32400
     nodePort: 32400
