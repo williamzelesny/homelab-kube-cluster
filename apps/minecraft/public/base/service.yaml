@@ -7,6 +7,7 @@ spec:
   - protocol: UDP
     port: 19132
     targetPort: 19132
+    NodePort: 31029
   selector:
     app: minecraft-public
   type: NodePort
