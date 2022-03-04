@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nzbget
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: nzbget
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 100%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nzbget
+    spec:
+      containers:
+      - env:
+        - name: TZ
+          value: America/New_York
+        - name: PUID
+          value: "1100"
+        - name: PGID
+          value: "1100"
+        image: linuxserver/nzbget
+        imagePullPolicy: Always
+        name: nzbget
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /config
+          name: nzbget-config
+        - mountPath: /downloads
+          name: nzbget-downloads
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: nzbget-config
+        persistentVolumeClaim:
+          claimName: nzbget-config
+      - hostPath:
+          path: /mnt/nfs/downloads
+          type: ""
+        name: nzbget-downloads
