@@ -32,7 +32,7 @@ spec:
             - name: NFS_SERVER
               value: 10.0.1.6
             - name: NFS_PATH
-              value: /volume2/microk8s
+              value: /volume2/k3s
       volumes:
         - name: nfs-client-root
           nfs:
