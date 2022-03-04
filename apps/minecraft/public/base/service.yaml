@@ -4,10 +4,6 @@ metadata:
   name: minecraft-public
 spec:
   ports:
-  - name: tcp
-    port: 19132
-    protocol: TCP
-    targetPort: 19132
   - name: udp
     port: 19132
     protocol: UDP
