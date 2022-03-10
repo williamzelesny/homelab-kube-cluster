@@ -11,10 +11,7 @@ spec:
     matchLabels:
       app: plex
   strategy:
-    rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 100%
-    type: RollingUpdate
+    type: Recreate
   template:
     metadata:
       labels:
