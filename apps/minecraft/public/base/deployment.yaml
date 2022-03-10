@@ -12,10 +12,6 @@ spec:
   selector:
     matchLabels:
       app: minecraft-public
-  strategy:
-    rollingUpdate:
-      maxSurge: 0
-      maxUnavailable: 100%
     type: Recreate
   template:
     metadata:
