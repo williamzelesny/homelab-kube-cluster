@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       app: minecraft-public
+  strategy:
     type: Recreate
   template:
     metadata:
