@@ -36,7 +36,7 @@ spec:
         - mountPath: /data
           name: minecraft-public
       dnsPolicy: ClusterFirst
-      restartPolicy: Never
+      restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
