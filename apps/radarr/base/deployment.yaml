@@ -58,6 +58,6 @@ spec:
           type: ""
         name: downloads-data
       - hostPath:
-          path: /mnt/nfs/Videos/Movies
+          path: /mnt/nfs/videos/movies
           type: ""
         name: movies-data
