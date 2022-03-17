@@ -23,9 +23,9 @@ spec:
       containers:
       - env:
         - name: PGID
-          value: "1100"
+          value: "1000"
         - name: PUID
-          value: "1100"
+          value: "1000"
         # image: mdhiggins/radarr-sma
         image: linuxserver/radarr
         imagePullPolicy: Always

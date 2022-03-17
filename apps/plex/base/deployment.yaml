@@ -21,10 +21,6 @@ spec:
       - env:
         - name: TZ
           value: America/New_York
-        # - name: PUID
-        #   value: "1100"
-        # - name: PGID
-        #   value: "1100"
         image: plexinc/pms-docker
         imagePullPolicy: Always
         name: plex

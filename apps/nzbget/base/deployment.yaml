@@ -23,9 +23,9 @@ spec:
         - name: TZ
           value: America/New_York
         - name: PUID
-          value: "1100"
+          value: "1000"
         - name: PGID
-          value: "1100"
+          value: "1000"
         image: linuxserver/nzbget
         imagePullPolicy: Always
         name: nzbget
