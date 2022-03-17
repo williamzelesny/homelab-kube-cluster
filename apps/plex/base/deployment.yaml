@@ -22,9 +22,9 @@ spec:
         - name: TZ
           value: America/New_York
         - name: PUID
-          value: "\x31\x31\x30\x30"
+          value: "1100"
         - name: PGID
-          value: "\x31\x31\x30\x30"
+          value: "1100"
         image: plexinc/pms-docker
         imagePullPolicy: Always
         name: plex
