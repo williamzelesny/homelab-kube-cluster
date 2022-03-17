@@ -41,9 +41,6 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-      tolerations:
-      - effect: NoSchedule
-        operator: Exists
       volumes:
       - hostPath:
           path: /mnt/nfs/videos
