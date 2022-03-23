@@ -40,7 +40,7 @@ spec:
         #   name: sonarr-sma-config
         - mountPath: /downloads
           name: downloads-data
-        - mountPath: /movies
+        - mountPath: /tv
           name: tv-data
       dnsPolicy: ClusterFirst
       restartPolicy: Always
