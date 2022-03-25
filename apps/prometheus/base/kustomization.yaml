@@ -4,7 +4,7 @@ resources:
 - prometheus-clusterRoleBinding.yaml
 - prometheus-podDisruptionBudget.yaml
 - prometheus-prometheus.yaml
-- prometheus-prometheusRole.yaml
+- prometheus-prometheusRule.yaml
 - prometheus-roleBindingConfig.yaml
 - prometheus-roleBindingSpecificNamespaces.yaml
 - prometheus-roleConfig.yaml
