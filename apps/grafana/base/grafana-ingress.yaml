@@ -15,7 +15,7 @@ spec:
       - path: /
         backend:
           serviceName: prometheus-grafana
-          servicePort: 3000
+          servicePort: 80
 
   # - host: bar.localhost
   #   http:
