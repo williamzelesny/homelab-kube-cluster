@@ -1,11 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
-namespace: monitoring
 metadata:
   name: grafana-ingress
   annotations:
     kubernetes.io/ingress.class: "nginx"
-  namespace: monitoring
 spec:
   tls:
   - hosts:
