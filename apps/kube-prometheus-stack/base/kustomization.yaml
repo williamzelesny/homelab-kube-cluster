@@ -1,3 +1,4 @@
 namespace: argocd
 resources:
 - application.yaml
+- grafana-ingress.yaml
