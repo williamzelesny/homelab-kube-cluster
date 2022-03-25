@@ -5,7 +5,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: nginx
+      name: prometheus-grafana
       port:
         number: 80
   ingressClassName: nginx
@@ -16,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: prometheus-grafana-headless
+            name: prometheus-grafana
             port:
-              number: 3000
+              number: 80
