@@ -1,5 +1,6 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
+namespace: monitoring
 metadata:
   name: grafana-ingress
   annotations:
