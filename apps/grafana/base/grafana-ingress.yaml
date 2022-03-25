@@ -8,7 +8,7 @@ spec:
       name: prometheus-grafana
       port:
         number: 80
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
   - http:
       paths:
