@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - grafana.localhost
+  rules:
+  - host: grafana.localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: prometheus-grafana
+          servicePort: 3000
+
+  # - host: bar.localhost
+  #   http:
+  #     paths:
+  #     - backend:
+  #         serviceName: service2
+  #         servicePort: 80
+  #     - backend:
+  #         serviceName: service3
+  #         servicePort: 80
