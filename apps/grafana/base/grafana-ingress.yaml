@@ -3,6 +3,11 @@ kind: Ingress
 metadata:
   name: grafana-ingress
 spec:
+  defaultBackend:
+    service:
+      name: nginx
+      port:
+        number: 80
   ingressClassName: nginx
   rules:
   - http:
