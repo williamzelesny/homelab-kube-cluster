@@ -1,0 +1,130 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: grafana-agent-service-monitor
+  namespace: monitoring
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      name: grafana-agent
+  namespaceSelector:
+    any: true
+  endpoints:
+    - port: agent-http-metrics
+      path: /metrics
+    - port: span-metrics
+      path: /metrics
+---
+apiVersion: v1
+data:
+  agent.yaml: |
+    server:
+      http_listen_port: 8080
+      log_level: debug
+kind: ConfigMap
+metadata:
+  name: grafana-agent
+  namespace: monitoring
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: grafana-agent
+  namespace: monitoring
+rules: []
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: grafana-agent
+roleRef: []
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - nodes
+      - nodes/proxy
+      - services
+      - endpoints
+      - pods
+    verbs:
+      - get
+      - list
+      - watch
+  - nonResourceURLs:
+      - /metrics
+    verbs:
+      - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: grafana-agent
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: grafana-agent
+subjects:
+  - kind: ServiceAccount
+    name: grafana-agent
+    namespace: monitoring
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: grafana-agent
+  name: grafana-agent
+  namespace: monitoring
+spec:
+  template: []
+  ports:
+    - name: agent-http-metrics
+      port: 8080
+      targetPort: 8080
+  selector:
+    name: grafana-agent
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana-agent
+  namespace: monitoring
+spec:
+  minReadySeconds: 10
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      name: grafana-agent
+  template:
+    metadata:
+      labels:
+        name: grafana-agent
+    spec:
+      containers:
+        - args:
+            - -config.file=/etc/agent/agent.yaml
+          command:
+            - /bin/agent
+          env:
+            - name: HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+          image: grafana/agent:v0.21.1
+          imagePullPolicy: IfNotPresent
+          name: agent
+          ports:
+            - containerPort: 8080
+              name: http-metrics
+          volumeMounts:
+            - mountPath: /etc/agent
+              name: grafana-agent
+      serviceAccount: grafana-agent
+      volumes:
+        - configMap:
+            name: grafana-agent
+          name: grafana-agent
