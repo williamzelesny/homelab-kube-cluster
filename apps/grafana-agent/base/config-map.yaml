@@ -7,4 +7,4 @@ data:
 kind: ConfigMap
 metadata:
   name: grafana-agent
-  namespace: monitoring
+  namespace: argocd
