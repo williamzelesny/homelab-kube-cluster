@@ -22,7 +22,6 @@ data:
       node_exporter:
         enabled: true
         rootfs_path: /host/root
-        procfs_path: /host/proc
     metrics:
       wal_directory: /var/lib/agent/wal
       global:
