@@ -31,7 +31,7 @@ data:
         scrape_configs:
         - job_name: mimir
           scheme: http
-          path: /metrics
+          metrics_path: /metrics
           static_configs:
           - targets:
             - mimir-distributed-alertmanager-headless.monitoring.svc.cluster.local:8080
