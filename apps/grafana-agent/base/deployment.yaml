@@ -14,8 +14,6 @@ spec:
   endpoints:
     - port: agent-http-metrics
       path: /metrics
-    - port: span-metrics
-      path: /metrics
 ---
 apiVersion: v1
 data:
