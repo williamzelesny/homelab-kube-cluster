@@ -29,6 +29,11 @@ data:
         remote_write:
         - url: http://mimir-distributed-distributor.monitoring.svc.cluster.local:8080/api/v1/push
         scrape_configs:
+        - job_name: mimir
+          scheme: http
+          static_configs:
+          - targets:
+              mimir-distributed-alertmanager-headless.monitoring.svc.cluster.local:8080/metrics
         - job_name: integrations/kubernetes/cadvisor
           bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
           kubernetes_sd_configs:
