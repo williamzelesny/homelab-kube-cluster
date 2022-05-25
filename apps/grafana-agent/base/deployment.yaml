@@ -39,8 +39,8 @@ data:
           static_configs:
           - targets:
             - mimir-distributed-alertmanager-headless.monitoring.svc.cluster.local:8080
-          labels:
-            namespace: monitoring
+            labels:
+              namespace: monitoring
         - job_name: ingester
           scheme: http
           metrics_path: metrics
