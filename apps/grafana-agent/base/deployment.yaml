@@ -39,12 +39,16 @@ data:
           static_configs:
           - targets:
             - mimir-distributed-alertmanager-headless.monitoring.svc.cluster.local:8080
+            labels:
+            - namespace: monitoring
         - job_name: ingester
           scheme: http
           metrics_path: metrics
           static_configs:
           - targets:
             - mimir-distributed-ingester.monitoring.svc.cluster.local:8080
+            labels:
+            - namespace: monitoring
         - job_name: integrations/kubernetes/cadvisor
           bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
           kubernetes_sd_configs:
