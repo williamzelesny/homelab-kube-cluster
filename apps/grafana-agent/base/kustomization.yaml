@@ -1,7 +1,7 @@
 namespace: monitoring
 resources:
-- deployment.yaml
-- service.yaml
+- ./deployment.yaml
+- ./service.yaml
 patchesStrategicMerge:
 - |-
   $patch: delete
