@@ -23,7 +23,7 @@ data:
       global:
         scrape_interval: 60s
         external_labels:
-          cluster: YOUR_CLUSTER_NAME
+          cluster: AmpD
       configs:
       - name: integrations
         remote_write:
