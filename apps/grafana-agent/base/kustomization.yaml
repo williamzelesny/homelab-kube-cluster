@@ -2,3 +2,10 @@ namespace: monitoring
 resources:
 - deployment.yaml
 - service.yaml
+patchesStrategicMerge:
+- |-
+  $patch: delete
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: grafana-agent
