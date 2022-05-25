@@ -39,12 +39,6 @@ data:
             - mimir-distributed-query-frontend-headless.monitoring.svc.cluster.local:8080
             - mimir-distributed-gossip-ring.monitoring.svc.cluster.local:8080
             - mimir-distributed-store-gateway-headless.monitoring.svc.cluster.local:8080
-          relabel_configs:
-          - action: hashmod
-            modulus: $(SHARDS)
-            source_labels:
-            - __address__
-            target_label: __tmp_hash
         - job_name: integrations/kubernetes/cadvisor
           bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
           kubernetes_sd_configs:
