@@ -27,7 +27,7 @@ data:
       configs:
       - name: integrations
         remote_write:
-        - url: https://mimir-distributed-distributor.monitoring.svc.cluster.local:8080
+        - url: http://mimir-distributed-distributor.monitoring.svc.cluster.local:8080
         scrape_configs:
         - job_name: integrations/kubernetes/cadvisor
           bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
