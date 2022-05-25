@@ -119,21 +119,6 @@ subjects:
     name: grafana-agent
     namespace: monitoring
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    name: grafana-agent
-  name: grafana-agent
-  namespace: monitoring
-spec:
-  ports:
-    - name: agent-http-metrics
-      port: 8080
-      targetPort: 8080
-  selector:
-    name: grafana-agent
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
