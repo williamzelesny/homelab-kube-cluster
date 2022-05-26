@@ -2,3 +2,4 @@ namespace: monitoring
 resources:
 - deployment.yaml
 - service.yaml
+- config.yaml
