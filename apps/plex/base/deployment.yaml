@@ -53,6 +53,6 @@ spec:
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
-    tolerations:
-    - effect: NoSchedule
-      operator: Exists
+      tolerations:
+      - effect: NoSchedule
+        operator: Exists
