@@ -19,6 +19,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: DP_DISABLE_HEALTHCHECKS
+          value: "xids"
         - name: TZ
           value: America/New_York
         - name: PUID
