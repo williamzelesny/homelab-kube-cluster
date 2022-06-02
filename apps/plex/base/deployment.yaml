@@ -30,9 +30,9 @@ spec:
         image: plexinc/pms-docker
         imagePullPolicy: Always
         name: plex
-        resources:
-          limits:
-            nvidia.com/gpu: '1' # requesting 1 GPU
+        resources: {}
+          # limits:
+          #   nvidia.com/gpu: '1' # requesting 1 GPU
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
@@ -53,6 +53,6 @@ spec:
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
-      tolerations:
-      - effect: NoSchedule
-        operator: Exists
+      # tolerations:
+      # - effect: NoSchedule
+      #   operator: Exists
