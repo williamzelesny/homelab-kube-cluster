@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
   - protocol: TCP
-    port: 32400
+    port: 80
     targetPort: 32400
     # nodePort: 32400
   selector:
