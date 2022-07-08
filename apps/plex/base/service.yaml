@@ -7,7 +7,7 @@ spec:
   - protocol: TCP
     port: 32400
     targetPort: 32400
-    nodePort: 32400
+    # nodePort: 32400
   selector:
     app: plex
-  type: NodePort
+  type: ClusterIP
