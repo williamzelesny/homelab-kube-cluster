@@ -1,5 +1,0 @@
-namespace: default
-resources:
-- deployment.yaml
-- claim.yaml
-- service.yaml
