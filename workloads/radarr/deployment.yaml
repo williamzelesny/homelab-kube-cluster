@@ -26,7 +26,6 @@ spec:
           value: "1000"
         - name: PUID
           value: "1000"
-        # image: mdhiggins/radarr-sma
         image: linuxserver/radarr
         imagePullPolicy: Always
         name: radarr
@@ -36,8 +35,6 @@ spec:
         volumeMounts:
         - mountPath: /config
           name: radarr-config
-        # - mountPath: /usr/local/sma/config
-        #   name: radarr-sma-config
         - mountPath: /downloads
           name: downloads-data
         - mountPath: /movies
@@ -51,9 +48,6 @@ spec:
       - name: radarr-config
         persistentVolumeClaim:
           claimName: radarr-config
-      # - name: radarr-sma-config
-      #   persistentVolumeClaim:
-      #     claimName: radarr-sma-config
       - hostPath:
           path: /mnt/nfs/downloads
           type: ""
