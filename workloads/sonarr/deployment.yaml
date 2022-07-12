@@ -26,7 +26,6 @@ spec:
           value: "1000"
         - name: PUID
           value: "1000"
-        # image: mdhiggins/sonarr-sma
         image: linuxserver/sonarr
         imagePullPolicy: Always
         name: sonarr
@@ -36,8 +35,6 @@ spec:
         volumeMounts:
         - mountPath: /config
           name: sonarr-config
-        # - mountPath: /usr/local/sma/config
-        #   name: sonarr-sma-config
         - mountPath: /downloads
           name: downloads-data
         - mountPath: /tv
@@ -51,9 +48,6 @@ spec:
       - name: sonarr-config
         persistentVolumeClaim:
           claimName: sonarr-config
-      # - name: sonarr-sma-config
-      #   persistentVolumeClaim:
-      #     claimName: sonarr-sma-config
       - hostPath:
           path: /mnt/nfs/downloads
           type: ""
