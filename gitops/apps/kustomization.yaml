@@ -1,2 +1,3 @@
 resources:
+  - gaming-app.yaml
   - media-app.yaml

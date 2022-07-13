@@ -1,4 +1,3 @@
 resources:
 - ./argo-events
-- ./minecraft/public
 - ./nfs-client-provisioner
