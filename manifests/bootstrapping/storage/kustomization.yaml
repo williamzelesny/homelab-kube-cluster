@@ -1,2 +1,2 @@
 resources:
-  - ./nfs-client=provisioner
+  - ./nfs-client-provisioner
