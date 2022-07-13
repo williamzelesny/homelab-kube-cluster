@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
     targetRevision: main
-    path: manifests\workloads\media
+    path: manifests/workloads/media
   destination:
     server: https://kubernetes.default.svc
     namespace: media
