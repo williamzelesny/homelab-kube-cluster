@@ -1,3 +1,4 @@
 resources:
   - gaming-app.yaml
   - media-app.yaml
+  - bootstrapping-storage.yaml
