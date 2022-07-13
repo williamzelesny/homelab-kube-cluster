@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: plex
-  namespace: plex
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
