@@ -1,4 +1,4 @@
-namespace: default
+namespace: gaming
 resources:
 - deployment.yaml
 - claim.yaml
