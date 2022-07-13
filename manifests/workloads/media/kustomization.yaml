@@ -1,0 +1,5 @@
+resources:
+- ./nzbget
+- ./plex
+- ./radarr
+- ./sonarr
