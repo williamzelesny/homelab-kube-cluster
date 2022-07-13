@@ -1,0 +1,8 @@
+bases:
+- ./argo-events
+- ./minecraft/public
+- ./nfs-client-provisioner
+- ./nzbget
+- ./plex
+- ./radarr
+- ./sonarr
