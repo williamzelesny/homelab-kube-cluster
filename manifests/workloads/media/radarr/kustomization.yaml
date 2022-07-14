@@ -1,4 +1,4 @@
-namespace: default
+namespace: media
 resources:
 - deployment.yaml
 - claim.yaml
