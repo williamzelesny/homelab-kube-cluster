@@ -39,6 +39,10 @@ spec:
           name: plex-data
         - mountPath: /config
           name: plex-config
+      tolerations:
+        - key: node.kubernetes.io/disk-pressure
+          operator: Exists
+          effect: NoSchedule
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -52,7 +56,3 @@ spec:
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
-        tolerations:
-        - key: node.kubernetes.io/disk-pressure
-          operator: Exists
-          effect: NoSchedule
