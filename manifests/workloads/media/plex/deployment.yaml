@@ -52,3 +52,7 @@ spec:
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
+        tolerations:
+        - key: node.kubernetes.io/disk-pressure
+          operator: Exists
+          effect: NoSchedule
