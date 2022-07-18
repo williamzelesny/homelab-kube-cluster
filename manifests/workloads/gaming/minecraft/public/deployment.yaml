@@ -22,6 +22,8 @@ spec:
       - env:
         - name: EULA
           value: "TRUE"
+        - name: VERSION
+          value: "LATEST"
         image: itzg/minecraft-bedrock-server:latest
         imagePullPolicy: Always
         name: minecraft-public
