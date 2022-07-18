@@ -22,7 +22,7 @@ spec:
       - env:
         - name: EULA
           value: "TRUE"
-        image: itzg/minecraft-bedrock-server
+        image: itzg/minecraft-bedrock-server:latest
         imagePullPolicy: Always
         name: minecraft-public
         resources: {}
