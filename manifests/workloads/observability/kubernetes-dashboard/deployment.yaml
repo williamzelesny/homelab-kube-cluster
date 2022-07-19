@@ -15,19 +15,21 @@ metadata:
 
 ---
 
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
+  labels:
+    k8s-app: kubernetes-dashboard
   name: kubernetes-dashboard
+  namespace: observability
 spec:
   ports:
-  - protocol: TCP
-    port: 8443
-    targetPort: 8443
-    nodePort: 32201
+    - port: 443
+      targetPort: 8443
+      nodePort: 8443
+  type: NodePort
   selector:
     k8s-app: kubernetes-dashboard
-  type: NodePort
 
 ---
 
