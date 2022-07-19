@@ -24,7 +24,7 @@ spec:
   - protocol: TCP
     port: 8443
     targetPort: 8443
-    nodePort: 32400
+    nodePort: 32201
   selector:
     app: kubernetes-dashboard
   type: NodePort
