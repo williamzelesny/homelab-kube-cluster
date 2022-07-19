@@ -4,16 +4,16 @@ metadata:
   name: prometheus-deployment
   namespace: observability
   labels:
-    app: prometheus-server
+    app: prometheus
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: prometheus-server
+      app: prometheus
   template:
     metadata:
       labels:
-        app: prometheus-server
+        app: prometheus
     spec:
       containers:
         - name: prometheus
