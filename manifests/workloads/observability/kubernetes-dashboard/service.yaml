@@ -4,11 +4,10 @@ metadata:
   name: kubernetes-dashboard
 spec:
   ports:
-    - port: 8443
-      protocol: TCP
-      targetPort: 8443
-      nodePort: 32201
+  - protocol: TCP
+    port: 8443
+    targetPort: 8443
+    nodePort: 32400
   selector:
     app: kubernetes-dashboard
-  sessionAffinity: None
   type: NodePort
