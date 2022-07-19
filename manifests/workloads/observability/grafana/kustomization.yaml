@@ -1,0 +1,5 @@
+namespace: observability
+resources:
+- deployment.yaml
+- claim.yaml
+- service.yaml
