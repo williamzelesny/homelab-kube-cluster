@@ -26,7 +26,7 @@ spec:
     targetPort: 8443
     nodePort: 32201
   selector:
-    app: kubernetes-dashboard
+    k8s-app: kubernetes-dashboard
   type: NodePort
 
 ---
@@ -158,7 +158,6 @@ apiVersion: apps/v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
-    app: kubernetes-dashboard
   name: kubernetes-dashboard
   namespace: observability
 spec:
