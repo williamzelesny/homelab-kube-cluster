@@ -158,6 +158,7 @@ apiVersion: apps/v1
 metadata:
   labels:
     k8s-app: kubernetes-dashboard
+    name: kubernetes-dashboard
   name: kubernetes-dashboard
   namespace: observability
 spec:
