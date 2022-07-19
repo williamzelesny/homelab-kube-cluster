@@ -2,3 +2,4 @@ resources:
 - ./grafana
 - ./prometheus
 - ./cadvisor
+- ./kube-state-metrics
