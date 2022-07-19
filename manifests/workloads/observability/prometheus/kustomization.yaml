@@ -1,4 +1,4 @@
-namespace: media
+namespace: observability
 resources:
 - clusterrole.yaml
 - configmap.yaml
