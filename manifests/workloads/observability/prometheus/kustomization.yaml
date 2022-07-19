@@ -1,0 +1,7 @@
+namespace: media
+resources:
+- clusterrole.yaml
+- configmap.yaml
+- deployment.yaml
+- claim.yaml
+- service.yaml
