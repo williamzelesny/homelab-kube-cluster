@@ -24,7 +24,7 @@ metadata:
   namespace: observability
 spec:
   ports:
-    - port: 443
+    - port: 8443
       targetPort: 8443
       nodePort: 32201
   type: NodePort
