@@ -2,4 +2,3 @@ resources:
 - ./grafana
 - ./prometheus
 - ./cadvisor
-- ./kubernetes-dashboard
