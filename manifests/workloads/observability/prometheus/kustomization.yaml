@@ -8,6 +8,6 @@ resources:
 - service.yaml
 
 configMapGenerator:
-  - name: prometheus-config
+  - name: prometheus-server-conf
     files:
     - configmap.yaml
