@@ -9,5 +9,5 @@ resources:
 configMapGenerator:
   - name: prometheus-server-conf
     files:
-    - prometheus.yaml
+    - prometheus.yml
     - prometheus.rules
