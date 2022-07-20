@@ -2,6 +2,7 @@ namespace: observability
 resources:
 - clusterrole.yaml
 - clusterrolebinding.yaml
+- configmap.yaml
 - deployment.yaml
 - claim.yaml
 - service.yaml
