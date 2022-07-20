@@ -1,10 +1,10 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: prometheus-server-conf
-  labels:
-    name: prometheus-server-conf
-  namespace: observability
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: prometheus-server-conf
+#   labels:
+#     name: prometheus-server-conf
+#   namespace: observability
 data:
   prometheus.rules: |-
     # groups:
