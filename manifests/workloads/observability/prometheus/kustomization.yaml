@@ -2,12 +2,12 @@ namespace: observability
 resources:
 - clusterrole.yaml
 - clusterrolebinding.yaml
-- configmap.yaml
 - deployment.yaml
 - claim.yaml
 - service.yaml
 
 configMapGenerator:
-  - name: prometheus-config
+  - name: prometheus-server-conf
     files:
-    - configmap.yaml
+    - prometheus.yaml
+    - prometheus.rules
