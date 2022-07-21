@@ -5,7 +5,7 @@ metadata:
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: sonarr
@@ -43,7 +43,6 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-      revisionHistoryLimit: 3
       volumes:
       - name: sonarr-config
         persistentVolumeClaim:
