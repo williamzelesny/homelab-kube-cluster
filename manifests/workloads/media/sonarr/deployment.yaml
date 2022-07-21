@@ -43,6 +43,7 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
+      revisionHistoryLimit: 3
       volumes:
       - name: sonarr-config
         persistentVolumeClaim:
