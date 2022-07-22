@@ -5,7 +5,7 @@
   ],
   "kubernetes": {
     "fileMatch": [
-      "manifests/workloads/.+\\.yaml$"
+      "manifests/workloads/.+\\deployment.yaml$"
     ]
   }
 }
