@@ -41,6 +41,9 @@ spec:
         - name: disk
           mountPath: /dev/disk
           readOnly: true
+        - name: mem
+          mountPath: /dev/kmsg
+          readOnly: true
         ports:
           - name: http
             containerPort: 8080
@@ -63,3 +66,6 @@ spec:
       - name: disk
         hostPath:
           path: /dev/disk
+      - name: mem
+        hostPath:
+          path: /dev/kmsg
