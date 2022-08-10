@@ -21,7 +21,7 @@ spec:
           - 0
       containers:
         - name: grafana
-          image: grafana/grafana:latest@sha256:c6aa20c31944df1ceebc8ac04809cdb9d02a0969a4176f516c117eed9e488556
+          image: grafana/grafana:9.0.7@sha256:68769c7f591946bbee3f158184c562ed2f28d10b6fc3f3901496442762c9cb0a
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
