@@ -25,7 +25,7 @@ spec:
           value: "1000"
         - name: PGID
           value: "1000"
-        image: linuxserver/nzbget:latest@sha256:066c926a7b533ba72cece4f5ede572238da9c04bf03a6076e847679713f7f289
+        image: linuxserver/nzbget:21.1.20220812@sha256:96547c9d11e470dcc6308cc5a3a521381b5c4db11a701eacbf404f2b4bca922b
         imagePullPolicy: Always
         name: nzbget
         resources: {}
