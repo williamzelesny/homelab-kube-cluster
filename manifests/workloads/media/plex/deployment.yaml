@@ -26,7 +26,7 @@ spec:
           value: "1000"
         - name: PGID
           value: "1000"
-        image: plexinc/pms-docker:latest@sha256:4b3e78f3a4f2d7a253c420b39ac6cc9dc6cf91ea9181972075107e3b5ffad3eb
+        image: plexinc/pms-docker:latest@sha256:8a527e49c10dd01186c7a66cb225887512d63e05620f97628a3dbea643655efd
         imagePullPolicy: Always
         name: plex
         resources: {}
