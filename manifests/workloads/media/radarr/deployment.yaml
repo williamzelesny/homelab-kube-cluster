@@ -25,7 +25,7 @@ spec:
           value: "1000"
         - name: PUID
           value: "1000"
-        image: linuxserver/radarr:latest@sha256:f812987fe076ab652c82d5a1cb7bbd5f8e07c9a9ea932b1ad966cea44e77748a
+        image: linuxserver/radarr:latest@sha256:4ddc0c7167c71d4d2cbbc536510690fcb9b93b32c073852db0269a4dd53bc397
         imagePullPolicy: Always
         name: radarr
         resources: {}
