@@ -3,5 +3,5 @@ resources:
 - clusterrole.yaml
 - clusterrolebinding.yaml
 - daemonset.yaml
-- podsecuritypolicy.yaml
+#- podsecuritypolicy.yaml
 - serviceaccount.yaml
