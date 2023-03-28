@@ -6,7 +6,7 @@ patchesStrategicMerge:
 - argocd-cm.yaml
 - argocd-rbac-cm.yaml
 - argocd-cmd-params-cm.yaml
-- argocd-ingress.yaml
+# - argocd-ingress.yaml
 - network-policy.yaml
 
 namespace: argocd
