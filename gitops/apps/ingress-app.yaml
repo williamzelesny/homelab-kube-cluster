@@ -16,7 +16,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-  project: zelesny
+  project: default
   syncPolicy:
     automated:
       prune: true
