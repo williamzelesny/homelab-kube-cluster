@@ -2,6 +2,5 @@ resources:
   - argocd-app.yaml
   - bootstrapping-storage.yaml
   - gaming-app.yaml
-  - ingress-app.yaml
   - media-app.yaml
   - observability-app.yaml
