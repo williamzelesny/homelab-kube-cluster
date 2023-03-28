@@ -4,8 +4,8 @@ metadata:
   name: argocd
 spec:
   rules:
-  # - host: argo.zelesny.com 
-  - http:
+  - host: argo.zelesny.com 
+    http:
       paths:
       - path: /
         pathType: Prefix
