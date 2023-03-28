@@ -1,6 +1,6 @@
 resources:
 - namespace.yaml
-- github.com/argoproj/argo-cd/manifests/cluster-install?ref=latest
+- github.com/argoproj/argo-cd/manifests/cluster-install
 
 patchesStrategicMerge:
 - argocd-cm.yaml
