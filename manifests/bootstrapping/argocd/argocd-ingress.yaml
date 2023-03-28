@@ -4,7 +4,7 @@ metadata:
   name: argocd
 spec:
   rules:
-  - host: www.argo.zelesny.com 
+  - host: argo.zelesny.com 
     http:
       paths:
       - path: /
@@ -13,4 +13,4 @@ spec:
           service:
             name: argocd-server
             port:
-              name: web
+              name: http
