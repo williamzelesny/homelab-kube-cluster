@@ -4,4 +4,4 @@ resources:
   - gaming-app.yaml
   - media-app.yaml
   - observability-app.yaml
-  - traefik-app.yaml
+  # - traefik-app.yaml
