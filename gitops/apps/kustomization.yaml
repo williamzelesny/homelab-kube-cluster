@@ -3,5 +3,6 @@ resources:
   - bootstrapping-storage.yaml
   - gaming-app.yaml
   - media-app.yaml
+  - metallb-app.yaml
   - observability-app.yaml
   - traefik-app.yaml
