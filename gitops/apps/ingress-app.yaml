@@ -16,7 +16,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-  project: brentgruberorg
+  project: zelesny
   syncPolicy:
     automated:
       prune: true
