@@ -10,15 +10,12 @@ metadata:
 spec:
   ports:
   - name: http
-    nodePort: 30450
     port: 80
     protocol: TCP
     targetPort: 8080
   - name: https
-    nodePort: 32614
     port: 443
     protocol: TCP
     targetPort: 8080
   selector:
     app.kubernetes.io/name: argocd-server
-  type: NodePort
