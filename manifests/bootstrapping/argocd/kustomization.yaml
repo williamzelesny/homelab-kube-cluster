@@ -1,9 +1,10 @@
 resources:
 - namespace.yaml
 - github.com/argoproj/argo-cd/manifests/cluster-install
-- argocd-ingress.yaml
+# - argocd-ingress.yaml
 
 patchesStrategicMerge:
+- argocd-server-service.yaml
 - argocd-cm.yaml
 - argocd-rbac-cm.yaml
 - argocd-cmd-params-cm.yaml
