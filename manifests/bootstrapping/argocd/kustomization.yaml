@@ -1,7 +1,6 @@
 resources:
 - namespace.yaml
 - github.com/argoproj/argo-cd/manifests/cluster-install
-# - argocd-ingress.yaml
 
 patchesStrategicMerge:
 - argocd-server-service.yaml
