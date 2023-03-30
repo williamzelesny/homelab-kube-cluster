@@ -1,5 +1,5 @@
 resources:
-  # - argocd-app.yaml
+  - argocd-app.yaml
   - bootstrapping-storage.yaml
   - gaming-app.yaml
   - media-app.yaml
