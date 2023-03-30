@@ -4,6 +4,6 @@ metadata:
   name: production-public-ips
   namespace: metallb-system
 spec:
-  myASN: 64512
-  peerASN: 64512
+  myASN: 7922
+  peerASN: 7922
   peerAddress: 10.0.1.1
