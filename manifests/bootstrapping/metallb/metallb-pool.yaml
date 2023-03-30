@@ -4,6 +4,5 @@ metadata:
   name: first-pool
   namespace: metallb-system
 spec:
-  protocol: layer2
   addresses:
   - 10.0.3.0/24
