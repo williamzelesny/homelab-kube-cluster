@@ -7,3 +7,6 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   server.insecure: "true"
+  controller.status.processors: "30"
+  controller.operation.processors: "30"
+  controller.repo.server.timeout.seconds: "180"
