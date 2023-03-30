@@ -1,9 +1,9 @@
 apiVersion: metallb.io/v1beta2
 kind: BGPPeer
 metadata:
-  name: sample
+  name: production-public-ips
   namespace: metallb-system
 spec:
-  myASN: 64500
-  peerASN: 64501
+  myASN: 64512
+  peerASN: 64512
   peerAddress: 10.0.1.1
