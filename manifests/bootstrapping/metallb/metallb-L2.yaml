@@ -3,6 +3,3 @@ kind: L2Advertisement
 metadata:
   name: production-public-ips
   namespace: metallb-system
-spec:
-  IPAddressPools:
-  - first-pool
