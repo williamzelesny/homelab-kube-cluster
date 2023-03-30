@@ -2,15 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd
+  namespace: argocd
 spec:
+  tls:
+    - secretName: secret-zelesny-com
   rules:
-  - host: argo.zelesny.com 
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: argocd-server
-            port:
-              name: https
+    - host: argocd.zelesny.com
+      http:
+        paths:
+        - pathType: ImplementationSpecific
+          path: "/*"   # "*" is needed. Without this, the UI Javascript and CSS will not load properly
+          backend:
+            service:
+              name: argocd-server
+              port:
+                number: 80
