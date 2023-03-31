@@ -10,4 +10,4 @@ spec:
     nodePort: 31029
   selector:
     app: minecraft-public
-  type: NodePort
+  type: LoadBalancer
