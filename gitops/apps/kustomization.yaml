@@ -1,7 +1,7 @@
 resources:
   - argocd-app.yaml
   - bootstrapping-storage.yaml
-  # - cert-manager-app.yaml
+  - cert-manager-app.yaml
   - gaming-app.yaml
   - media-app.yaml
   - metallb-app.yaml
