@@ -4,8 +4,8 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  tls:
-    - secretName: secret-zelesny-com
+  # tls:
+  #   - secretName: secret-zelesny-com
   rules:
     - host: argo.zelesny.com
       http:
