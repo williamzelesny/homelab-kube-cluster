@@ -7,7 +7,7 @@ spec:
   tls:
     - secretName: secret-zelesny-com
   rules:
-    - host: argocd.zelesny.com
+    - host: argo.zelesny.com
       http:
         paths:
         - pathType: ImplementationSpecific
