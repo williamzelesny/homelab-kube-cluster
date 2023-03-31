@@ -16,4 +16,4 @@ spec:
             service:
               name: minecraft-public
               port:
-                number: 32400
+                number: 19132
