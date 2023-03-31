@@ -3,3 +3,4 @@ resources:
 - deployment.yaml
 - claim.yaml
 - service.yaml
+- ingress.yaml
