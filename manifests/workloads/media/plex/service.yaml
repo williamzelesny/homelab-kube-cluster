@@ -10,4 +10,4 @@ spec:
     nodePort: 32400
   selector:
     app: plex
-  type: NodePort
+  type: LoadBalancer
