@@ -1,9 +1,0 @@
-apiVersion: metallb.io/v1beta2
-kind: BGPPeer
-metadata:
-  name: production-public-ips
-  namespace: metallb-system
-spec:
-  myASN: 7922
-  peerASN: 7922
-  peerAddress: 10.0.1.1
