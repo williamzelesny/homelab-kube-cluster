@@ -21,4 +21,6 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    certResolver: default
+  - hosts:
+    - argo.zelesny.com
+    secretName: argo-zelesny-tls
