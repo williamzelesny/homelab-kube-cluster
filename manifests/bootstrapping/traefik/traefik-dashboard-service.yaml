@@ -10,7 +10,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: traefik
-    port: 9000
+    port: 8080
     targetPort: traefik
     protocol: TCP
   selector:
