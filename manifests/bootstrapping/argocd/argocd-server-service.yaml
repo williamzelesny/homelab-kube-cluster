@@ -3,23 +3,21 @@ kind: Service
 metadata:
   annotations:
     metallb.universe.tf/address-pool: production-public-ips
+  labels:
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+    app.kubernetes.io/component: server
   name: argocd-server
-  namespace: argocd
 spec:
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
   - name: http
-    port: 80
     protocol: TCP
+    port: 80
     targetPort: 8080
   - name: https
-    port: 443
     protocol: TCP
+    port: 443
     targetPort: 8080
   selector:
     app.kubernetes.io/name: argocd-server
-  sessionAffinity: None
-  type: LoadBalancer
+  

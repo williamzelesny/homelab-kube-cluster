@@ -3,9 +3,10 @@ resources:
 - github.com/argoproj/argo-cd/manifests/cluster-install
 - argocd-cert.yaml
 - argocd-ingressroute.yaml
-- argocd-server-service.yaml
+
 
 patchesStrategicMerge:
+- argocd-server-service.yaml
 - argocd-cm.yaml
 - argocd-rbac-cm.yaml
 - argocd-cmd-params-cm.yaml
