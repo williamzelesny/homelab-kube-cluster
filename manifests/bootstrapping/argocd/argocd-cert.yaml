@@ -9,5 +9,5 @@ spec:
   dnsNames:
     - argo.zelesny.com
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
     kind: ClusterIssuer
