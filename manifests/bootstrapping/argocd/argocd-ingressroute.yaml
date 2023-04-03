@@ -20,5 +20,5 @@ spec:
         - name: argocd-server
           port: 80
           scheme: h2c
-  tls:
-    secretName: argo-zelesny-cert
+  tls: {}
+    # secretName: argo-zelesny-cert
