@@ -13,8 +13,6 @@ spec:
       services:
         - name: argocd-server
           port: 80
-      middlewares:
-        - name: redirect
     - kind: Rule
       match: Host(`argo.zelesny.com`) && Headers(`Content-Type`, `application/grpc`)
       priority: 11
@@ -22,7 +20,5 @@ spec:
         - name: argocd-server
           port: 80
           scheme: h2c
-      middlewares:
-        - name: redirect
   tls:
     secretName: argo-zelesny-cert

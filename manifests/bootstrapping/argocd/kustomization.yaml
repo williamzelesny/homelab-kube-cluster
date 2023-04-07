@@ -4,6 +4,7 @@ resources:
 - argocd-cert.yaml
 - argocd-middleware.yaml
 - argocd-ingressroute.yaml
+- argocd-ingressroute-http.yaml
 
 patchesStrategicMerge:
 - argocd-server-service.yaml
