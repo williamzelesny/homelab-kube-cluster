@@ -6,9 +6,8 @@ spec:
   ports:
     - port: 3000
       protocol: TCP
-      targetPort: http-grafana
-      nodePort: 32200
+      targetPort: http
   selector:
     app: grafana
   sessionAffinity: None
-  type: NodePort
+  type: LoadBalancer
