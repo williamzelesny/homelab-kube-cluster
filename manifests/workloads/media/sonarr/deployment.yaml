@@ -25,7 +25,7 @@ spec:
           value: "1000"
         - name: PUID
           value: "1000"
-        image: linuxserver/sonarr:latest@sha256:48c9065210c7e04c0ebef53f7179a6ac9ab58808a75b11907ad1bc9b96813141
+        image: linuxserver/sonarr:latest@sha256:62071f6a28f0c8c928ecd6d9ae4ef35e68c51a01e1a0c29cbd3d4be987222dbe
         imagePullPolicy: Always
         name: sonarr
         resources: {}
