@@ -2,4 +2,4 @@ namespace: system-upgrade
 
 resources:
   - system-upgrade-service-acct.yaml
-  
+  - system-upgrade-cluster-role-binding.yaml
