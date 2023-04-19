@@ -5,3 +5,4 @@ resources:
   - system-upgrade-cluster-role-binding.yaml
   - system-upgrade-configmap.yaml
   - system-upgrade-deployment.yaml
+  - system-upgrade-plan.yaml
