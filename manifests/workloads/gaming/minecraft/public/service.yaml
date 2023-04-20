@@ -11,3 +11,4 @@ spec:
   selector:
     app: minecraft-public
   type: LoadBalancer
+  loadBalancerIP: 10.0.3.20
