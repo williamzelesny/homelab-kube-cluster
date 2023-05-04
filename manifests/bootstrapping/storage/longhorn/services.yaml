@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     app: longhorn-conversion-webhook
   name: longhorn-conversion-webhook
   namespace: longhorn-system
@@ -14,10 +14,10 @@ spec:
   type: ClusterIP
   sessionAffinity: ClientIP
   selector:
-    app: longhorn-manager
+    app: longhorn-conversion-webhook
   ports:
     - name: conversion-webhook
-      port: 9501
+      port: 9443
       targetPort: conversion-wh
 ---
 # Source: longhorn/templates/services.yaml
@@ -27,7 +27,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     app: longhorn-admission-webhook
   name: longhorn-admission-webhook
   namespace: longhorn-system
@@ -35,10 +35,10 @@ spec:
   type: ClusterIP
   sessionAffinity: ClientIP
   selector:
-    app: longhorn-manager
+    app: longhorn-admission-webhook
   ports:
     - name: admission-webhook
-      port: 9502
+      port: 9443
       targetPort: admission-wh
 ---
 # Source: longhorn/templates/services.yaml
@@ -48,7 +48,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     app: longhorn-recovery-backend
   name: longhorn-recovery-backend
   namespace: longhorn-system
@@ -56,10 +56,10 @@ spec:
   type: ClusterIP
   sessionAffinity: ClientIP
   selector:
-    app: longhorn-manager
+    app: longhorn-recovery-backend
   ports:
     - name: recovery-backend
-      port: 9503
+      port: 9600
       targetPort: recov-backend
 ---
 # Source: longhorn/templates/services.yaml
@@ -69,7 +69,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
   name: longhorn-engine-manager
   namespace: longhorn-system
 spec:
@@ -85,7 +85,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
   name: longhorn-replica-manager
   namespace: longhorn-system
 spec:

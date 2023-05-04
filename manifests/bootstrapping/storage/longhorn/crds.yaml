@@ -9,7 +9,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: backingimagedatasources.longhorn.io
 spec:
@@ -180,7 +180,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: backingimagemanagers.longhorn.io
 spec:
@@ -365,7 +365,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: backingimages.longhorn.io
 spec:
@@ -377,7 +377,7 @@ spec:
           name: longhorn-conversion-webhook
           namespace: longhorn-system
           path: /v1/webhook/conversion
-          port: 9501
+          port: 9443
       conversionReviewVersions:
         - v1beta2
         - v1beta1
@@ -540,7 +540,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: backups.longhorn.io
 spec:
@@ -654,9 +654,6 @@ spec:
                 backupCreatedAt:
                   description: The snapshot backup upload finished time.
                   type: string
-                compressionMethod:
-                  description: Compression method
-                  type: string
                 error:
                   description: The error message when taking the snapshot backup.
                   type: string
@@ -736,7 +733,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: backuptargets.longhorn.io
 spec:
@@ -748,7 +745,7 @@ spec:
           name: longhorn-conversion-webhook
           namespace: longhorn-system
           path: /v1/webhook/conversion
-          port: 9501
+          port: 9443
       conversionReviewVersions:
         - v1beta2
         - v1beta1
@@ -919,7 +916,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: backupvolumes.longhorn.io
 spec:
@@ -1083,7 +1080,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: engineimages.longhorn.io
 spec:
@@ -1096,7 +1093,7 @@ spec:
           name: longhorn-conversion-webhook
           namespace: longhorn-system
           path: /v1/webhook/conversion
-          port: 9501
+          port: 9443
       conversionReviewVersions:
         - v1beta2
         - v1beta1
@@ -1275,7 +1272,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: engines.longhorn.io
 spec:
@@ -1624,7 +1621,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: instancemanagers.longhorn.io
 spec:
@@ -1717,7 +1714,6 @@ spec:
                   type: string
                 type:
                   enum:
-                    - aio
                     - engine
                     - replica
                   type: string
@@ -1735,72 +1731,6 @@ spec:
                   type: integer
                 currentState:
                   type: string
-                instanceEngines:
-                  additionalProperties:
-                    properties:
-                      spec:
-                        properties:
-                          name:
-                            type: string
-                        type: object
-                      status:
-                        properties:
-                          endpoint:
-                            type: string
-                          errorMsg:
-                            type: string
-                          listen:
-                            type: string
-                          portEnd:
-                            format: int32
-                            type: integer
-                          portStart:
-                            format: int32
-                            type: integer
-                          resourceVersion:
-                            format: int64
-                            type: integer
-                          state:
-                            type: string
-                          type:
-                            type: string
-                        type: object
-                    type: object
-                  nullable: true
-                  type: object
-                instanceReplicas:
-                  additionalProperties:
-                    properties:
-                      spec:
-                        properties:
-                          name:
-                            type: string
-                        type: object
-                      status:
-                        properties:
-                          endpoint:
-                            type: string
-                          errorMsg:
-                            type: string
-                          listen:
-                            type: string
-                          portEnd:
-                            format: int32
-                            type: integer
-                          portStart:
-                            format: int32
-                            type: integer
-                          resourceVersion:
-                            format: int64
-                            type: integer
-                          state:
-                            type: string
-                          type:
-                            type: string
-                        type: object
-                    type: object
-                  nullable: true
-                  type: object
                 instances:
                   additionalProperties:
                     properties:
@@ -1833,7 +1763,6 @@ spec:
                         type: object
                     type: object
                   nullable: true
-                  description: 'Deprecated: Replaced by InstanceEngines and InstanceReplicas'
                   type: object
                 ip:
                   type: string
@@ -1862,7 +1791,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: nodes.longhorn.io
 spec:
@@ -1875,7 +1804,7 @@ spec:
           name: longhorn-conversion-webhook
           namespace: longhorn-system
           path: /v1/webhook/conversion
-          port: 9501
+          port: 9443
       conversionReviewVersions:
         - v1beta2
         - v1beta1
@@ -1980,16 +1909,12 @@ spec:
                     type: object
                   type: object
                 engineManagerCPURequest:
-                  description: 'Deprecated: Replaced by InstanceManagerCPURequest'
                   type: integer
                 evictionRequested:
                   type: boolean
-                instanceManagerCPURequest:
-                  type: integer
                 name:
                   type: string
                 replicaManagerCPURequest:
-                  description: 'Deprecated: Replaced by InstanceManagerCPURequest'
                   type: integer
                 tags:
                   items:
@@ -2105,7 +2030,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: orphans.longhorn.io
 spec:
@@ -2274,7 +2199,7 @@ spec:
           jsonPath: .spec.groups
           name: Groups
           type: string
-        - description: Should be one of "snapshot", "snapshot-force-create", "snapshot-cleanup", "snapshot-delete", "backup", "backup-force-create" or "filesystem-trim"
+        - description: Should be one of "snapshot", "snapshot-cleanup", "snapshot-delete" or "backup"
           jsonPath: .spec.task
           name: Task
           type: string
@@ -2336,15 +2261,12 @@ spec:
                   description: The retain count of the snapshot/backup.
                   type: integer
                 task:
-                  description: The recurring job task. Can be "snapshot", "snapshot-force-create", "snapshot-cleanup", "snapshot-delete", "backup", "backup-force-create" or "filesystem-trim"
+                  description: The recurring job task. Can be "snapshot", "snapshot-cleanup", "snapshot-delete" or "backup".
                   enum:
                     - snapshot
-                    - snapshot-force-create
                     - snapshot-cleanup
                     - snapshot-delete
                     - backup
-                    - backup-force-create
-                    - filesystem-trim
                   type: string
               type: object
             status:
@@ -2376,7 +2298,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: replicas.longhorn.io
 spec:
@@ -2594,7 +2516,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: settings.longhorn.io
 spec:
@@ -2685,7 +2607,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: sharemanagers.longhorn.io
 spec:
@@ -2762,20 +2684,16 @@ spec:
               description: ShareManagerSpec defines the desired state of the Longhorn share manager
               properties:
                 image:
-                  description: Share manager image used for creating a share manager pod
                   type: string
               type: object
             status:
               description: ShareManagerStatus defines the observed state of the Longhorn share manager
               properties:
                 endpoint:
-                  description: NFS endpoint that can access the mounted filesystem of the volume
                   type: string
                 ownerID:
-                  description: The node ID on which the controller is responsible to reconcile this share manager resource
                   type: string
                 state:
-                  description: The state of the share manager resource
                   type: string
               type: object
           type: object
@@ -2800,7 +2718,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: snapshots.longhorn.io
 spec:
@@ -2927,7 +2845,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: supportbundles.longhorn.io
 spec:
@@ -3053,7 +2971,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: systembackups.longhorn.io
 spec:
@@ -3176,7 +3094,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: systemrestores.longhorn.io
 spec:
@@ -3278,7 +3196,7 @@ metadata:
   labels:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
-    app.kubernetes.io/version: v1.4.0-dev
+    app.kubernetes.io/version: v1.4.1
     longhorn-manager: ""
   name: volumes.longhorn.io
 spec:
@@ -3291,7 +3209,7 @@ spec:
           name: longhorn-conversion-webhook
           namespace: longhorn-system
           path: /v1/webhook/conversion
-          port: 9501
+          port: 9443
       conversionReviewVersions:
         - v1beta2
         - v1beta1
@@ -3403,12 +3321,6 @@ spec:
                 baseImage:
                   description: Deprecated. Rename to BackingImage
                   type: string
-                backupCompressionMethod:
-                  enum:
-                    - none
-                    - lz4
-                    - gzip
-                  type: string
                 dataLocality:
                   enum:
                     - disabled
@@ -3479,12 +3391,9 @@ spec:
                       task:
                         enum:
                           - snapshot
-                          - snapshot-force-create
                           - snapshot-cleanup
                           - snapshot-delete
                           - backup
-                          - backup-force-create
-                          - filesystem-trim
                         type: string
                     type: object
                   type: array

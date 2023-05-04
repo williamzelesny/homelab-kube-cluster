@@ -1,10 +1,13 @@
 resources:
   - namespace.yaml
-  - service-acct.yaml
-  - configmap.yaml
+  - serviceaccount.yaml
+  - storageclass.yaml
   - crds.yaml
   - clusterrole.yaml
   - deployment-ui.yaml
   - services.yaml
   - daemonset-sa.yaml
   - deployment-driver.yaml
+  - default-setting.yaml
+  - deployment-recovery-backend.yaml
+  - deployment-webhook.yaml
