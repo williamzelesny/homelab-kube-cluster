@@ -7,3 +7,13 @@ metadata:
     app.kubernetes.io/name: longhorn
     app.kubernetes.io/instance: longhorn
     app.kubernetes.io/version: v1.4.0-dev
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: longhorn-support-bundle
+  namespace: longhorn-system
+  labels:
+    app.kubernetes.io/name: longhorn
+    app.kubernetes.io/instance: longhorn
+    app.kubernetes.io/version: v1.4.0-dev
