@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
+  kustomize.buildOptions: "--enable-helm"
   users.anonymous.enabled: "true"
   admin.enabled: "false"
   statusbadge.enabled: "true"
