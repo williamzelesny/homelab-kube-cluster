@@ -1,3 +1,5 @@
+namespace: longhorn-system
+
 resources:
   - namespace.yaml
   - serviceaccount.yaml
