@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nfs-client-provisioner
+  name: longhorn
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,10 +10,10 @@ spec:
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
     targetRevision: main
-    path: manifests/bootstrapping/storage/nfs-client-provisioner
+    path: manifests/bootstrapping/storage/longhorn
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system
+    namespace: longhorn-system
   syncPolicy:
     automated:
       prune: true
