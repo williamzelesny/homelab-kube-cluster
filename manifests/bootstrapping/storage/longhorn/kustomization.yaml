@@ -4,3 +4,5 @@ resources:
   - configmap.yaml
   - crds.yaml
   - clusterrole.yaml
+  - deployment-ui.yaml
+  - services.yaml
