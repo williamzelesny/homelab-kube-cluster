@@ -1,11 +1,7 @@
 resources:
 - namespace.yaml
 
-helmChartInflationGenerator:
-  - chartRepoUrl: https://charts.longhorn.io
-    chartHome: longhorn
-    chartName: longhorn
-    releaseName: longhorn
-    releaseNamespace: longhorn-system
+generators:
+  - chartInflator.yaml
 
 namespace: longhorn-system

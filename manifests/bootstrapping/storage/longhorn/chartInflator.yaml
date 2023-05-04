@@ -1,0 +1,9 @@
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: longhorn-chart-inflator
+chartRepoUrl: https://charts.longhorn.io
+chartHome: longhorn
+chartName: longhorn
+releaseName: longhorn
+releaseNamespace: longhorn-system
