@@ -12,5 +12,6 @@ spec:
         - name: redirect
       kind: Rule
       services:
-        - name: argocd-server
-          port: 80
+        - kind: Service
+          name: argocd-server
+          port: http
