@@ -3,3 +3,4 @@ resources:
   - service-acct.yaml
   - configmap.yaml
   - crds.yaml
+  - clusterrole.yaml
