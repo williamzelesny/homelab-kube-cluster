@@ -2,6 +2,6 @@ resources:
 - namespace.yaml
 
 generators:
-  - chartInflator.yaml
+- chartInflator.yaml
 
 namespace: longhorn-system
