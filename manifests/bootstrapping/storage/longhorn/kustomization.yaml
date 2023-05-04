@@ -1,15 +1,11 @@
-namespace: longhorn-system
-
 resources:
-  - namespace.yaml
-  - serviceaccount.yaml
-  - storageclass.yaml
-  - crds.yaml
-  - clusterrole.yaml
-  - deployment-ui.yaml
-  - services.yaml
-  - daemonset-sa.yaml
-  - deployment-driver.yaml
-  - default-setting.yaml
-  - deployment-recovery-backend.yaml
-  - deployment-webhook.yaml
+- namespace.yaml
+
+helmChartInflationGenerator:
+  - chartRepoUrl: https://charts.longhorn.io
+    chartHome: longhorn
+    chartName: longhorn
+    releaseName: longhorn
+    releaseNamespace: longhorn-system
+
+namespace: longhorn-system
