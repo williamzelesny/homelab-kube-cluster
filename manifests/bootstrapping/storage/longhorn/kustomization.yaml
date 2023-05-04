@@ -1,3 +1,4 @@
 resources:
   - namespace.yaml
   - service-acct.yaml
+  - configmap.yaml
