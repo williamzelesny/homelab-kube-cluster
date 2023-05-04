@@ -6,3 +6,4 @@ resources:
   - clusterrole.yaml
   - deployment-ui.yaml
   - services.yaml
+  - daemonset-sa.yaml
