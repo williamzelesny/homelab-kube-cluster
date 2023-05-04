@@ -7,4 +7,3 @@ resources:
   - metallb-app.yaml
   - observability-app.yaml
   - traefik-app.yaml
-  - system-upgrade-app.yaml
