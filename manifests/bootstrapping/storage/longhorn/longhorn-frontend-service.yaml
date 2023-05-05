@@ -11,5 +11,5 @@ spec:
       targetPort: http
   selector:
     app: longhorn-ui
-  sessionAffinity: None
+  sessionAffinity: ClientIP
   type: LoadBalancer
