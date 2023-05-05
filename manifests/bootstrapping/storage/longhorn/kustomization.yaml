@@ -4,10 +4,7 @@ resources:
 generators:
 - chartInflator.yaml
 
-patches:
-  - path: longhorn-frontend-service.yaml
-    target:
-      kind: Service
-      name: longhorn-frontend
+patchesStrategicMerge:
+  - longhorn-frontend-service.yaml
 
 namespace: longhorn-system
