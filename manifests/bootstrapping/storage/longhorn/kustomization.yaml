@@ -1,10 +1,17 @@
-generators:
-- chartInflator.yaml
+#generators:
+#- chartInflator.yaml
 
 #patches:
 #  - path: longhorn-frontend-service.yaml
 #    target:
 #      kind: Service
 #      name: longhorn-frontend
+
+helmCharts:
+  - name: longhorn
+    repo: https://charts.longhorn.io
+    releaseName: longhorn
+    namespace: longhorn-system
+    valuesFile: values.yaml
 
 namespace: longhorn-system
