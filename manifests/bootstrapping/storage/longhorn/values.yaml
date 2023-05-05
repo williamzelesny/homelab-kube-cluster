@@ -68,7 +68,7 @@ image:
 service:
   ui:
     type: LoadBalancer
-    nodePort: null
+    nodePort: 31362
   manager:
     type: ClusterIP
     nodePort: ""
