@@ -7,3 +7,4 @@ releaseName: longhorn
 name: longhorn
 namespace: longhorn-system
 IncludeCRDs: true
+values: values.yaml
