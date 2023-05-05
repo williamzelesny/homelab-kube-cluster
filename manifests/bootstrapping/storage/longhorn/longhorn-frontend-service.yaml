@@ -1,15 +1,6 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: longhorn-frontend
-  namespace: longhorn-system
+  name: long-horn-loadbalancer
 spec:
-  ports:
-    - name: http
-      port: 80
-      protocol: TCP
-      targetPort: http
-  selector:
-    app: longhorn-ui
-  sessionAffinity: None
   type: LoadBalancer
