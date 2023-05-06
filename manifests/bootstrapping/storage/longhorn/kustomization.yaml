@@ -1,11 +1,5 @@
-#generators:
-#- chartInflator.yaml
-
-#patches:
-#  - path: longhorn-frontend-service.yaml
-#    target:
-#      kind: Service
-#      name: longhorn-frontend
+resources:
+  - slow-storage-class.yaml
 
 helmCharts:
   - name: longhorn
