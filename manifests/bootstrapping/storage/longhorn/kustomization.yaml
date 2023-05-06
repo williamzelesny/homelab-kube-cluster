@@ -1,6 +1,12 @@
 resources:
   - slow-storage-class.yaml
 
+patches:
+  - path: longhorn-frontend-service.yaml
+    target:
+      kind: Service
+      name: longhorn-frontend
+
 helmCharts:
   - name: longhorn
     repo: https://charts.longhorn.io
