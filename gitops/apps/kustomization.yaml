@@ -8,3 +8,4 @@ resources:
   - observability-app.yaml
   - traefik-app.yaml
   - longhorn.yaml
+  - system-upgrade-app.yaml
