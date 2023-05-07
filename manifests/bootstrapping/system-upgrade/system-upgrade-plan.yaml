@@ -1,48 +1,42 @@
----
+# Server plan
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
-  name: k3s-server
+  name: server-plan
   namespace: system-upgrade
-  labels:
-    k3s-upgrade: server
 spec:
-  concurrency: 1 # Batch size (roughly maps to maximum number of unschedulable nodes)
-  version: v1.26.4+k3s1
-  nodeSelector:
-    matchExpressions:
-      - {key: k3s-upgrade, operator: Exists}
-      - {key: k3s-upgrade, operator: NotIn, values: ["disabled", "false"]}
-      - {key: k3os.io/mode, operator: DoesNotExist}
-      - {key: node-role.kubernetes.io/control-plane, operator: Exists}
-  serviceAccountName: system-upgrade
+  concurrency: 1
   cordon: true
+  nodeSelector:
+    matchExpressions:
+      - key: node-role.kubernetes.io/control-plane
+        operator: In
+        values:
+          - "true"
+  serviceAccountName: system-upgrade
   upgrade:
     image: rancher/k3s-upgrade
+  version: v1.24.6+k3s1
 ---
+# Agent plan
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
-  name: k3s-agent
+  name: agent-plan
   namespace: system-upgrade
-  labels:
-    k3s-upgrade: agent
 spec:
-  concurrency: 2 # Batch size (roughly maps to maximum number of unschedulable nodes)
-  version: v1.26.4+k3s1
+  concurrency: 1
+  cordon: true
   nodeSelector:
     matchExpressions:
-      - {key: k3s-upgrade, operator: Exists}
-      - {key: k3s-upgrade, operator: NotIn, values: ["disabled", "false"]}
-      - {key: k3os.io/mode, operator: DoesNotExist}
-      - {key: node-role.kubernetes.io/control-plane, operator: DoesNotExist}
-  serviceAccountName: system-upgrade
+      - key: node-role.kubernetes.io/control-plane
+        operator: DoesNotExist
   prepare:
-    # Defaults to the same "resolved" tag that is used for the `upgrade` container, NOT `latest`
+    args:
+      - prepare
+      - server-plan
     image: rancher/k3s-upgrade
-    args: ["prepare", "k3s-server"]
-  drain:
-    force: true
-    skipWaitForDeleteTimeout: 60 # 1.18+ (honor pod disruption budgets up to 60 seconds per pod then moves on)
+  serviceAccountName: system-upgrade
   upgrade:
     image: rancher/k3s-upgrade
+  version: v1.24.6+k3s1
