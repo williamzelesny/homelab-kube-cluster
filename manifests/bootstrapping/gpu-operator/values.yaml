@@ -112,7 +112,7 @@ mig:
   strategy: single
 
 driver:
-  enabled: true
+  enabled: false
   # use pre-compiled packages for NVIDIA driver installation.
   # only supported for as a tech-preview feature on ubuntu22.04 kernels.
   usePrecompiled: false
@@ -201,7 +201,7 @@ driver:
     name: ""
 
 toolkit:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
   version: v1.13.0-ubuntu20.04
@@ -279,7 +279,7 @@ dcgm:
   resources: {}
 
 dcgmExporter:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
   version: 3.1.7-3.1.4-ubuntu20.04
