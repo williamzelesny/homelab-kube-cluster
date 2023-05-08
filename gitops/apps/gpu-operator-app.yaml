@@ -27,3 +27,9 @@ spec:
       name: cluster-policy
       jsonPointers:
         - /spec/cdi
+        - /spec/daemonsets
+        - /spec/dcgmExporter
+        - /spec/devicePlugin
+        - /spec/gfd/enabled
+        - /spec/migManager/config/default
+        - /spec/migManager/installDir
