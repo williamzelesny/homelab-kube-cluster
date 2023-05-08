@@ -9,15 +9,15 @@ spec:
   resources:
     requests:
       storage: 5Gi
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: prometheus-config-volume
-spec:
-  storageClassName: longhorn
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 100Mi
+#---
+#kind: PersistentVolumeClaim
+#apiVersion: v1
+#metadata:
+#  name: prometheus-config-volume
+#spec:
+#  storageClassName: longhorn
+#  accessModes:
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 100Mi
