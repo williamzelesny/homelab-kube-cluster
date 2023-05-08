@@ -9,3 +9,4 @@ resources:
   - traefik-app.yaml
   - longhorn.yaml
   - system-upgrade-app.yaml
+  - gpu-operator-app.yaml
