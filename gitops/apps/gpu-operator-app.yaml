@@ -25,3 +25,5 @@ spec:
     - group: "nvidia.com/v1"
       kind: ClusterPolicy
       name: cluster-policy
+      jsonPointers:
+        - /spec/cdi
