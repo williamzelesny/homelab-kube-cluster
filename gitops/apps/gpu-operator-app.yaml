@@ -33,3 +33,4 @@ spec:
         - /spec/gfd/enabled
         - /spec/migManager/config/default
         - /spec/migManager/installDir
+        - /spec/upgradePolicy
