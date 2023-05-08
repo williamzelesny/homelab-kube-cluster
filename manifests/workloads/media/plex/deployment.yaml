@@ -29,9 +29,9 @@ spec:
         image: plexinc/pms-docker:latest@sha256:3dd108737a1eb55a3a90eb8107ad7aaa49d13afa0b2c8d37381881a0a598b2ca
         imagePullPolicy: Always
         name: plex
-        resources: {}
-#           limits:
-#             nvidia.com/gpu: '1' # requesting 1 GPU
+        resources:
+           limits:
+             nvidia.com/gpu: '1' # requesting 1 GPU
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
