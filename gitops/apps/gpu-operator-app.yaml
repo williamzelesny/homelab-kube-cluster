@@ -22,7 +22,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
   ignoreDifferences:
-    - group: "apiextensions.k8s.io"
+    - group: "nvidia.com/v1"
       kind: ClusterPolicy
       name: cluster-policy
       jsonPointers:
