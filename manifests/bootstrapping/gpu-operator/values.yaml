@@ -12,8 +12,8 @@ psp:
   enabled: false
 
 cdi:
-  enabled: true
-  default: true
+  enabled: false
+  default: false
 
 sandboxWorkloads:
   enabled: false
