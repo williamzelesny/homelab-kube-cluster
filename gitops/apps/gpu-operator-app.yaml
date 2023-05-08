@@ -15,24 +15,21 @@ spec:
     server: https://kubernetes.default.svc
     namespace: gpu-operator
   syncPolicy:
-    automated:
-      selfHeal: true
-      allowEmpty: true
-      prune: true
+    automated: {}
     syncOptions:
       - CreateNamespace=true
-  ignoreDifferences:
-    - group: "nvidia.com"
-      kind: ClusterPolicy
-      name: cluster-policy
-      jsonPointers:
-        - /spec/cdi
-        - /spec/daemonsets
-        - /spec/dcgmExporter
-        - /spec/devicePlugin
-        - /spec/gfd/enabled
-        - /spec/migManager/config/default
-        - /spec/migManager/installDir
-        - /spec/driver/upgradePolicy
-        - /spec/driver/usePrecompiled
-        - /spec/toolkit/installDir
+#  ignoreDifferences:
+#    - group: "nvidia.com"
+#      kind: ClusterPolicy
+#      name: cluster-policy
+#      jsonPointers:
+#        - /spec/cdi
+#        - /spec/daemonsets
+#        - /spec/dcgmExporter
+#        - /spec/devicePlugin
+#        - /spec/gfd/enabled
+#        - /spec/migManager/config/default
+#        - /spec/migManager/installDir
+#        - /spec/driver/upgradePolicy
+#        - /spec/driver/usePrecompiled
+#        - /spec/toolkit/installDir
