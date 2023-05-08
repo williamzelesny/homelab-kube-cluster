@@ -34,3 +34,5 @@ spec:
         - /spec/migManager/config/default
         - /spec/migManager/installDir
         - /spec/driver/upgradePolicy
+        - /spec/driver/usePrecompiled
+        - /spec/toolkit/installDir
