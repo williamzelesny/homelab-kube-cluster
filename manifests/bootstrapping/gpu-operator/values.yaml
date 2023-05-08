@@ -12,8 +12,8 @@ psp:
   enabled: false
 
 cdi:
-  enabled: true
-  default: true
+  enabled: false
+  default: false
 
 sandboxWorkloads:
   enabled: false
@@ -212,7 +212,7 @@ toolkit:
   installDir: "/usr/local/nvidia"
 
 devicePlugin:
-  enabled: false
+  enabled: true
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
   version: v0.14.0-ubi8
@@ -266,7 +266,7 @@ devicePlugin:
 # standalone dcgm hostengine
 dcgm:
   # disabled by default to use embedded nv-hostengine by exporter
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: dcgm
   version: 3.1.7-1-ubuntu20.04
@@ -277,7 +277,7 @@ dcgm:
   resources: {}
 
 dcgmExporter:
-  enabled: false
+  enabled: true
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
   version: 3.1.7-3.1.4-ubuntu20.04
@@ -291,8 +291,8 @@ dcgmExporter:
       value: "/etc/dcgm-exporter/dcp-metrics-included.csv"
   resources: {}
   serviceMonitor:
-    enabled: true
-    interval: 30s
+    enabled: false
+    interval: 15s
     honorLabels: false
     additionalLabels: {}
 
@@ -328,7 +328,7 @@ migManager:
     name: ""
 
 nodeStatusExporter:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: gpu-operator-validator
   # If version is not specified, then default is to use chart.AppVersion
