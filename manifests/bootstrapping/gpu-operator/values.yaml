@@ -277,7 +277,7 @@ dcgm:
   resources: {}
 
 dcgmExporter:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
   version: 3.1.7-3.1.4-ubuntu20.04
