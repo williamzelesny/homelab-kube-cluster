@@ -112,7 +112,7 @@ mig:
   strategy: single
 
 driver:
-  enabled: false
+  enabled: true
   # use pre-compiled packages for NVIDIA driver installation.
   # only supported for as a tech-preview feature on ubuntu22.04 kernels.
   usePrecompiled: false
@@ -201,7 +201,7 @@ driver:
     name: ""
 
 toolkit:
-  enabled: false
+  enabled: true
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
   version: v1.13.0-ubuntu20.04
