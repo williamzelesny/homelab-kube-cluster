@@ -215,7 +215,7 @@ toolkit:
   - name: CONTAINERD_RUNTIME_CLASS
     value: nvidia
   - name: CONTAINERD_SET_AS_DEFAULT
-    value: true
+    value: "true"
   resources: {}
   installDir: "/usr/local/nvidia"
 
