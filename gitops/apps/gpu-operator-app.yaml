@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://nvidia.github.io/gpu-operator
     targetRevision: v23.3.1
-    chart: gpu-operator
+    chart: manifests/bootstrapping/gpu-operator
     helm:
       valueFiles:
       - manifests/bootstrapping/gpu-operator/values.yaml
