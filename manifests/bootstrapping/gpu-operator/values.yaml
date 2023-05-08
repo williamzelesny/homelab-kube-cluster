@@ -212,7 +212,7 @@ toolkit:
   installDir: "/usr/local/nvidia"
 
 devicePlugin:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
   version: v0.14.0-ubi8
