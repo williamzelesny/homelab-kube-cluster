@@ -12,7 +12,7 @@ spec:
     targetRevision: v23.3.1
     helm:
       valueFiles:
-      - ../manifests/bootstrapping/gpu-operator/values.yaml
+      - manifests/bootstrapping/gpu-operator/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: gpu-operator
