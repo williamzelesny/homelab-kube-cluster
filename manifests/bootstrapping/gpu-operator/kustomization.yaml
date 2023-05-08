@@ -1,6 +1,6 @@
 helmCharts:
   - name: gpu-operator
-    repo: https://catalog.ngc.nvidia.com/orgs/nvidia/helm-charts/
+    repo: https://nvidia.github.io/gpu-operator
     version: v23.3.1
     releaseName: gpu-operator
     namespace: gpu-operator
