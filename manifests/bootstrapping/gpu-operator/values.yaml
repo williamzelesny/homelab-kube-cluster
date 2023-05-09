@@ -112,10 +112,10 @@ mig:
   strategy: single
 
 driver:
-  enabled: true
+  enabled: false
   # use pre-compiled packages for NVIDIA driver installation.
   # only supported for as a tech-preview feature on ubuntu22.04 kernels.
-  usePrecompiled: true
+  usePrecompiled: false
   repository: nvcr.io/nvidia
   image: driver
   version: "470"
