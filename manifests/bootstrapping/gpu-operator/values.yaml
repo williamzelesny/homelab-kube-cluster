@@ -296,7 +296,7 @@ dcgmExporter:
     - name: DCGM_EXPORTER_KUBERNETES
       value: "true"
     - name: DCGM_EXPORTER_COLLECTORS
-      value: "/etc/dcgm-exporter/dcp-metrics-included.csv"
+      value: "/etc/dcgm-exporter/default-counters.csv"
   resources: {}
   serviceMonitor:
     enabled: false
