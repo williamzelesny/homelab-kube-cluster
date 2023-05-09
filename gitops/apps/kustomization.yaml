@@ -6,7 +6,6 @@ resources:
   - media-app.yaml
   - metallb-app.yaml
 #  - observability-app.yaml
-#  - traefik-app.yaml
   - longhorn.yaml
   - system-upgrade-app.yaml
   - gpu-operator-app.yaml

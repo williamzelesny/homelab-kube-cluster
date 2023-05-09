@@ -1,5 +1,0 @@
-resources:
-- traefik-dashboard-service.yaml
-# - traefik-dashboard-ingress.yaml
-
-namespace: kube-system
