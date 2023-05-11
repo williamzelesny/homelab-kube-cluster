@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: homeassistant-config
+  name: home-assistant-config
 spec:
   storageClassName: longhorn
   accessModes:
