@@ -109,7 +109,7 @@ operator:
       memory: 100Mi
 
 mig:
-  strategy: single
+  strategy: none
 
 driver:
   enabled: false
