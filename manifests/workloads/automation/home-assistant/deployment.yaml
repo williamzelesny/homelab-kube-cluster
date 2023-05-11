@@ -47,8 +47,5 @@ spec:
       schedulerName: default-scheduler
   strategy:
     type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 25%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
