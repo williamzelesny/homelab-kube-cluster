@@ -45,7 +45,7 @@ spec:
           operator: Exists
           effect: NoSchedule
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: OnFailure
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
