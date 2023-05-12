@@ -4,7 +4,6 @@ metadata:
   name: heimdall
 spec:
   storageClassName: longhorn
-  volumeName: heimdall
   accessModes:
     - ReadWriteOnce
   resources:
