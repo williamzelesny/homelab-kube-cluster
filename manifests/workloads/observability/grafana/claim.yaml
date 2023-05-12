@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: grafana-pvc
 spec:
-  storageClassName: nfs-client
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
