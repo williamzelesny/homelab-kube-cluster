@@ -15,6 +15,13 @@ spec:
       labels:
         app: prometheus
     spec:
+      initContainers:
+        - name: prometheus-data-permission-setup
+          image: busybox
+          command: [ "/bin/chmod","-R","777", "/data" ]
+          volumeMounts:
+            - name: prometheus-data
+              mountPath: /data
       containers:
         - name: prometheus
           image: prom/prometheus
@@ -36,18 +43,10 @@ spec:
               mountPath: /etc/prometheus/
             - name: prometheus-data
               mountPath: /prometheus/
-#      initContainers:
-#        - name: prometheus-data-permission-fix
-#          image: busybox
-#          command: [ "/bin/chmod","-R","777", "/data" ]
-#          volumeMounts:
-#            - name: prometheus-data
-#              mountPath: /data
       volumes:
         - name: prometheus-config-volume
-          configMap:
-            defaultMode: 420
-            name: prometheus-server-conf
+          persistentVolumeClaim:
+            claimName: prometheus-server-conf
         - name: prometheus-data
           persistentVolumeClaim:
             claimName: prometheus-data
