@@ -10,4 +10,4 @@ spec:
     nodePort: 30078
   selector:
     app: radarr
-  type: NodePort
+  type: LoadBalancer
