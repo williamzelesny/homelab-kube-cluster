@@ -10,3 +10,4 @@ resources:
   - system-upgrade-app.yaml
   - gpu-operator-app.yaml
   - home-assistant-app.yaml
+  - heimdall-app.yaml
