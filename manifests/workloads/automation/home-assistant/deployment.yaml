@@ -20,6 +20,9 @@ spec:
         - name: home-assistant-config
           persistentVolumeClaim:
             claimName: home-assistant-config
+        - name: localtime
+          hostPath:
+            path: /etc/localtime
       containers:
         - name: home-assistant
           image: 'homeassistant/home-assistant:2023.6.0.dev20230511'
