@@ -34,6 +34,8 @@ spec:
           volumeMounts:
             - name: home-assistant-config
               mountPath: /config
+            - name: localtime
+              mountPath: /etc/localtime
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
