@@ -3,3 +3,4 @@ resources:
 - ./plex
 - ./radarr
 - ./sonarr
+- ./overseerr
