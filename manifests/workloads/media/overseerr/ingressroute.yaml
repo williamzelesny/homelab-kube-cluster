@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: overseerr
+  namespace: media
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`overseerr.zelesny.com`)
+      priority: 10
+      services:
+        - kind: Service
+          name: overseerr
+          port: http
+  tls:
+    secretName: overseerr-zelesny-cert
