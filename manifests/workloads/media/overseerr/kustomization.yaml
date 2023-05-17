@@ -5,3 +5,5 @@ resources:
   - service.yaml
   - cert.yaml
   - ingressroute.yaml
+  - ingressroute-http.yaml
+  - middleware.yaml
