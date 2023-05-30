@@ -48,6 +48,8 @@ spec:
           configMap:
             defaultMode: 420
             name: prometheus-server-conf
+#        - name: prometheus-data
+#          persistentVolumeClaim:
+#            claimName: prometheus-data
         - name: prometheus-data
-          persistentVolumeClaim:
-            claimName: prometheus-data
+          emptyDir: {}
