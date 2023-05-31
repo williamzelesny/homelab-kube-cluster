@@ -3,7 +3,6 @@ resources:
 - clusterrole.yaml
 - clusterrolebinding.yaml
 - deployment.yaml
-- claim.yaml
 - service.yaml
 
 configMapGenerator:
