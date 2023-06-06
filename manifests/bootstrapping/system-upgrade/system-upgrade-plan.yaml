@@ -60,7 +60,7 @@ spec:
       path: /host/run/system-upgrade/secrets/os-update
 #  drain:
 #    force: true
-  version: os-update
+  version: jammy
   upgrade:
     image: ubuntu
     command: ["chroot", "/host"]
