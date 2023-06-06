@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: os-update
+  namespace: system-upgrade
+type: Opaque
+stringData:
+  curl: 7.81.0-1ubuntu1.10
+  openssl: 3.0.2-0ubuntu1.10
+  upgrade.sh: |
+    #!/bin/sh
+    set -e
+    secrets=$(dirname $0)
+    apt-get --assume-yes update
+    apt-get --assume-yes upgrade
