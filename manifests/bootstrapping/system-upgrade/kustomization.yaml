@@ -6,3 +6,4 @@ resources:
   - system-upgrade-configmap.yaml
   - system-upgrade-deployment.yaml
   - system-upgrade-plan.yaml
+  - os-update.yaml
