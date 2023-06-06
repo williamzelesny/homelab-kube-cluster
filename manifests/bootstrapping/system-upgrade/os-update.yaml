@@ -11,5 +11,5 @@ stringData:
     #!/bin/sh
     set -e
     secrets=$(dirname $0)
-    apt-get --assume-yes update
+    apt-get update
     apt-get -y upgrade
