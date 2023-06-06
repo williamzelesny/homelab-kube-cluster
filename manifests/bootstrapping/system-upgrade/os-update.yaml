@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: os-update
+  name: osupdate
   namespace: system-upgrade
 type: Opaque
 stringData:

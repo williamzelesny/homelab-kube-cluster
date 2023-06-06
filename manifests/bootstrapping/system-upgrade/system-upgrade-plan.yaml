@@ -56,11 +56,11 @@ spec:
           - "true"
   serviceAccountName: system-upgrade
   secrets:
-    - name: os-update
-      path: /host/run/system-upgrade/secrets/os-update
+    - name: osupdate
+      path: /host/run/system-upgrade/secrets/osupdate
   drain:
     force: true
-  version: os-update
+  version: osupdate
   upgrade:
     image: ubuntu
     command: ["chroot", "/host"]
