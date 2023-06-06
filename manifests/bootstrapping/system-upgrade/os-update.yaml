@@ -12,4 +12,4 @@ stringData:
     set -e
     secrets=$(dirname $0)
     apt-get --assume-yes update
-    apt-get --assume-yes upgrade
+    apt-get -y upgrade
