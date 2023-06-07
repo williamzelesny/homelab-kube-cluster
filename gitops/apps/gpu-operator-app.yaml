@@ -40,10 +40,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: gpu-operator
   syncPolicy:
-    automated:
-      selfHeal: true
-      allowEmpty: true
-      prune: true
+    automated: {}
     syncOptions:
       - CreateNamespace=true
 #  ignoreDifferences:
