@@ -23,7 +23,7 @@ spec:
       enableServiceLinks: true
       containers:
         - name: overseerr
-          image: "ghcr.io/sct/overseerr:1.32.5"
+          image: "ghcr.io/sct/overseerr:1.33.0"
           imagePullPolicy: IfNotPresent
           env:
             - name: LOG_LEVEL
