@@ -25,7 +25,7 @@ spec:
           value: "TRUE"
         - name: VERSION
           value: "LATEST"
-        image: itzg/minecraft-bedrock-server:latest@sha256:54041eab2f68f009e792c1f79c961868ad1fccb5e30eb9b5a3861167f45156ea
+        image: itzg/minecraft-bedrock-server:latest@sha256:0772222c4a8963ebb303b56eb2fec55ee6689fe20cf2e15bf878106568681d72
         imagePullPolicy: Always
         name: minecraft-public
         resources: {}
