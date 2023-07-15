@@ -221,7 +221,7 @@ longhornUI:
   #  label-key2: "label-value2"
 
 longhornConversionWebhook:
-  replicas: 2
+  replicas: 0
   priorityClass: ~
   tolerations: []
   ## If you want to set tolerations for Longhorn conversion webhook Deployment, delete the `[]` in the line above
@@ -237,7 +237,7 @@ longhornConversionWebhook:
   #  label-key2: "label-value2"
 
 longhornAdmissionWebhook:
-  replicas: 2
+  replicas: 0
   priorityClass: ~
   tolerations: []
   ## If you want to set tolerations for Longhorn admission webhook Deployment, delete the `[]` in the line above
@@ -253,7 +253,7 @@ longhornAdmissionWebhook:
   #  label-key2: "label-value2"
 
 longhornRecoveryBackend:
-  replicas: 2
+  replicas: 0
   priorityClass: ~
   tolerations: []
   ## If you want to set tolerations for Longhorn recovery backend Deployment, delete the `[]` in the line above
