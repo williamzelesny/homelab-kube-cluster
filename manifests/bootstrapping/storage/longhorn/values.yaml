@@ -25,22 +25,22 @@ image:
   longhorn:
     engine:
       repository: longhornio/longhorn-engine
-      tag: v1.5.0
+      tag: v1.5.1
     manager:
       repository: longhornio/longhorn-manager
-      tag: v1.5.0
+      tag: v1.5.1
     ui:
       repository: longhornio/longhorn-ui
-      tag: v1.5.0
+      tag: v1.5.1
     instanceManager:
       repository: longhornio/longhorn-instance-manager
-      tag: v1.5.0
+      tag: v1.5.1
     shareManager:
       repository: longhornio/longhorn-share-manager
-      tag: v1.5.0
+      tag: v1.5.1
     backingImageManager:
       repository: longhornio/backing-image-manager
-      tag: v1.5.0
+      tag: v1.5.1
     supportBundleKit:
       repository: longhornio/support-bundle-kit
       tag: v0.0.25
@@ -221,7 +221,7 @@ longhornUI:
   #  label-key2: "label-value2"
 
 longhornConversionWebhook:
-  replicas: 0
+  replicas: 2
   priorityClass: ~
   tolerations: []
   ## If you want to set tolerations for Longhorn conversion webhook Deployment, delete the `[]` in the line above
@@ -237,7 +237,7 @@ longhornConversionWebhook:
   #  label-key2: "label-value2"
 
 longhornAdmissionWebhook:
-  replicas: 0
+  replicas: 2
   priorityClass: ~
   tolerations: []
   ## If you want to set tolerations for Longhorn admission webhook Deployment, delete the `[]` in the line above
@@ -253,7 +253,7 @@ longhornAdmissionWebhook:
   #  label-key2: "label-value2"
 
 longhornRecoveryBackend:
-  replicas: 0
+  replicas: 2
   priorityClass: ~
   tolerations: []
   ## If you want to set tolerations for Longhorn recovery backend Deployment, delete the `[]` in the line above
