@@ -63,7 +63,7 @@ image:
     livenessProbe:
       repository: longhornio/livenessprobe
       tag: v2.9.0
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   ui:
