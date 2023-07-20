@@ -37,7 +37,7 @@ spec:
         - mountPath: /downloads
           name: nzbget-downloads
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: OnFailure
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30

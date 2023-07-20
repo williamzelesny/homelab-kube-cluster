@@ -39,7 +39,7 @@ spec:
         - mountPath: /movies
           name: movies-data
       dnsPolicy: ClusterFirst
-      restartPolicy: Always
+      restartPolicy: OnFailure
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
