@@ -22,7 +22,7 @@ global:
         systemManagedComponentsNodeSelector: kubernetes.io/os:linux
 
 networkPolicies:
-  enabled: false
+  enabled: true
   # Available types: k3s, rke2, rke1
   type: "k3s"
 
