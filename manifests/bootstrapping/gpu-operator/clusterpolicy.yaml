@@ -24,7 +24,7 @@ spec:
       - effect: NoSchedule
         key: nvidia.com/gpu
         operator: Exists
-    updateStrategy: RollingUpdate
+    updateStrategy: Recreate
   dcgm:
     enabled: false
     hostPort: 5555
