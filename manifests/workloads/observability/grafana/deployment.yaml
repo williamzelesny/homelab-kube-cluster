@@ -6,6 +6,7 @@ metadata:
     app: grafana
   name: grafana
 spec:
+  replicas: 0
   revisionHistoryLimit: 2
   selector:
     matchLabels:
