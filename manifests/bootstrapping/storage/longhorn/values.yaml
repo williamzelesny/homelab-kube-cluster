@@ -154,7 +154,7 @@ defaultSettings:
   kubernetesClusterAutoscalerEnabled: ~
   orphanAutoDeletion: ~
   storageNetwork: ~
-  deletingConfirmationFlag: true
+  deletingConfirmationFlag: "true"
   engineReplicaTimeout: ~
   snapshotDataIntegrity: ~
   snapshotDataIntegrityImmediateCheckAfterSnapshotCreation: ~
