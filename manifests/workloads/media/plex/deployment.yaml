@@ -32,6 +32,8 @@ spec:
         resources:
            limits:
              nvidia.com/gpu: '1' # requesting 1 GPU
+           requests:
+             nvidia.com/gpu: '1'
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
