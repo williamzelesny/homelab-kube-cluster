@@ -116,7 +116,7 @@ defaultSettings:
   replicaAutoBalance: ~
   storageOverProvisioningPercentage: ~
   storageMinimalAvailablePercentage: ~
-#  upgradeChecker: ~
+  upgradeChecker: ~
   defaultReplicaCount: ~
   defaultLonghornStaticStorageClass: ~
   backupstorePollInterval: ~
