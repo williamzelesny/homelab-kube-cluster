@@ -3,9 +3,6 @@ kind: Application
 metadata:
   name: argocd
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/hook: PreSync
-    argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
   source:
