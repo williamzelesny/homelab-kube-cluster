@@ -4,3 +4,7 @@ metadata:
   name: longhorn-frontend
   annotations:
     metallb.universe.tf/loadBalancerIPs: 10.0.3.23
+spec:
+  type: LoadBalancer
+  selector:
+    app: longhorn-ui
