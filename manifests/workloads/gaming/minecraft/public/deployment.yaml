@@ -31,15 +31,15 @@ spec:
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
-#        volumeMounts:
-#        - mountPath: /data
-#          name: minecraft-public
+        volumeMounts:
+        - mountPath: /data
+          name: minecraft-public
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-#      volumes:
-#      - name: minecraft-public
-#        persistentVolumeClaim:
-#          claimName: minecraft-public
+      volumes:
+      - name: minecraft-public
+        persistentVolumeClaim:
+          claimName: minecraft-public
