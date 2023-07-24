@@ -1,7 +1,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: minecraft-public2
+  name: minecraft-public
 spec:
   storageClassName: longhorn
   accessModes:
