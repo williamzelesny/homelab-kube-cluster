@@ -33,7 +33,7 @@ spec:
         terminationMessagePolicy: File
         volumeMounts:
         - mountPath: /data
-          name: minecraft-public
+          name: minecraft-public2
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -42,4 +42,4 @@ spec:
       volumes:
       - name: minecraft-public
         persistentVolumeClaim:
-          claimName: minecraft-public
+          claimName: minecraft-public2
