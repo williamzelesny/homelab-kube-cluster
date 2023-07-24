@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: media
+  name: plex
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -16,7 +16,7 @@ spec:
     path: manifests/workloads/media/plex
   destination:
     server: https://kubernetes.default.svc
-    namespace: media
+    namespace: plex
   syncPolicy:
     automated:
       prune: true
