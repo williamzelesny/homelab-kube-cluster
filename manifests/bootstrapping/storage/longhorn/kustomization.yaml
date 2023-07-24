@@ -10,6 +10,7 @@ patches:
 
 patchesStrategicMerge:
   - storageclass.yaml
+  - deployment-ui.yaml
 
 #helmCharts:
 #  - name: longhorn

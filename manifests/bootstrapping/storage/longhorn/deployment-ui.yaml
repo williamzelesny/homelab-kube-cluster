@@ -1,0 +1,16 @@
+# Source: longhorn/templates/deployment-ui.yaml
+kind: Service
+apiVersion: v1
+metadata:
+  name: longhorn-frontend
+  namespace: longhorn-system
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 10.0.3.23
+  selector:
+    app: longhorn-ui
+  ports:
+    - name: https
+      protocol: TCP
+      port: 443
+      targetPort: http
