@@ -39,8 +39,8 @@ spec:
         volumeMounts:
         - mountPath: /data
           name: plex-data
-        - mountPath: /config
-          name: plex-config
+#        - mountPath: /config
+#          name: plex-config
       tolerations:
         - key: node.kubernetes.io/disk-pressure
           operator: Exists
@@ -55,6 +55,6 @@ spec:
           path: /mnt/nfs/videos
           type: ""
         name: plex-data
-      - name: plex-config
-        persistentVolumeClaim:
-          claimName: plex-config
+#      - name: plex-config
+#        persistentVolumeClaim:
+#          claimName: plex-config
