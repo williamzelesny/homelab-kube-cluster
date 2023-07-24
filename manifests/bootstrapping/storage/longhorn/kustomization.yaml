@@ -1,5 +1,6 @@
 resources:
-  - slow-storage-class.yaml
+  - https://raw.githubusercontent.com/longhorn/longhorn/v1.5.1/deploy/longhorn.yaml
+#  - slow-storage-class.yaml
 
 patches:
   - path: longhorn-frontend-service.yaml
@@ -7,12 +8,15 @@ patches:
       kind: Service
       name: longhorn-frontend
 
-helmCharts:
-  - name: longhorn
-    repo: https://charts.longhorn.io
-    version: 1.5.1
-    releaseName: longhorn
-    namespace: longhorn-system
-    valuesFile: values.yaml
+patchesStrategicMerge:
+  - storageclass.yaml
+
+#helmCharts:
+#  - name: longhorn
+#    repo: https://charts.longhorn.io
+#    version: 1.5.1
+#    releaseName: longhorn
+#    namespace: longhorn-system
+#    valuesFile: values.yaml
 
 namespace: longhorn-system

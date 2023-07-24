@@ -6,7 +6,7 @@ resources:
   - media-app.yaml
   - metallb-app.yaml
   - observability-app.yaml
-#  - longhorn.yaml
+  - longhorn.yaml
   - system-upgrade-app.yaml
   - gpu-operator-app.yaml
   - home-assistant-app.yaml
