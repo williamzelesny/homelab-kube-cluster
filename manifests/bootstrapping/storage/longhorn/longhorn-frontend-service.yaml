@@ -5,6 +5,10 @@ metadata:
   annotations:
     metallb.universe.tf/loadBalancerIPs: 10.0.3.23
 spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
   type: LoadBalancer
   selector:
     app: longhorn-ui
