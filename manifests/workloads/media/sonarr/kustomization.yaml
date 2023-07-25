@@ -1,4 +1,4 @@
-namespace: media
+namespace: sonarr
 resources:
 - deployment.yaml
 - claim.yaml
