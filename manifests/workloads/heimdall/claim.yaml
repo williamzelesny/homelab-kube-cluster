@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: heimdall
 spec:
-  storageClassName: local-path
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
