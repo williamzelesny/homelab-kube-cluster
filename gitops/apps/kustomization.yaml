@@ -8,7 +8,6 @@ resources:
   - heimdall-app.yaml
   - home-assistant-app.yaml
   - longhorn.yaml
-  - media-app.yaml
   - metallb-app.yaml
   - nzbget-app.yaml
   - observability-app.yaml
