@@ -1,7 +1,7 @@
 namespace: overseerr
 resources:
   - deployment.yaml
-  - claim.yaml
+#  - claim.yaml
   - service.yaml
   - cert.yaml
   - ingressroute.yaml
