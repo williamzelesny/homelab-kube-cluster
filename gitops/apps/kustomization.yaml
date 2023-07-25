@@ -16,4 +16,4 @@ resources:
   - radarr-app.yaml
   - sonarr-app.yaml
   - system-upgrade-app.yaml
-  - traefik-app.yaml
+#  - traefik-app.yaml
