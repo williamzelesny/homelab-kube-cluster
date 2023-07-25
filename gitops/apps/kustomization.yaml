@@ -12,3 +12,4 @@ resources:
   - gpu-operator-app.yaml
   - home-assistant-app.yaml
   - heimdall-app.yaml
+  - traefik-app.yaml
