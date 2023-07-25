@@ -9,7 +9,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 31445
+      nodePort: 32449
   type: LoadBalancer
   selector:
     app: longhorn-ui
