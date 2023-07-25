@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: overseerr-zelesny-cert
-  namespace: media
+  namespace: overseerr
 spec:
   commonName: overseerr.zelesny.com
   secretName: overseerr-zelesny-cert
