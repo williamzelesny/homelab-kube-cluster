@@ -6,10 +6,11 @@ metadata:
     metallb.universe.tf/loadBalancerIPs: 10.0.3.23
 spec:
   ports:
-    - name: http
-      nodePort: 32449
-      port: 80
-      protocol: TCP
+  - name: http
+    nodePort: 32449
+    port: 80
+    protocol: TCP
+    targetPort: http
   type: LoadBalancer
   selector:
     app: longhorn-ui
