@@ -1,5 +1,5 @@
 namespace: radarr
 resources:
 - deployment.yaml
-- claim.yaml
+#- claim.yaml
 - service.yaml
