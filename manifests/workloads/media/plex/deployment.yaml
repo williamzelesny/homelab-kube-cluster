@@ -55,6 +55,6 @@ spec:
           path: /mnt/nfs/videos
           type: ""
         name: plex-data
-#      - name: plex-config
-#        persistentVolumeClaim:
-#          claimName: plex-config
+      - name: plex-config
+        persistentVolumeClaim:
+          claimName: plex-config
