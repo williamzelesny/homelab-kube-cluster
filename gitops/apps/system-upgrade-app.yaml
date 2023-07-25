@@ -6,7 +6,6 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
