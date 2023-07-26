@@ -7,7 +7,7 @@ data:
   users.anonymous.enabled: "true"
   admin.enabled: "false"
   statusbadge.enabled: "true"
-  ga.trackingid: "G-Q3FF2RCT27"
+  ga.trackingid: "G-G1NEJCWL9G"
   ga.anonymizeusers: "false"
   resource.customizations: |
     apiextensions.k8s.io/CustomResourceDefinition:
