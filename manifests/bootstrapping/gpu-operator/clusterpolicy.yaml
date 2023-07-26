@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/instance: gpu-operator
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: gpu-operator
-    app.kubernetes.io/version: v23.3.1
-    helm.sh/chart: gpu-operator-v23.3.1
+    app.kubernetes.io/version: v23.3.2
+    helm.sh/chart: gpu-operator-v23.3.2
   name: cluster-policy
 spec:
   cdi:
@@ -16,7 +16,7 @@ spec:
   daemonsets:
     labels:
       app.kubernetes.io/managed-by: gpu-operator
-      helm.sh/chart: gpu-operator-v23.3.1
+      helm.sh/chart: gpu-operator-v23.3.2
     priorityClassName: system-node-critical
     rollingUpdate:
       maxUnavailable: '1'
@@ -155,7 +155,7 @@ spec:
     image: gpu-operator-validator
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia/cloud-native
-    version: v23.3.1
+    version: v23.3.2
   operator:
     defaultRuntime: docker
     initContainer:
@@ -190,7 +190,7 @@ spec:
         - name: WITH_WORKLOAD
           value: 'true'
     repository: nvcr.io/nvidia/cloud-native
-    version: v23.3.1
+    version: v23.3.2
   vfioManager:
     driverManager:
       env:
