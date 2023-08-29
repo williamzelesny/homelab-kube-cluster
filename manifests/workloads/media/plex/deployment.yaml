@@ -58,3 +58,21 @@ spec:
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
+      - name: run-nvidia
+        hostPath:
+          path: /run/nvidia
+          type: ''
+      initContainers:
+        - name: validate-gpu-readiness
+          image: alpine:3.14
+          command:
+            - sh
+            - '-c'
+          args:
+            - >-
+              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
+              for nvidia container stack to be setup; sleep 5; done
+          volumeMounts:
+            - name: run-nvidia
+              mountPath: /run/nvidia
+              mountPropagation: HostToContainer
