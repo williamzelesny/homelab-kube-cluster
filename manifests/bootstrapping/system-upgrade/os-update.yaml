@@ -15,6 +15,6 @@ stringData:
     apt-get --assume-yes install \
           curl=$(cat $secrets/curl) \
           libcurl4=$(cat $secrets/curl) \
-          libssl1.1.1=$(cat $secrets/openssl) \
+          libssl3=$(cat $secrets/openssl) \
           openssl=$(cat $secrets/openssl)
     apt-get -y upgrade
