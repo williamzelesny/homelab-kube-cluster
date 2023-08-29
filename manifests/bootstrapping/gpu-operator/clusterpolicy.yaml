@@ -26,14 +26,14 @@ spec:
         operator: Exists
     updateStrategy: Recreate
   dcgm:
-    enabled: false
+    enabled: true
     hostPort: 5555
     image: dcgm
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia/cloud-native
     version: 3.1.7-1-ubuntu20.04
   dcgmExporter:
-    enabled: false
+    enabled: true
     env:
       - name: DCGM_EXPORTER_LISTEN
         value: ':9400'
