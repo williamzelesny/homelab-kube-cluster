@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sonarr
-#  annotations:
-#    metallb.universe.tf/loadBalancerIPs: 10.0.3.21
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.16
 spec:
   ports:
   - protocol: TCP
