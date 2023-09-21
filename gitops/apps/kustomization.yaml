@@ -1,19 +1,19 @@
 resources:
   - argocd-app.yaml
-  - bootstrapping-storage.yaml
-  - cert-manager-app.yaml
-  - doppler-app.yaml
-  - gaming-app.yaml
-  - gpu-operator-app.yaml
-  - heimdall-app.yaml
-  - home-assistant-app.yaml
-  - longhorn.yaml
-  - metallb-app.yaml
-  - nzbget-app.yaml
-  - observability-app.yaml
-  - overseerr-app.yaml
-  - plex-app.yaml
-  - radarr-app.yaml
-  - sonarr-app.yaml
-  - system-upgrade-app.yaml
+#  - bootstrapping-storage.yaml
+#  - cert-manager-app.yaml
+#  - doppler-app.yaml
+#  - gaming-app.yaml
+#  - gpu-operator-app.yaml
+#  - heimdall-app.yaml
+#  - home-assistant-app.yaml
+#  - longhorn.yaml
+#  - metallb-app.yaml
+#  - nzbget-app.yaml
+#  - observability-app.yaml
+#  - overseerr-app.yaml
+#  - plex-app.yaml
+#  - radarr-app.yaml
+#  - sonarr-app.yaml
+#  - system-upgrade-app.yaml
 #  - traefik-app.yaml
