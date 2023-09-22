@@ -62,16 +62,16 @@ spec:
         hostPath:
           path: /run/nvidia
           type: ''
-      initContainers:
-        - name: validate-gpu-readiness
-          image: alpine:3.18
-          command:
-            - sh
-            - '-c'
-          args:
-            - >-
-              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
-              for nvidia container stack to be setup; sleep 5; done
+#      initContainers:
+#        - name: validate-gpu-readiness
+#          image: alpine:3.18
+#          command:
+#            - sh
+#            - '-c'
+#          args:
+#            - >-
+#              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
+#              for nvidia container stack to be setup; sleep 5; done
           volumeMounts:
             - name: run-nvidia
               mountPath: /run/nvidia
