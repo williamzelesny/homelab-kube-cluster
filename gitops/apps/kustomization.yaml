@@ -7,7 +7,7 @@ resources:
 #  - gpu-operator-app.yaml
 #  - heimdall-app.yaml
 #  - home-assistant-app.yaml
-#  - longhorn.yaml
+  - longhorn.yaml
   - metallb-app.yaml
 #  - nzbget-app.yaml
 #  - observability-app.yaml
