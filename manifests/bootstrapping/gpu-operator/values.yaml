@@ -23,10 +23,10 @@ daemonsets:
   labels: {}
   annotations: {}
   priorityClassName: system-node-critical
-  tolerations: []
-#    - key: nvidia.com/gpu
-#      operator: Exists
-#      effect: NoSchedule
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Exists
+      effect: NoSchedule
   # configuration for controlling update strategy("OnDelete" or "RollingUpdate") of GPU Operands
   # note that driver Daemonset is always set with OnDelete to avoid unintended disruptions
   updateStrategy: "RollingUpdate"
@@ -72,15 +72,15 @@ operator:
     repository: nvcr.io/nvidia
     version: 12.1.0-base-ubi8
     imagePullPolicy: IfNotPresent
-#  tolerations:
-#    - key: "node-role.kubernetes.io/master"
-#      operator: "Equal"
-#      value: ""
-#      effect: "NoSchedule"
-#    - key: "node-role.kubernetes.io/control-plane"
-#      operator: "Equal"
-#      value: ""
-#      effect: "NoSchedule"
+  tolerations:
+    - key: "node-role.kubernetes.io/master"
+      operator: "Equal"
+      value: ""
+      effect: "NoSchedule"
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Equal"
+      value: ""
+      effect: "NoSchedule"
   annotations:
     openshift.io/scc: restricted-readonly
   affinity:
@@ -425,14 +425,14 @@ node-feature-discovery:
       name: node-feature-discovery
       # disable creation to avoid duplicate serviceaccount creation by master spec below
       create: false
-    tolerations: []
-#      - key: "node-role.kubernetes.io/master"
-#        operator: "Equal"
-#        value: ""
-#        effect: "NoSchedule"
-#      - key: nvidia.com/gpu
-#        operator: Exists
-#        effect: NoSchedule
+    tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Equal"
+        value: ""
+        effect: "NoSchedule"
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
     config:
       sources:
         pci:
