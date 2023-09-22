@@ -72,7 +72,7 @@ spec:
 #            - >-
 #              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
 #              for nvidia container stack to be setup; sleep 5; done
-          volumeMounts:
-            - name: run-nvidia
-              mountPath: /run/nvidia
-              mountPropagation: HostToContainer
+#          volumeMounts:
+#            - name: run-nvidia
+#              mountPath: /run/nvidia
+#              mountPropagation: HostToContainer
