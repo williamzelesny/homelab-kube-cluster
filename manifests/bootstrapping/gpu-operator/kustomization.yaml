@@ -1,6 +1,3 @@
-patches:
-  - path: clusterpolicy.yaml
-
 helmCharts:
   - name: gpu-operator
     repo: https://nvidia.github.io/gpu-operator
