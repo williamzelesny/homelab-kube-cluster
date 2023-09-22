@@ -1,4 +1,4 @@
 patches:
-  - service.yaml
+  - path: service.yaml
 
 namespace: kube-system
