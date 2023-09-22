@@ -1,6 +1,6 @@
 resources:
   - argocd-app.yaml
-  - bootstrapping-storage.yaml
+#  - bootstrapping-storage.yaml
   - cert-manager-app.yaml
 #  - doppler-app.yaml
 #  - gaming-app.yaml
