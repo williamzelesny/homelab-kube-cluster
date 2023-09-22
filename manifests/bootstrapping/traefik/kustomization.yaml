@@ -1,2 +1,4 @@
 patchesStrategicMerge:
   - service.yaml
+
+namespace: kube-system
