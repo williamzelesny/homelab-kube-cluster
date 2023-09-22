@@ -1,4 +1,8 @@
 patches:
   - path: service.yaml
+    target:
+      kind: Service
+      name: traefik
+      namespace: kube-system
 
 namespace: kube-system
