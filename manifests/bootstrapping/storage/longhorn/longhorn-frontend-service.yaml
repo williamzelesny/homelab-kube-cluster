@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: longhorn-frontend
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.3.23
+    metallb.universe.tf/loadBalancerIPs: 10.0.4.23
 spec:
   ports:
   - name: http
