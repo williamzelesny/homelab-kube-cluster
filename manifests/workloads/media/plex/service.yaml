@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: plex
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.3.22
+    metallb.universe.tf/loadBalancerIPs: 10.0.4.22
 spec:
   ports:
   - protocol: TCP
