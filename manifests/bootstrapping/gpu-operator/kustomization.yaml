@@ -7,6 +7,6 @@ helmCharts:
     valuesFile: values.yaml
 
 resources:
-  - clusterpolicy.yamls
+  - clusterpolicy.yaml
 
 namespace: gpu-operator
