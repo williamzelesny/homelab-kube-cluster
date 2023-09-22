@@ -10,7 +10,7 @@ resources:
   - longhorn.yaml
   - metallb-app.yaml
   - nzbget-app.yaml
-  - observability-app.yaml
+#  - observability-app.yaml
   - overseerr-app.yaml
   - plex-app.yaml
   - radarr-app.yaml
