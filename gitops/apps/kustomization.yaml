@@ -4,7 +4,7 @@ resources:
   - cert-manager-app.yaml
 #  - doppler-app.yaml
 #  - gaming-app.yaml
-  - gpu-operator-app.yaml
+#  - gpu-operator-app.yaml
   - heimdall-app.yaml
 #  - home-assistant-app.yaml
   - longhorn.yaml
