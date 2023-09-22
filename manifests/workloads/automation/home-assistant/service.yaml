@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: home-assistant
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.3.25
+    metallb.universe.tf/loadBalancerIPs: 10.0.4.25
 spec:
   ports:
   - protocol: TCP
