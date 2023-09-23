@@ -29,11 +29,11 @@ spec:
         image: plexinc/pms-docker:latest@sha256:0c9f20ac5a421581f270baeea633bb1109c4058aa38563eb51d0a0346866644a
         imagePullPolicy: Always
         name: plex
-        resources: {}
-#           limits:
-#             nvidia.com/gpu: '1' # requesting 1 GPU
-#           requests:
-#             nvidia.com/gpu: '1'
+        resources:
+           limits:
+             nvidia.com/gpu: '1' # requesting 1 GPU
+           requests:
+             nvidia.com/gpu: '1'
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
         volumeMounts:
@@ -62,17 +62,17 @@ spec:
         hostPath:
           path: /run/nvidia
           type: ''
-#      initContainers:
-#        - name: validate-gpu-readiness
-#          image: alpine:3.18
-#          command:
-#            - sh
-#            - '-c'
-#          args:
-#            - >-
-#              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
-#              for nvidia container stack to be setup; sleep 5; done
-#          volumeMounts:
-#            - name: run-nvidia
-#              mountPath: /run/nvidia
-#              mountPropagation: HostToContainer
+      initContainers:
+        - name: validate-gpu-readiness
+          image: alpine:3.18
+          command:
+            - sh
+            - '-c'
+          args:
+            - >-
+              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
+              for nvidia container stack to be setup; sleep 5; done
+          volumeMounts:
+            - name: run-nvidia
+              mountPath: /run/nvidia
+              mountPropagation: HostToContainer
