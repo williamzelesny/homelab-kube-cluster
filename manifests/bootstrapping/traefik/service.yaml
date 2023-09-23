@@ -16,7 +16,6 @@ spec:
       port: 443
       protocol: TCP
       targetPort: websecure
-
   selector:
     app.kubernetes.io/name: traefik
   type: LoadBalancer
