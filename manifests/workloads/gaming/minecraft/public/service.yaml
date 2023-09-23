@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: minecraft-public
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.4.20
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.20
 spec:
   ports:
   - protocol: UDP

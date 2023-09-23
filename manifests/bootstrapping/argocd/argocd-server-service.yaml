@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: argocd-server
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.4.17
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.17
 spec:
   ports:
   - name: http

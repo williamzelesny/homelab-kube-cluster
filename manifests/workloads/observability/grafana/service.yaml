@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: grafana
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 10.0.4.24
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.24
 spec:
   ports:
     - port: 3000
