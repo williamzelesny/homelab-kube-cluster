@@ -13,7 +13,7 @@ resources:
   - observability-app.yaml
 #  - overseerr-app.yaml
   - plex-app.yaml
-#  - radarr-app.yaml
+  - radarr-app.yaml
   - sonarr-app.yaml
 #  - system-upgrade-app.yaml
   - traefik-app.yaml
