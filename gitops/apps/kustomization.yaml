@@ -1,6 +1,5 @@
 resources:
   - argocd-app.yaml
-#  - bootstrapping-storage.yaml
   - cert-manager-app.yaml
   - doppler-app.yaml
   - gaming-app.yaml
@@ -15,5 +14,5 @@ resources:
   - plex-app.yaml
   - radarr-app.yaml
   - sonarr-app.yaml
-#  - system-upgrade-app.yaml
+  - system-upgrade-app.yaml
   - traefik-app.yaml
