@@ -140,5 +140,5 @@ scrape_configs:
 
   - job_name: 'argocd-server-metrics'
     static_configs:
-      - targets: ['argocd-metrics.argocd.svc.cluster.local:8082','argocd-server-metrics.argocd.svc.cluster.local:8083']
+      - targets: ['argocd-metrics.argocd.svc.cluster.local:8082','argocd-server-metrics.argocd.svc.cluster.local:8083', 'argocd-repo-server.argocd.svc.cluster.local:8084']
     
