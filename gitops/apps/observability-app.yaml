@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
-    targetRevision: feature/migration
+    targetRevision: main
     path: manifests/workloads/observability
   destination:
     server: https://kubernetes.default.svc
