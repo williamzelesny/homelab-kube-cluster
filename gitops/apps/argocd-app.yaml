@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
-    targetRevision: main
+    targetRevision: feature/migration
     path: manifests/bootstrapping/argocd
   destination:
     server: https://kubernetes.default.svc

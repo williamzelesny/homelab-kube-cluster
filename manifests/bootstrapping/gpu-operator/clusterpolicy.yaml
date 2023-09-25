@@ -6,8 +6,8 @@ metadata:
     app.kubernetes.io/instance: gpu-operator
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: gpu-operator
-    app.kubernetes.io/version: v23.3.2
-    helm.sh/chart: gpu-operator-v23.3.2
+    app.kubernetes.io/version: v23.6.1
+    helm.sh/chart: gpu-operator-v23.6.1
   name: cluster-policy
 spec:
   cdi:
@@ -16,7 +16,7 @@ spec:
   daemonsets:
     labels:
       app.kubernetes.io/managed-by: gpu-operator
-      helm.sh/chart: gpu-operator-v23.3.2
+      helm.sh/chart: gpu-operator-v23.6.1
     priorityClassName: system-node-critical
     rollingUpdate:
       maxUnavailable: '1'
@@ -31,7 +31,7 @@ spec:
     image: dcgm
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia/cloud-native
-    version: 3.1.7-1-ubuntu20.04
+    version: 3.1.8-1-ubuntu20.04
   dcgmExporter:
     enabled: false
     env:
@@ -49,7 +49,7 @@ spec:
       enabled: false
       honorLabels: false
       interval: 15s
-    version: 3.1.7-3.1.4-ubuntu20.04
+    version: 3.1.8-3.1.5-ubuntu20.04
   devicePlugin:
     enabled: true
     env:
@@ -68,7 +68,7 @@ spec:
     image: k8s-device-plugin
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia
-    version: v0.14.0-ubi8
+    version: v0.14.1-ubi8
   driver:
     certConfig:
       name: ''
@@ -133,7 +133,7 @@ spec:
     image: gpu-feature-discovery
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia
-    version: v0.8.0-ubi8
+    version: v0.13.1-ubi8
   mig:
     strategy: single
   migManager:
@@ -149,13 +149,13 @@ spec:
     image: k8s-mig-manager
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.5.2-ubuntu20.04
+    version: v0.5.3-ubuntu20.04
   nodeStatusExporter:
     enabled: false
     image: gpu-operator-validator
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia/cloud-native
-    version: v23.3.2
+    version: v23.6.1
   operator:
     defaultRuntime: docker
     initContainer:
@@ -171,7 +171,7 @@ spec:
     image: kubevirt-gpu-device-plugin
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia
-    version: v1.2.1
+    version: v1.2.2
   sandboxWorkloads:
     defaultWorkload: container
     enabled: false
@@ -181,7 +181,7 @@ spec:
     imagePullPolicy: IfNotPresent
     installDir: /usr/local/nvidia
     repository: nvcr.io/nvidia/k8s
-    version: v1.13.0-ubuntu20.04
+    version: v1.13.4-ubuntu20.04
   validator:
     image: gpu-operator-validator
     imagePullPolicy: IfNotPresent
@@ -190,7 +190,7 @@ spec:
         - name: WITH_WORKLOAD
           value: 'false'
     repository: nvcr.io/nvidia/cloud-native
-    version: v23.3.2
+    version: v23.6.1
   vfioManager:
     driverManager:
       env:
@@ -201,7 +201,7 @@ spec:
       image: k8s-driver-manager
       imagePullPolicy: IfNotPresent
       repository: nvcr.io/nvidia/cloud-native
-      version: v0.6.1
+      version: v0.6.2
     enabled: true
     image: cuda
     imagePullPolicy: IfNotPresent
@@ -215,7 +215,7 @@ spec:
     image: vgpu-device-manager
     imagePullPolicy: IfNotPresent
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.2.1
+    version: v0.2.2
   vgpuManager:
     driverManager:
       env:

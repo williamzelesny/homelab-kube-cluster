@@ -7,8 +7,13 @@ platform:
 
 nfd:
   enabled: true
+  nodefeaturerules: false
 
+# deprecated: use PodSecurityAdmission (PSA) controls instead
 psp:
+  enabled: false
+
+psa:
   enabled: false
 
 cdi:
@@ -23,10 +28,10 @@ daemonsets:
   labels: {}
   annotations: {}
   priorityClassName: system-node-critical
-  tolerations: []
-#    - key: nvidia.com/gpu
-#      operator: Exists
-#      effect: NoSchedule
+  tolerations:
+    - key: nvidia.com/gpu
+      operator: Exists
+      effect: NoSchedule
   # configuration for controlling update strategy("OnDelete" or "RollingUpdate") of GPU Operands
   # note that driver Daemonset is always set with OnDelete to avoid unintended disruptions
   updateStrategy: "RollingUpdate"
@@ -63,24 +68,24 @@ operator:
   runtimeClass: nvidia
   use_ocp_driver_toolkit: false
   # cleanup CRD on chart un-install
-  cleanupCRD: true
+  cleanupCRD: false
   # upgrade CRD on chart upgrade, requires --disable-openapi-validation flag
   # to be passed during helm upgrade.
-  upgradeCRD: true
+  upgradeCRD: false
   initContainer:
     image: cuda
     repository: nvcr.io/nvidia
-    version: 12.1.0-base-ubi8
+    version: 12.2.0-base-ubi8
     imagePullPolicy: IfNotPresent
-#  tolerations:
-#    - key: "node-role.kubernetes.io/master"
-#      operator: "Equal"
-#      value: ""
-#      effect: "NoSchedule"
-#    - key: "node-role.kubernetes.io/control-plane"
-#      operator: "Equal"
-#      value: ""
-#      effect: "NoSchedule"
+  tolerations:
+    - key: "node-role.kubernetes.io/master"
+      operator: "Equal"
+      value: ""
+      effect: "NoSchedule"
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Equal"
+      value: ""
+      effect: "NoSchedule"
   annotations:
     openshift.io/scc: restricted-readonly
   affinity:
@@ -90,6 +95,12 @@ operator:
           preference:
             matchExpressions:
               - key: "node-role.kubernetes.io/master"
+                operator: In
+                values: [""]
+        - weight: 1
+          preference:
+            matchExpressions:
+              - key: "node-role.kubernetes.io/control-plane"
                 operator: In
                 values: [""]
   logging:
@@ -118,7 +129,7 @@ driver:
   usePrecompiled: false
   repository: nvcr.io/nvidia
   image: driver
-  version: "470"
+  version: "535.104.05"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   startupProbe:
@@ -166,7 +177,7 @@ driver:
   manager:
     image: k8s-driver-manager
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.6.1
+    version: v0.6.2
     imagePullPolicy: IfNotPresent
     env:
       - name: ENABLE_GPU_POD_EVICTION
@@ -204,7 +215,7 @@ toolkit:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
-  version: v1.13.0-ubuntu20.04
+  version: v1.13.4-ubuntu20.04
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -223,7 +234,7 @@ devicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
-  version: v0.14.0-ubi8
+  version: v0.14.1-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
@@ -277,7 +288,7 @@ dcgm:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: dcgm
-  version: 3.1.7-1-ubuntu20.04
+  version: 3.1.8-1-ubuntu20.04
   imagePullPolicy: IfNotPresent
   hostPort: 5555
   args: []
@@ -288,7 +299,7 @@ dcgmExporter:
   enabled: false
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
-  version: 3.1.7-3.1.4-ubuntu20.04
+  version: 3.1.8-3.1.5-ubuntu20.04
   imagePullPolicy: IfNotPresent
   env:
     - name: DCGM_EXPORTER_LISTEN
@@ -303,12 +314,19 @@ dcgmExporter:
     interval: 15s
     honorLabels: false
     additionalLabels: {}
+    relabelings: []
+    # - source_labels:
+    #     - __meta_kubernetes_pod_node_name
+    #   regex: (.*)
+    #   target_label: instance
+    #   replacement: $1
+    #   action: replace
 
 gfd:
   enabled: true
   repository: nvcr.io/nvidia
   image: gpu-feature-discovery
-  version: v0.8.0-ubi8
+  version: v0.8.1-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -322,7 +340,7 @@ migManager:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: k8s-mig-manager
-  version: v0.5.2-ubuntu20.04
+  version: v0.5.3-ubuntu20.04
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -349,7 +367,7 @@ gds:
   enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: nvidia-fs
-  version: "2.15.1"
+  version: "2.16.1"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -367,7 +385,7 @@ vgpuManager:
   driverManager:
     image: k8s-driver-manager
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.6.1
+    version: v0.6.2
     imagePullPolicy: IfNotPresent
     env:
       - name: ENABLE_GPU_POD_EVICTION
@@ -379,7 +397,7 @@ vgpuDeviceManager:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: vgpu-device-manager
-  version: "v0.2.1"
+  version: "v0.2.3"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -391,7 +409,7 @@ vfioManager:
   enabled: true
   repository: nvcr.io/nvidia
   image: cuda
-  version: 12.1.0-base-ubi8
+  version: 12.2.0-base-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -399,7 +417,7 @@ vfioManager:
   driverManager:
     image: k8s-driver-manager
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.6.1
+    version: v0.6.2
     imagePullPolicy: IfNotPresent
     env:
       - name: ENABLE_GPU_POD_EVICTION
@@ -407,15 +425,52 @@ vfioManager:
       - name: ENABLE_AUTO_DRAIN
         value: "false"
 
+kataManager:
+  enabled: false
+  config:
+    artifactsDir: "/opt/nvidia-gpu-operator/artifacts/runtimeclasses"
+    runtimeClasses:
+      - name: kata-qemu-nvidia-gpu
+        nodeSelector: {}
+        artifacts:
+          url: nvcr.io/nvidia/cloud-native/kata-gpu-artifacts:ubuntu22.04-535.54.03
+          pullSecret: ""
+      - name: kata-qemu-nvidia-gpu-snp
+        nodeSelector:
+          "nvidia.com/cc.capable": "true"
+        artifacts:
+          url: nvcr.io/nvidia/cloud-native/kata-gpu-artifacts:ubuntu22.04-535.86.10-snp
+          pullSecret: ""
+  repository: nvcr.io/nvidia/cloud-native
+  image: k8s-kata-manager
+  version: v0.1.1
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets: []
+  env: []
+  resources: {}
+
 sandboxDevicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: kubevirt-gpu-device-plugin
-  version: v1.2.1
+  version: v1.2.2
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
   env: []
+  resources: {}
+
+ccManager:
+  enabled: false
+  defaultMode: "off"
+  repository: nvcr.io/nvidia/cloud-native
+  image: k8s-cc-manager
+  version: v0.1.0
+  imagePullPolicy: IfNotPresent
+  imagePullSecrets: []
+  env:
+    - name: CC_CAPABLE_DEVICE_IDS
+      value: "0x2339,0x2331,0x2330,0x2324,0x2322,0x233d"
   resources: {}
 
 node-feature-discovery:
@@ -425,14 +480,18 @@ node-feature-discovery:
       name: node-feature-discovery
       # disable creation to avoid duplicate serviceaccount creation by master spec below
       create: false
-    tolerations: []
-#      - key: "node-role.kubernetes.io/master"
-#        operator: "Equal"
-#        value: ""
-#        effect: "NoSchedule"
-#      - key: nvidia.com/gpu
-#        operator: Exists
-#        effect: NoSchedule
+    tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Equal"
+        value: ""
+        effect: "NoSchedule"
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Equal"
+        value: ""
+        effect: "NoSchedule"
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
     config:
       sources:
         pci:
@@ -445,8 +504,12 @@ node-feature-discovery:
           deviceLabelFields:
             - vendor
   master:
-    extraLabelNs:
-      - nvidia.com
     serviceAccount:
       name: node-feature-discovery
       create: true
+    config:
+      extraLabelNs: ["nvidia.com"]
+      # noPublish: false
+      # resourceLabels: ["nvidia.com/feature-1","nvidia.com/feature-2"]
+      # enableTaints: false
+      # labelWhiteList: "nvidia.com/gpu"

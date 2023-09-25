@@ -2,17 +2,20 @@ apiVersion: v1
 kind: Service
 metadata:
   name: traefik
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.18
 spec:
   ports:
-    - name: http
-      protocol: TCP
+    - name: web
+      nodePort: 32047
       port: 80
-      targetPort: 8080
-    - name: https
       protocol: TCP
+      targetPort: web
+    - name: websecure
+      nodePort: 31668
       port: 443
-      targetPort: 8080
+      protocol: TCP
+      targetPort: websecure
   selector:
     app.kubernetes.io/name: traefik
   type: LoadBalancer
-  loadBalancerIP: 10.0.3.18

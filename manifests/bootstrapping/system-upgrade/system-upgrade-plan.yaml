@@ -44,13 +44,38 @@ spec:
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
 metadata:
-  name: os-update
+  name: os-update-control-plane
   namespace: system-upgrade
 spec:
   concurrency: 1
   nodeSelector:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
+        operator: In
+        values:
+          - "true"
+  serviceAccountName: system-upgrade
+  secrets:
+    - name: os-update
+      path: /host/run/system-upgrade/secrets/os-update
+  drain:
+    force: true
+  version: jammy
+  upgrade:
+    image: ubuntu
+    command: ["chroot", "/host"]
+    args: ["sh", "/run/system-upgrade/secrets/os-update/upgrade.sh"]
+---
+apiVersion: upgrade.cattle.io/v1
+kind: Plan
+metadata:
+  name: os-update-worker
+  namespace: system-upgrade
+spec:
+  concurrency: 1
+  nodeSelector:
+    matchExpressions:
+      - key: node-role.kubernetes.io/worker
         operator: In
         values:
           - "true"

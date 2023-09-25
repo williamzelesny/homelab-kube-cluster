@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
-    targetRevision: main
+    targetRevision: feature/migration
     path: manifests/workloads/media/sonarr
   destination:
     server: https://kubernetes.default.svc

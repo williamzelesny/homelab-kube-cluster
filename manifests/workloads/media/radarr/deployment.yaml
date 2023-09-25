@@ -4,14 +4,14 @@ metadata:
   name: radarr
 spec:
   progressDeadlineSeconds: 600
-  replicas: 0
+  replicas: 1
   revisionHistoryLimit: 2
   selector:
     matchLabels:
       app: radarr
   strategy:
     rollingUpdate:
-      maxSurge: 0
+      maxSurge: 1
       maxUnavailable: 100%
     type: RollingUpdate
   template:
