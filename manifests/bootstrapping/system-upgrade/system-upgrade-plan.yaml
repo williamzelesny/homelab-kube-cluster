@@ -11,6 +11,8 @@ spec:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
         operator: Exists
+      - key: node-role.kubernetes.io/master
+        operator: Exists
   serviceAccountName: system-upgrade
   upgrade:
     image: rancher/k3s-upgrade
