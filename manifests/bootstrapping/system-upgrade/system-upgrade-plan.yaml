@@ -54,8 +54,8 @@ spec:
   secrets:
     - name: os-update
       path: /host/run/system-upgrade/secrets/os-update
-  drain:
-    force: false
+#  drain:
+#    force: false
   version: jammy
   upgrade:
     image: ubuntu
@@ -77,8 +77,8 @@ spec:
   secrets:
     - name: os-update
       path: /host/run/system-upgrade/secrets/os-update
-  drain:
-    force: false
+#  drain:
+#    force: false
   version: jammy
   upgrade:
     image: ubuntu
