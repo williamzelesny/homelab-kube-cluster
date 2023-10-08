@@ -6,13 +6,11 @@ metadata:
   namespace: system-upgrade
 spec:
   concurrency: 1
-  cordon: true
+  cordon: false
   nodeSelector:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
-        operator: In
-        values:
-          - "true"
+        operator: Exists
   serviceAccountName: system-upgrade
   upgrade:
     image: rancher/k3s-upgrade
@@ -26,7 +24,7 @@ metadata:
   namespace: system-upgrade
 spec:
   concurrency: 1
-  cordon: true
+  cordon: false
   nodeSelector:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
@@ -51,15 +49,13 @@ spec:
   nodeSelector:
     matchExpressions:
       - key: node-role.kubernetes.io/control-plane
-        operator: In
-        values:
-          - "true"
+        operator: Exists
   serviceAccountName: system-upgrade
   secrets:
     - name: os-update
       path: /host/run/system-upgrade/secrets/os-update
   drain:
-    force: true
+    force: false
   version: jammy
   upgrade:
     image: ubuntu
@@ -76,15 +72,13 @@ spec:
   nodeSelector:
     matchExpressions:
       - key: node-role.kubernetes.io/worker
-        operator: In
-        values:
-          - "true"
+        operator: Exists
   serviceAccountName: system-upgrade
   secrets:
     - name: os-update
       path: /host/run/system-upgrade/secrets/os-update
-#  drain:
-#    force: true
+  drain:
+    force: false
   version: jammy
   upgrade:
     image: ubuntu
