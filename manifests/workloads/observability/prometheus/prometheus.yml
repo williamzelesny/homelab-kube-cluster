@@ -18,9 +18,6 @@ scrape_configs:
     - source_labels: [__meta_kubernetes_endpoints_name]
       regex: 'node-exporter'
       action: keep
-    - source_labels: [ __meta_kubernetes_node_name ]
-      target_label: instance
-      action: replace
   
   - job_name: 'kubernetes-apiservers'
 
