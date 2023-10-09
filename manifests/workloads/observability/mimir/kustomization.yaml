@@ -4,6 +4,6 @@ helmCharts:
     version: 5.2.0-weekly.259
     releaseName: mimir-distributed
     namespace: mimir
-#    valuesFile: values.yaml
+    valuesFile: values.yaml
 
 namespace: mimir
