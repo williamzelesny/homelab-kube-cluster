@@ -10,7 +10,7 @@ global:
 #     - targets:
 #       - "alertmanager.observability.svc:9093"
 
-remote_read:
+remote_write:
   - url: http://mimir-distributed-nginx.mimir.svc/prometheus/api/prom/push
 
 scrape_configs:
