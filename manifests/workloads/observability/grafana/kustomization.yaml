@@ -1,4 +1,4 @@
-namespace: observability
+namespace: grafana
 resources:
 - deployment.yaml
 - claim.yaml
