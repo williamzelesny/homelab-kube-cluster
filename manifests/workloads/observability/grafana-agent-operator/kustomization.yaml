@@ -1,5 +1,5 @@
 helmCharts:
-  - name: grafana-agent-operator-operator
+  - name: grafana-agent-operator
     repo: https://grafana.github.io/helm-charts
     version: 0.3.6
     releaseName: grafana-agent-operator-operator
