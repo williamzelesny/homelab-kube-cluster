@@ -5,6 +5,7 @@ resources:
   - gaming-app.yaml
   - gpu-operator-app.yaml
   - grafana-app.yaml
+  - grafana-agent-app.yaml
   - heimdall-app.yaml
   - home-assistant-app.yaml
   - longhorn.yaml
