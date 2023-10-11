@@ -434,6 +434,8 @@ mimir:
 runtimeConfig:
   ingester_limits:
     max_ingestion_rate: 20000
+  distributor_limits:
+    max_ingestion_rate: 20000
 
 # RBAC configuration
 rbac:
