@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: grafana
-  namespace: grafana
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
