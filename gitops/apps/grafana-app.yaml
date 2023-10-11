@@ -18,7 +18,8 @@ spec:
     namespace: grafana
   syncPolicy:
     automated:
-      prune: true
       selfHeal: true
+      allowEmpty: true
+      prune: true
     syncOptions:
       - CreateNamespace=true
