@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: cadvisor
-  namespace: observability
+  namespace: monitoring
   annotations:
       seccomp.security.alpha.kubernetes.io/pod: 'docker/default'
 spec:
