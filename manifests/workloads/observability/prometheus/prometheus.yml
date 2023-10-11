@@ -149,5 +149,5 @@ scrape_configs:
 
   - job_name: 'mimir'
     static_configs:
-      - targets: [ 'http://mimir-distributed-nginx.mimir.svc.cluster.local:8080' ]
+      - targets: [ 'mimir-distributed-nginx.mimir.svc.cluster.local:8080' ]
     
