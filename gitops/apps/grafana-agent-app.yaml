@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
     targetRevision: main
-    path: manifests/workloads/observability/grafana-agents
+    path: manifests/workloads/observability/grafana-agent-operator
   destination:
     server: https://kubernetes.default.svc
     namespace: grafana-agent-operator
