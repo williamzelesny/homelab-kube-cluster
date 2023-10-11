@@ -709,7 +709,7 @@ distributor:
       memory: 512Mi
 
   instance_limits:
-    max_ingestion_rate: 30000
+    max_ingestion_rate: 300000
 
 
   # Additional distributor container arguments, e.g. log level (debug, info, warn, error)
