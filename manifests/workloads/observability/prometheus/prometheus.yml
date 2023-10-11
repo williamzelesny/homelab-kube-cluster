@@ -11,7 +11,7 @@ global:
 #       - "alertmanager.observability.svc:9093"
 
 remote_write:
-  - url: http://mimir-distributed-nginx.mimir.svc.cluster.local:80/api/prom/pushs
+  - url: http://mimir-distributed-nginx.mimir.svc.cluster.local:80/api/prom/push
 
 scrape_configs:
   - job_name: 'kubernetes-apiservers'
