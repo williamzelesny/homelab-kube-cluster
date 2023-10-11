@@ -1,0 +1,9 @@
+helmCharts:
+  - name: grafana-agent-operator-operator
+    repo: https://grafana.github.io/helm-charts
+    version: 0.3.6
+    releaseName: grafana-agent-operator-operator
+    namespace: grafana-agent-operator-operator
+    valuesFile: values.yaml
+
+namespace: grafana-agent-operator
