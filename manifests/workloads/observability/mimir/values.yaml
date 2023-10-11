@@ -433,9 +433,9 @@ mimir:
 #       max_fetched_series_per_query: 100000
 runtimeConfig:
   ingester_limits:
-    max_ingestion_rate: 20000
+    max_ingestion_rate: 30000
   distributor_limits:
-    max_ingestion_rate: 20000
+    max_ingestion_rate: 30000
 
 # RBAC configuration
 rbac:
