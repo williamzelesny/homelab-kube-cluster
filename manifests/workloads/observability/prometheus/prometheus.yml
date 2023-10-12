@@ -146,8 +146,3 @@ scrape_configs:
   - job_name: 'argocd-metrics'
     static_configs:
       - targets: [ 'argocd-metrics.argocd.svc.cluster.local:8082']
-
-  - job_name: 'mimir'
-    static_configs:
-      - targets: [ 'mimir-distributed-nginx.mimir.svc.cluster.local:8080' ]
-    
