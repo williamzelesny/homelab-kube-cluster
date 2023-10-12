@@ -443,6 +443,11 @@ mimir:
 #    max_inflight_push_requests: 30000
 #    max_inflight_push_requests_bytes: 50000000
 
+runtimeConfig:
+  overrides:
+    anonymous:
+      ingestion_rate: 50000
+
 
 # RBAC configuration
 rbac:
