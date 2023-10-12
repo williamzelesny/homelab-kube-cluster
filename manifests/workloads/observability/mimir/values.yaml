@@ -319,6 +319,7 @@ mimir:
       # Avoid caching results newer than 10m because some samples can be delayed
       # This presents caching incomplete results
       max_cache_freshness: 10m
+      max_label_names_per_series: 100
 
     memberlist:
       abort_if_cluster_join_fails: false
@@ -441,9 +442,6 @@ runtimeConfig:
     max_ingestion_rate: 30000
     max_inflight_push_requests: 30000
     max_inflight_push_requests_bytes: 50000000
-  overrides:
-    anonymous:
-      max_label_names_per_series: 100
 
 
 # RBAC configuration
