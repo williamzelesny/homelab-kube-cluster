@@ -16,6 +16,7 @@ resources:
   - grafana-agent-crds-logsinstance.yaml
   - grafana-agent-crds-podmonitors.yaml
   - grafana-agent-crds-probes.yaml
+  - grafana-agent-crds-servicemonitors.yaml
   - grafana-agent.yaml
   - grafana-agent-service-account.yaml
   - grafana-agent-clusterrole.yaml
