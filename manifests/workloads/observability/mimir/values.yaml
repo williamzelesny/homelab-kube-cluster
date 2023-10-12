@@ -441,8 +441,6 @@ runtimeConfig:
      max_ingestion_rate: 30000
      max_inflight_push_requests: 30000
      max_inflight_push_requests_bytes: 50000000
-   validation:
-     max-label-names-per-series: 100
 
 # RBAC configuration
 rbac:
