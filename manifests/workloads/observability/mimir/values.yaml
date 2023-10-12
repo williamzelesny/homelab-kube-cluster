@@ -706,7 +706,7 @@ alertmanager:
         storageClass: null
 
 distributor:
-  replicas: 1
+  replicas: 2
 
   service:
     annotations: {}
