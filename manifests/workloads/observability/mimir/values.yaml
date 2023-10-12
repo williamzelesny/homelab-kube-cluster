@@ -1549,8 +1549,6 @@ store_gateway:
 compactor:
   replicas: 1
 
-  compactor_blocks_retention_period: 1w
-
   service:
     annotations: {}
     labels: {}
