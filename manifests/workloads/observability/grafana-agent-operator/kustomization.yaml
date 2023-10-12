@@ -9,7 +9,7 @@ helmCharts:
 namespace: grafana-agent-operator
 
 resources:
-  - grafana-agent-crds.yaml
+  - grafana-agent-crds-grafanaagents.yaml
   - grafana-agent.yaml
   - grafana-agent-service-account.yaml
   - grafana-agent-clusterrole.yaml
