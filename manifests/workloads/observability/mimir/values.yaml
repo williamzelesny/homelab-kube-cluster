@@ -775,7 +775,7 @@ ingester:
   # If ingester.zoneAwareReplication.enabled=false, this number is taken as is.
   # Otherwise each zone starts `ceil(replicas / number_of_zones)` number of pods.
   #   E.g. if 'replicas' is set to 4 and there are 3 zones, then 4/3=1.33 and after rounding up it means 2 pods per zone are started.
-  replicas: 1
+  replicas: 2
 
   statefulSet:
     enabled: true
@@ -1492,7 +1492,7 @@ store_gateway:
   #
   zoneAwareReplication:
     # -- Enable zone-aware replication for store-gateway
-    enabled: false
+    enabled: true
     # -- Maximum number of store-gateways that can be unavailable per zone during rollout
     maxUnavailable: 50
     # -- topologyKey to use in pod anti-affinity. If unset, no anti-affinity rules are generated. If set, the generated anti-affinity rule makes sure that pods from different zones do not mix.
