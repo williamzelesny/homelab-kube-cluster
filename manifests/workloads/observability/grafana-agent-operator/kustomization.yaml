@@ -7,3 +7,8 @@ helmCharts:
     valuesFile: values.yaml
 
 namespace: grafana-agent-operator
+
+resources:
+  - grafana-agent.yaml
+  - grafana-agent-service-account.yaml
+  - grafana-agent-clusterrole.yaml
