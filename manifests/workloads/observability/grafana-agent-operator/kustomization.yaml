@@ -12,6 +12,7 @@ resources:
   - grafana-agent-crds-grafanaagents.yaml
   - grafana-agent-crds-podlogs.yaml
   - grafana-agent-crds-metricsinstances.yaml
+  - grafana-agent-crds-integration.yaml
   - grafana-agent.yaml
   - grafana-agent-service-account.yaml
   - grafana-agent-clusterrole.yaml
