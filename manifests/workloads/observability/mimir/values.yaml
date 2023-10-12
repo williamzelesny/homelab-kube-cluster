@@ -438,10 +438,13 @@ runtimeConfig:
     max_tenants: 1000
     max_inflight_push_requests: 30000
   distributor_limits: # limits that each distributor replica enforces
-    max-label-names-per-series: 100
     max_ingestion_rate: 30000
     max_inflight_push_requests: 30000
     max_inflight_push_requests_bytes: 50000000
+  overrides:
+    tenant1:
+      max-label-names-per-series: 100
+
 
 # RBAC configuration
 rbac:
