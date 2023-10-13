@@ -446,7 +446,7 @@ mimir:
 runtimeConfig:
   overrides:
     anonymous:
-      ingestion_rate: 50000
+      ingestion_rate: 100000
 
 
 # RBAC configuration
