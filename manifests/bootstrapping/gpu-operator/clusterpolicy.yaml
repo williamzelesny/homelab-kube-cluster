@@ -8,7 +8,6 @@ metadata:
     app.kubernetes.io/name: gpu-operator
     app.kubernetes.io/version: v23.6.1
     helm.sh/chart: gpu-operator-v23.6.1
-    "helm.sh/hook": "crd-install"
   name: cluster-policy
 spec:
   cdi:
