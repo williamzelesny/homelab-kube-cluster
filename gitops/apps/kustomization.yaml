@@ -10,7 +10,7 @@ resources:
   - home-assistant-app.yaml
   - longhorn.yaml
   - metallb-app.yaml
-  - mimir-app.yaml
+#  - mimir-app.yaml
   - nzbget-app.yaml
   - observability-app.yaml
   - overseerr-app.yaml
