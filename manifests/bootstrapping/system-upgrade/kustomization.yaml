@@ -1,10 +1,10 @@
 namespace: system-upgrade
 
 resources:
-  - github.com/rancher/system-upgrade-controller/releases/latest/download/system-upgrade-controller.yaml
-#  - system-upgrade-service-acct.yaml
-#  - system-upgrade-cluster-role-binding.yaml
-#  - system-upgrade-configmap.yaml
-#  - system-upgrade-deployment.yaml
+#  - github.com/rancher/system-upgrade-controller/releases/latest/download/system-upgrade-controller.yaml
+  - system-upgrade-service-acct.yaml
+  - system-upgrade-cluster-role-binding.yaml
+  - system-upgrade-configmap.yaml
+  - system-upgrade-deployment.yaml
   - system-upgrade-plan.yaml
   - os-update.yaml
