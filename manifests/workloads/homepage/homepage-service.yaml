@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: homepage
   namespace: homepage
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.26
 spec:
   ports:
     - name: http
