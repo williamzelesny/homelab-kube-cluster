@@ -1,5 +1,5 @@
 helmCharts:
-  - name: jameswynn/homepage
+  - name: homepage
     repo: https://jameswynn.github.io/helm-charts
     releaseName: homepage
     namespace: homepage
