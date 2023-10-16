@@ -6,3 +6,9 @@ helmCharts:
     valuesFile: values.yaml
 
 namespace: homepage
+
+patches:
+  - path: homepage-service.yaml
+    target:
+      kind: Service
+      name: homepage
