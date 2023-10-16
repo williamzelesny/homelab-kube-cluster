@@ -7,6 +7,7 @@ resources:
   - grafana-app.yaml
 #  - grafana-agent-app.yaml
   - heimdall-app.yaml
+  - homepage-app.yaml
   - home-assistant-app.yaml
   - longhorn.yaml
   - metallb-app.yaml

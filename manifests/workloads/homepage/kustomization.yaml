@@ -1,0 +1,8 @@
+helmCharts:
+  - name: jameswynn/homepage
+    repo: https://jameswynn.github.io/helm-charts
+    releaseName: homepage
+    namespace: homepage
+    valuesFile: values.yaml
+
+namespace: homepage
