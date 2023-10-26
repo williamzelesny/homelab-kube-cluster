@@ -4,7 +4,6 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.13.0
-    "helm.sh/hook": "crd-install"
   name: clusterpolicies.nvidia.com
 spec:
   group: nvidia.com
