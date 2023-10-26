@@ -38,6 +38,8 @@ spec:
           name: downloads-data
         - mountPath: /movies
           name: movies-data
+        - mountPath: /adult
+          name: adult-data
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -51,6 +53,10 @@ spec:
           path: /mnt/nfs/downloads
           type: ""
         name: downloads-data
+      - hostPath:
+          path: /mnt/nfs/videos/Adult
+          type: ""
+        name: adult-data
       - hostPath:
           path: /mnt/nfs/videos/Movies
           type: ""
