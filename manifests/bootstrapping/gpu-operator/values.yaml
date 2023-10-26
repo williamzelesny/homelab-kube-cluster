@@ -75,7 +75,7 @@ operator:
   initContainer:
     image: cuda
     repository: nvcr.io/nvidia
-    version: 12.2.0-base-ubi8
+    version: 12.2.2-base-ubi8
     imagePullPolicy: IfNotPresent
   tolerations:
     - key: "node-role.kubernetes.io/master"
@@ -120,16 +120,21 @@ operator:
       memory: 100Mi
 
 mig:
-  strategy: none
+  strategy: single
 
 driver:
   enabled: false
+  nvidiaDriverCRD:
+    enabled: false
+    deployDefaultCR: true
+    driverType: gpu
+    nodeSelector: {}
   # use pre-compiled packages for NVIDIA driver installation.
   # only supported for as a tech-preview feature on ubuntu22.04 kernels.
   usePrecompiled: false
   repository: nvcr.io/nvidia
   image: driver
-  version: "535.104.05"
+  version: "535.104.12"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   startupProbe:
@@ -177,7 +182,7 @@ driver:
   manager:
     image: k8s-driver-manager
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.6.2
+    version: v0.6.4
     imagePullPolicy: IfNotPresent
     env:
       - name: ENABLE_GPU_POD_EVICTION
@@ -203,7 +208,7 @@ driver:
   # vGPU licensing configuration
   licensingConfig:
     configMapName: ""
-    nlsEnabled: false
+    nlsEnabled: true
   # vGPU topology daemon configuration
   virtualTopology:
     config: ""
@@ -215,18 +220,10 @@ toolkit:
   enabled: true
   repository: nvcr.io/nvidia/k8s
   image: container-toolkit
-  version: v1.13.4-ubuntu20.04
+  version: v1.14.3-ubuntu20.04
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
-  env:
-  - name: CONTAINERD_CONFIG
-    value: /var/lib/rancher/k3s/agent/etc/containerd/config.toml
-  - name: CONTAINERD_SOCKET
-    value: /run/k3s/containerd/containerd.sock
-  - name: CONTAINERD_RUNTIME_CLASS
-    value: nvidia
-  - name: CONTAINERD_SET_AS_DEFAULT
-    value: "true"
+  env: []
   resources: {}
   installDir: "/usr/local/nvidia"
 
@@ -234,7 +231,7 @@ devicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
-  version: v0.14.1-ubi8
+  version: v0.14.2-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
@@ -285,10 +282,10 @@ devicePlugin:
 # standalone dcgm hostengine
 dcgm:
   # disabled by default to use embedded nv-hostengine by exporter
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: dcgm
-  version: 3.1.8-1-ubuntu20.04
+  version: 3.2.6-1-ubuntu20.04
   imagePullPolicy: IfNotPresent
   hostPort: 5555
   args: []
@@ -296,10 +293,10 @@ dcgm:
   resources: {}
 
 dcgmExporter:
-  enabled: false
+  enabled: true
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
-  version: 3.1.8-3.1.5-ubuntu20.04
+  version: 3.2.6-3.1.9-ubuntu20.04
   imagePullPolicy: IfNotPresent
   env:
     - name: DCGM_EXPORTER_LISTEN
@@ -307,7 +304,7 @@ dcgmExporter:
     - name: DCGM_EXPORTER_KUBERNETES
       value: "true"
     - name: DCGM_EXPORTER_COLLECTORS
-      value: "/etc/dcgm-exporter/default-counters.csv"
+      value: "/etc/dcgm-exporter/dcp-metrics-included.csv"
   resources: {}
   serviceMonitor:
     enabled: false
@@ -326,7 +323,7 @@ gfd:
   enabled: true
   repository: nvcr.io/nvidia
   image: gpu-feature-discovery
-  version: v0.8.1-ubi8
+  version: v0.8.2-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -340,7 +337,7 @@ migManager:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: k8s-mig-manager
-  version: v0.5.3-ubuntu20.04
+  version: v0.5.5-ubuntu20.04
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -354,7 +351,7 @@ migManager:
     name: ""
 
 nodeStatusExporter:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: gpu-operator-validator
   # If version is not specified, then default is to use chart.AppVersion
@@ -385,7 +382,7 @@ vgpuManager:
   driverManager:
     image: k8s-driver-manager
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.6.2
+    version: v0.6.4
     imagePullPolicy: IfNotPresent
     env:
       - name: ENABLE_GPU_POD_EVICTION
@@ -397,7 +394,7 @@ vgpuDeviceManager:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: vgpu-device-manager
-  version: "v0.2.3"
+  version: "v0.2.4"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -409,7 +406,7 @@ vfioManager:
   enabled: true
   repository: nvcr.io/nvidia
   image: cuda
-  version: 12.2.0-base-ubi8
+  version: 12.2.2-base-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -443,17 +440,17 @@ kataManager:
           pullSecret: ""
   repository: nvcr.io/nvidia/cloud-native
   image: k8s-kata-manager
-  version: v0.1.1
+  version: v0.1.2
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
   resources: {}
 
 sandboxDevicePlugin:
-  enabled: false
+  enabled: true
   repository: nvcr.io/nvidia
   image: kubevirt-gpu-device-plugin
-  version: v1.2.2
+  version: v1.2.3
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
@@ -465,7 +462,7 @@ ccManager:
   defaultMode: "off"
   repository: nvcr.io/nvidia/cloud-native
   image: k8s-cc-manager
-  version: v0.1.0
+  version: v0.1.1
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env:
@@ -475,6 +472,12 @@ ccManager:
 
 node-feature-discovery:
   enableNodeFeatureApi: true
+  gc:
+    enable: true
+    replicaCount: 1
+    serviceAccount:
+      name: node-feature-discovery
+      create: false
   worker:
     serviceAccount:
       name: node-feature-discovery
