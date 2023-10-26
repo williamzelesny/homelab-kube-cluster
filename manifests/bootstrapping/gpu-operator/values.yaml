@@ -450,7 +450,7 @@ kataManager:
   resources: {}
 
 sandboxDevicePlugin:
-  enabled: true
+  enabled: false
   repository: nvcr.io/nvidia
   image: kubevirt-gpu-device-plugin
   version: v1.2.2
