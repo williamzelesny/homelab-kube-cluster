@@ -77,15 +77,15 @@ operator:
     repository: nvcr.io/nvidia
     version: 12.2.0-base-ubi8
     imagePullPolicy: IfNotPresent
-  tolerations: []
-#    - key: "node-role.kubernetes.io/master"
-#      operator: "Equal"
-#      value: ""
-#      effect: "NoSchedule"
-#    - key: "node-role.kubernetes.io/control-plane"
-#      operator: "Equal"
-#      value: ""
-#      effect: "NoSchedule"
+  tolerations:
+    - key: "node-role.kubernetes.io/master"
+      operator: "Equal"
+      value: ""
+      effect: "NoSchedule"
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Equal"
+      value: ""
+      effect: "NoSchedule"
   annotations:
     openshift.io/scc: restricted-readonly
   affinity:
