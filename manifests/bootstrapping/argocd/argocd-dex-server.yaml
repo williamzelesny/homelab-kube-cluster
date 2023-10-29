@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-dex-server
+spec:
+  template:
+    spec:
+      containers:
+        - imagePullPolicy: IfNotPresent
+          name: dex
+          env:
+            - name: GOOGLE_OAUTH_CLIENTID
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-doppler-secret
+                  key: GOOGLE_OAUTH_CLIENTID
+            - name: GOOGLE_OAUTH_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-doppler-secret
+                  key: GOOGLE_OAUTH_CLIENT_SECRET
+#      initContainers:
+#        - imagePullPolicy: IfNotPresent
+#          name: copyutil

@@ -9,6 +9,16 @@ data:
   statusbadge.enabled: "true"
   ga.trackingid: "G-2WN5SK1LRC"
   ga.anonymizeusers: "false"
+  dex.config: |
+    connectors:
+    - config:
+        issuer: https://accounts.google.com
+        clientID: ${GOOGLE_OAUTH_CLIENTID}
+        clientSecret: ${GOOGLE_OAUTH_CLIENT_SECRET}
+      type: oidc
+      id: google
+      name: Google
+  url: https://argo.zelesny.com
   resource.customizations: |
     apiextensions.k8s.io/CustomResourceDefinition:
       ignoreDifferences: |
