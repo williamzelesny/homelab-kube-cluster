@@ -11,6 +11,7 @@ patchesStrategicMerge:
 - argocd-cm.yaml
 - argocd-rbac-cm.yaml
 - argocd-cmd-params-cm.yaml
+- argocd-dex-server.yaml
 # - network-policy.yaml
 
 namespace: argocd
