@@ -19,6 +19,6 @@ spec:
                 secretKeyRef:
                   name: argocd-doppler-secret
                   key: GOOGLE_OAUTH_CLIENT_SECRET
-#      initContainers:
-#        - imagePullPolicy: IfNotPresent
-#          name: copyutil
+      initContainers:
+        - imagePullPolicy: IfNotPresent
+          name: copyutil
