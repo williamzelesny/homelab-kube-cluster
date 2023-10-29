@@ -1,3 +1,3 @@
 resources:
   - doppler-operator.yaml
-#  - argocd-secret.yaml
+#  - argocd-doppler-secret.yaml
