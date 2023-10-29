@@ -13,8 +13,8 @@ data:
     connectors:
     - config:
         issuer: https://accounts.google.com
-        clientID: ${GOOGLE_OAUTH_CLIENTID}
-        clientSecret: ${GOOGLE_OAUTH_CLIENT_SECRET}
+        clientID: $GOOGLE_OAUTH_CLIENTID
+        clientSecret: $GOOGLE_OAUTH_CLIENT_SECRET
       type: oidc
       id: google
       name: Google
