@@ -12,7 +12,12 @@ patchesStrategicMerge:
 - argocd-rbac-cm.yaml
 - argocd-cmd-params-cm.yaml
 - argocd-dex-server.yaml
-- argocd-doppler-secret.yaml
 # - network-policy.yaml
+
+patches:
+  - path: argocd-doppler-secret.yaml
+    target:
+      kind: Secret
+      name: argocd-doppler-secret
 
 namespace: argocd
