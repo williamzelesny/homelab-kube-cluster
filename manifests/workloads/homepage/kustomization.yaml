@@ -1,0 +1,14 @@
+helmCharts:
+  - name: homepage
+    repo: https://jameswynn.github.io/helm-charts
+    releaseName: homepage
+    namespace: homepage
+    valuesFile: values.yaml
+
+namespace: homepage
+
+patches:
+  - path: homepage-service.yaml
+    target:
+      kind: Service
+      name: homepage

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: plex
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.22
+spec:
+  ports:
+  - protocol: TCP
+    port: 32400
+    targetPort: 32400
+    nodePort: 32400
+  selector:
+    app: plex
+  type: LoadBalancer

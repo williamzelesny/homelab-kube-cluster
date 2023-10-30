@@ -1,0 +1,5 @@
+namespace: sonarr
+resources:
+- deployment.yaml
+- claim.yaml
+- service.yaml

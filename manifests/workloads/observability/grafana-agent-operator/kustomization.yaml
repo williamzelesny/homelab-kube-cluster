@@ -1,0 +1,22 @@
+helmCharts:
+  - name: grafana-agent-operator
+    repo: https://grafana.github.io/helm-charts
+    version: 0.3.9
+    releaseName: grafana-agent-operator
+    namespace: grafana-agent-operator
+    valuesFile: values.yaml
+
+namespace: grafana-agent-operator
+
+resources:
+  - grafana-agent-crds-grafanaagents.yaml
+  - grafana-agent-crds-podlogs.yaml
+  - grafana-agent-crds-metricsinstances.yaml
+  - grafana-agent-crds-integration.yaml
+  - grafana-agent-crds-logsinstance.yaml
+  - grafana-agent-crds-podmonitors.yaml
+  - grafana-agent-crds-probes.yaml
+  - grafana-agent-crds-servicemonitors.yaml
+  - grafana-agent.yaml
+  - grafana-agent-service-account.yaml
+  - grafana-agent-clusterrole.yaml

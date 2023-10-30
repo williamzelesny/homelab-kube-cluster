@@ -1,0 +1,5 @@
+namespace: home-assistant
+resources:
+- deployment.yaml
+- claim.yaml
+- service.yaml

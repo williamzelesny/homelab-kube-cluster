@@ -1,0 +1,26 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-server
+  namespace: argocd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`argo.zelesny.com`)
+      priority: 10
+      services:
+        - kind: Service
+          name: argocd-server
+          port: http
+    - kind: Rule
+      match: Host(`argo.zelesny.com`) && Headers(`Content-Type`, `application/grpc`)
+      priority: 11
+      services:
+        - kind: Service
+          name: argocd-server
+          port: http
+          scheme: h2c
+  tls:
+    secretName: argo-zelesny-cert

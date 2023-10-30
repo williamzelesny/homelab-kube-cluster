@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-public
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.20
+spec:
+  ports:
+  - protocol: UDP
+    port: 19132
+    targetPort: 19132
+    nodePort: 31029
+  selector:
+    app: minecraft-public
+  type: LoadBalancer

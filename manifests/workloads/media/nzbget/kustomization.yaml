@@ -1,0 +1,5 @@
+namespace: nzbget
+resources:
+- deployment.yaml
+- claim.yaml
+- service.yaml

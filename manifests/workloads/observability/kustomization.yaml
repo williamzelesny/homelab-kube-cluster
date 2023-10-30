@@ -1,0 +1,5 @@
+resources:
+- ./prometheus
+- ./cadvisor
+- ./kube-state-metrics
+- ./node-exporter

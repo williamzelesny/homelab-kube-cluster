@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.26
+spec:
+  ports:
+  - protocol: TCP
+    port: 9090
+    targetPort: 9090
+  selector:
+    app: prometheus
+  type: LoadBalancer

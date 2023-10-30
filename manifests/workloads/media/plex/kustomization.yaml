@@ -1,0 +1,5 @@
+namespace: plex
+resources:
+- deployment.yaml
+- claim.yaml
+- service.yaml

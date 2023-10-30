@@ -1,0 +1,78 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plex
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: plex
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: plex
+    spec:
+      containers:
+      - env:
+        - name: DP_DISABLE_HEALTHCHECKS
+          value: "xids"
+        - name: TZ
+          value: America/New_York
+        - name: PUID
+          value: "1000"
+        - name: PGID
+          value: "1000"
+        image: plexinc/pms-docker:latest@sha256:c0a9bf98e65a3b012a013ff0fe38d6158b8b3921f0d694ccbff928161dc445ea
+        imagePullPolicy: Always
+        name: plex
+        resources:
+           limits:
+             nvidia.com/gpu: '1' # requesting 1 GPU
+           requests:
+             nvidia.com/gpu: '1'
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /data
+          name: plex-data
+        - mountPath: /config
+          name: plex-config
+      tolerations:
+        - key: node.kubernetes.io/disk-pressure
+          operator: Exists
+          effect: NoSchedule
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /mnt/nfs/videos
+          type: ""
+        name: plex-data
+      - name: plex-config
+        persistentVolumeClaim:
+          claimName: plex-config
+      - name: run-nvidia
+        hostPath:
+          path: /run/nvidia
+          type: ''
+      initContainers:
+        - name: validate-gpu-readiness
+          image: alpine:3.18
+          command:
+            - sh
+            - '-c'
+          args:
+            - >-
+              until [ -f /run/nvidia/validations/plugin-ready ]; do echo waiting
+              for nvidia container stack to be setup; sleep 5; done
+          volumeMounts:
+            - name: run-nvidia
+              mountPath: /run/nvidia
+              mountPropagation: HostToContainer

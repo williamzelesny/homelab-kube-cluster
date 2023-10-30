@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: overseer-server-http
+  namespace: overseerr
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`overseerr.zelesny.com`)
+      middlewares:
+        - name: redirect
+      kind: Rule
+      services:
+        - kind: Service
+          name: overseerr
+          port: http

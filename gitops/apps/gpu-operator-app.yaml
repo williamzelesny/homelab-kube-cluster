@@ -1,0 +1,59 @@
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: gpu-operator
+#  namespace: argocd
+#  finalizers:
+#    - resources-finalizer.argocd.argoproj.io
+#spec:
+#  project: default
+#  source:
+#    repoURL: https://nvidia.github.io/gpu-operator
+#    targetRevision: v23.3.1
+#    chart: gpu-operator
+#    path: manifests/bootstrapping/gpu-operator
+#    helm:
+#      valueFiles:
+#      - values.yaml
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: gpu-operator
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gpu-operator
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
+    targetRevision: main
+    path: manifests/bootstrapping/gpu-operator
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gpu-operator
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
+#  ignoreDifferences:
+#    - group: "nvidia.com"
+#      kind: ClusterPolicy
+#      name: cluster-policy
+#      jsonPointers:
+#        - /spec/cdi
+#        - /spec/daemonsets
+#        - /spec/dcgmExporter
+#        - /spec/devicePlugin
+#        - /spec/gfd/enabled
+#        - /spec/migManager/config/default
+#        - /spec/migManager/installDir
+#        - /spec/driver/upgradePolicy
+#        - /spec/driver/usePrecompiled
+#        - /spec/toolkit/installDir

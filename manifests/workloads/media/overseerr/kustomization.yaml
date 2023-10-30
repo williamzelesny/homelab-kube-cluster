@@ -1,0 +1,9 @@
+namespace: overseerr
+resources:
+  - deployment.yaml
+  - claim.yaml
+  - service.yaml
+  - cert.yaml
+  - ingressroute.yaml
+  - ingressroute-http.yaml
+  - middleware.yaml

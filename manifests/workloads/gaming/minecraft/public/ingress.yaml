@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minecraft-public
+  namespace: gaming
+spec:
+  # tls:
+  #   - secretName: secret-zelesny-com
+  rules:
+    - host: minecraft.zelesny.com
+      http:
+        paths:
+        - pathType: ImplementationSpecific
+          path: "/*"   # "*" is needed. Without this, the UI Javascript and CSS will not load properly
+          backend:
+            service:
+              name: minecraft-public
+              port:
+                number: 19132
