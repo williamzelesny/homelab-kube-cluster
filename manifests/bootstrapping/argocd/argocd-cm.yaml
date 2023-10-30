@@ -13,8 +13,8 @@ data:
     connectors:
     - config:
         issuer: https://accounts.google.com
-        clientID: $argocd-doppler-secret:google_oauth_client_id
-        clientSecret: $argocd-doppler-secret:google_oauth_client_secret
+        clientID: $argocd-doppler-secret:GOOGLE_OAUTH_CLIENT_ID
+        clientSecret: $argocd-doppler-secret:GOOGLE_OAUTH_CLIENT_SECRET
       type: oidc
       id: google
       name: Google
