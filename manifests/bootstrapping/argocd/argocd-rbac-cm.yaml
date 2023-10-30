@@ -8,4 +8,3 @@ data:
       g, william.zelesny@gmail.com, role:admin
     # default policy for people logging in --> no privileges, they are blind and can't do anything
     policy.default: role:syncer
-    scopes: '[email, group]'
