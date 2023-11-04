@@ -18,6 +18,6 @@ resources:
   - plex-app.yaml
   - radarr-app.yaml
   - sonarr-app.yaml
-  - system-upgrade-app.yaml
+#  - system-upgrade-app.yaml
   - tautulli-app.yaml
   - traefik-app.yaml
