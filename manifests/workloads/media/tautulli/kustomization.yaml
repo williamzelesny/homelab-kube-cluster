@@ -1,5 +1,5 @@
 namespace: tautulli
 resources:
 - deployment.yaml
-- pvc.yaml
+#- pvc.yaml
 - service.yaml
