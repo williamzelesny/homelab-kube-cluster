@@ -75,7 +75,7 @@ operator:
   initContainer:
     image: cuda
     repository: nvcr.io/nvidia
-    version: 12.2.2-base-ubi8
+    version: 12.3.1-base-ubi8
     imagePullPolicy: IfNotPresent
   tolerations:
     - key: "node-role.kubernetes.io/master"
@@ -129,12 +129,13 @@ driver:
     deployDefaultCR: true
     driverType: gpu
     nodeSelector: {}
+  useOpenKernelModules: false
   # use pre-compiled packages for NVIDIA driver installation.
   # only supported for as a tech-preview feature on ubuntu22.04 kernels.
   usePrecompiled: false
   repository: nvcr.io/nvidia
   image: driver
-  version: "535.104.12"
+  version: "535.129.03"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   startupProbe:
@@ -182,7 +183,7 @@ driver:
   manager:
     image: k8s-driver-manager
     repository: nvcr.io/nvidia/cloud-native
-    version: v0.6.4
+    version: v0.6.5
     imagePullPolicy: IfNotPresent
     env:
       - name: ENABLE_GPU_POD_EVICTION
@@ -231,7 +232,7 @@ devicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: k8s-device-plugin
-  version: v0.14.2-ubi8
+  version: v0.14.3-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
@@ -285,7 +286,7 @@ dcgm:
   enabled: true
   repository: nvcr.io/nvidia/cloud-native
   image: dcgm
-  version: 3.2.6-1-ubuntu20.04
+  version: 3.3.0-1-ubuntu22.04
   imagePullPolicy: IfNotPresent
   hostPort: 5555
   args: []
@@ -296,7 +297,7 @@ dcgmExporter:
   enabled: false
   repository: nvcr.io/nvidia/k8s
   image: dcgm-exporter
-  version: 3.2.6-3.1.9-ubuntu20.04
+  version: 3.3.0-3.2.0-ubuntu22.04
   imagePullPolicy: IfNotPresent
   env:
     - name: DCGM_EXPORTER_LISTEN
@@ -364,7 +365,7 @@ gds:
   enabled: false
   repository: nvcr.io/nvidia/cloud-native
   image: nvidia-fs
-  version: "2.16.1"
+  version: "2.17.5"
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -406,7 +407,7 @@ vfioManager:
   enabled: true
   repository: nvcr.io/nvidia
   image: cuda
-  version: 12.2.2-base-ubi8
+  version: 12.3.1-base-ubi8
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   env: []
@@ -450,7 +451,7 @@ sandboxDevicePlugin:
   enabled: true
   repository: nvcr.io/nvidia
   image: kubevirt-gpu-device-plugin
-  version: v1.2.3
+  version: v1.2.4
   imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   args: []
