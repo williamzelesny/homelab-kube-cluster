@@ -1,7 +1,7 @@
 helmCharts:
   - name: gpu-operator
     repo: https://nvidia.github.io/gpu-operator
-    version: v23.9.0
+    version: v23.9.1
     releaseName: gpu-operator
     namespace: gpu-operator
     valuesFile: values.yaml

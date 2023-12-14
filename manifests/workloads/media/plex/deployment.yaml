@@ -26,7 +26,7 @@ spec:
           value: "1000"
         - name: PGID
           value: "1000"
-        image: plexinc/pms-docker:latest@sha256:b7534724f16ec3af7bb8d9da7be915cb335e37bd060a4a65b05d2dd863158e95
+        image: plexinc/pms-docker:latest@sha256:ebec98e2a51f48f23e556708381a3dbf036de4b3735f69c1924e4280a938dc34
         imagePullPolicy: Always
         name: plex
         resources:
@@ -64,7 +64,7 @@ spec:
           type: ''
       initContainers:
         - name: validate-gpu-readiness
-          image: alpine:3.18
+          image: alpine:3.19
           command:
             - sh
             - '-c'
