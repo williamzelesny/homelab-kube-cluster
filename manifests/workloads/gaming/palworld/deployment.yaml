@@ -28,7 +28,7 @@ spec:
               name: query
               protocol: UDP
           env:
-            - name: ADMIN_PASSWORD
+            - name: RCONPASSWORD
               valueFrom:
                 secretKeyRef:
                   name: palworld-doppler-secret
