@@ -1,0 +1,12 @@
+namespace: gaming
+resources:
+  - deployment.yaml
+  - claim.yaml
+  - service.yaml
+  - ingress.yaml
+
+patches:
+  - path: palworld-doppler-secret.yaml
+    target:
+      kind: Secret
+      name: palworld-doppler-secret
