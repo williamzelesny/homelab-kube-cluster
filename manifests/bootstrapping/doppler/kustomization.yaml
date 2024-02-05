@@ -1,3 +1,4 @@
 resources:
   - doppler-operator.yaml
   - argocd-doppler-secret.yaml
+  - palworld-doppler-secret.yaml
