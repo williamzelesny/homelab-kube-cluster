@@ -4,6 +4,7 @@ resources:
   - claim.yaml
   - service.yaml
   - ingress.yaml
+  - cm.yaml
 
 patches:
   - path: palworld-doppler-secret.yaml
