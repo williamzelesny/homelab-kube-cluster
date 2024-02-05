@@ -31,8 +31,8 @@ spec:
             - name: ADMIN_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: palworld-secrets
-                  key: rconPassword
+                  name: palworld-doppler-secret
+                  key: RCONPASSWORD
           envFrom:
             - configMapRef:
                 name: palworld-cm
