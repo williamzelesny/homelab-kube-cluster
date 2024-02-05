@@ -4,6 +4,8 @@ metadata:
   labels:
     app: palworld-server
   name: palworld-server
+  annotations:
+    metallb.universe.tf/loadBalancerIPs: 10.0.3.30
 spec:
   ports:
     - name: server
