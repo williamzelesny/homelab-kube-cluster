@@ -33,6 +33,11 @@ spec:
                 secretKeyRef:
                   name: palworld-doppler-secret
                   key: RCONPASSWORD
+            - name: ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: palworld-doppler-secret
+                  key: ADMIN_PASSWORD
             - name: SERVER_PASSWORD
               valueFrom:
                 secretKeyRef:
