@@ -41,6 +41,8 @@ spec:
           name: plex-data
         - mountPath: /config
           name: plex-config
+        - name: transcode
+          mountPath: /transcode
       tolerations:
         - key: node.kubernetes.io/disk-pressure
           operator: Exists
@@ -78,6 +80,4 @@ spec:
             - name: run-nvidia
               mountPath: /run/nvidia
               mountPropagation: HostToContainer
-            - name: transcode
-              mountPath: /transcode
 
