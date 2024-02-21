@@ -58,6 +58,8 @@ spec:
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
+      - name: transcode
+        emptyDir: {}
       - name: run-nvidia
         hostPath:
           path: /run/nvidia
@@ -76,3 +78,6 @@ spec:
             - name: run-nvidia
               mountPath: /run/nvidia
               mountPropagation: HostToContainer
+            - name: transcode
+              mountPath: /transcode
+
