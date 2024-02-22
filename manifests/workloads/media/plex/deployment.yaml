@@ -26,6 +26,10 @@ spec:
           value: "1000"
         - name: PGID
           value: "1000"
+        - name: NVIDIA_VISIBLE_DEVICES
+          value: all
+        - name: NVIDIA_DRIVER_CAPABILITIES
+          value: compute,video,utility
         image: plexinc/pms-docker:latest@sha256:aa69b9bff8a7fd56b3eecedb931c3d12e588f7b2749c25368765a2d12277b908
         imagePullPolicy: Always
         name: plex
