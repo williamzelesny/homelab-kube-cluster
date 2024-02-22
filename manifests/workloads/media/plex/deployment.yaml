@@ -61,6 +61,9 @@ spec:
           path: /mnt/nfs/videos
           type: ""
         name: plex-data
+      - name: dev-dri
+        hostPath:
+          path: /dev/dri
       - name: plex-config
         persistentVolumeClaim:
           claimName: plex-config
