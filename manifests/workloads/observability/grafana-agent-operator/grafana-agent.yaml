@@ -6,7 +6,7 @@ metadata:
   labels:
     app: grafana-agent
 spec:
-  image: grafana/agent:v0.40.1
+  image: grafana/agent:v0.40.2
   integrations:
     selector:
       matchLabels:
