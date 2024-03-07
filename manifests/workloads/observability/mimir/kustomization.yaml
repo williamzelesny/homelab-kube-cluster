@@ -1,7 +1,7 @@
 helmCharts:
   - name: mimir-distributed
     repo: https://grafana.github.io/helm-charts
-    version: 5.2.1
+    version: 5.2.2
     releaseName: mimir-distributed
     namespace: mimir
     valuesFile: values.yaml
