@@ -56,10 +56,10 @@ config:
             - abbr: GH
               href: https://github.com/
   services:
-    - My First Group:
-        - My First Service:
-            href: http://localhost/
-            description: Homepage is awesome
+    - Media:
+        - Plex:
+            href: http://10.0.3.22:32400/web/index.html#!/
+            description: Plex Media Server
 
     - My Second Group:
         - My Second Service:
