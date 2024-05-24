@@ -58,8 +58,10 @@ config:
   services:
     - Media:
         - Plex:
-            href: http://10.0.3.22:32400/web/index.html#!/
-            description: Plex Media Server
+            widget:
+              type: plex
+              url: http://10.0.3.22:32400/
+              key: kube
 
     - My Second Group:
         - My Second Service:
