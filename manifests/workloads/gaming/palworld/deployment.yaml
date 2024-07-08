@@ -5,7 +5,7 @@ metadata:
     app: palworld-server
   name: palworld-server
 spec:
-  replicas: 0
+  replicas: 1
   strategy:
     type: Recreate
   selector:
