@@ -446,7 +446,7 @@ mimir:
   #         http:
   #           insecure_skip_verify: true
   structuredConfig:
-    validation:
+    limits:
       max_label_names_per_series: 100
 
 # -- runtimeConfig provides a reloadable runtime configuration. Changing the runtimeConfig doesn't require a restart of all components.
