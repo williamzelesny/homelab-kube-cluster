@@ -459,6 +459,7 @@ runtimeConfig:
    max_tenants: 1000
    max_inflight_push_requests: 30000
  distributor_limits: # limits that each distributor replica enforces
+   max_label_names_per_series: 100
    max_ingestion_rate: 20000
    max_inflight_push_requests: 30000
    max_inflight_push_requests_bytes: 50000000
