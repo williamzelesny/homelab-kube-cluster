@@ -113,7 +113,6 @@ operator:
     develMode: false
   resources:
     limits:
-      cpu: 500m
       memory: 350Mi
     requests:
       cpu: 200m
