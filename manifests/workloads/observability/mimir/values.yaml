@@ -467,7 +467,7 @@ runtimeConfig:
  overrides:
    anonymous: # limits for tenant-1 that the whole cluster enforces
 #     ingestion_tenant_shard_size: 9
-     max_global_series_per_user: 1500000
+     max_global_series_per_user: 3000000
 #     max_fetched_series_per_query: 100000
 #runtimeConfig: {}
 
