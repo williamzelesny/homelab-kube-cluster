@@ -3,4 +3,3 @@ resources:
 - ./cadvisor
 - ./kube-state-metrics
 - ./node-exporter
-- ./mimir
