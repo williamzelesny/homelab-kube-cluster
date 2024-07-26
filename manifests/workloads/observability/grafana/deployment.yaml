@@ -48,10 +48,9 @@ spec:
             timeoutSeconds: 1
           resources:
             requests:
-              cpu: 250m
+              cpu: 10m
               memory: 750Mi
             limits:
-              cpu: "1"
               memory: 2Gi
           volumeMounts:
             - mountPath: /var/lib/grafana
