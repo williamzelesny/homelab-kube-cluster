@@ -445,7 +445,9 @@ mimir:
   #         secret_access_key: "${AWS_SECRET_ACCESS_KEY}" # This is a secret injected via an environment variable
   #         http:
   #           insecure_skip_verify: true
-  structuredConfig: {}
+  structuredConfig:
+    validation:
+      max_label_names_per_series: 100
 
 # -- runtimeConfig provides a reloadable runtime configuration. Changing the runtimeConfig doesn't require a restart of all components.
 # For more infromation see https://grafana.com/docs/mimir/latest/configure/about-runtime-configuration/
@@ -459,7 +461,6 @@ runtimeConfig:
    max_tenants: 1000
    max_inflight_push_requests: 30000
  distributor_limits: # limits that each distributor replica enforces
-   max_label_names_per_series: 100
    max_ingestion_rate: 20000
    max_inflight_push_requests: 30000
    max_inflight_push_requests_bytes: 50000000
