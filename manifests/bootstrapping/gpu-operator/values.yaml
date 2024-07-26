@@ -115,7 +115,7 @@ operator:
     limits:
       memory: 350Mi
     requests:
-      cpu: 200m
+      cpu: 10m
       memory: 100Mi
 
 mig:
