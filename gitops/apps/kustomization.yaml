@@ -5,7 +5,7 @@ resources:
   - gaming-app.yaml
   - gpu-operator-app.yaml
 #  - grafana-app.yaml
-#  - grafana-agent-app.yaml
+  - grafana-alloy.yaml
   - heimdall-app.yaml
   - homepage-app.yaml
   - home-assistant-app.yaml

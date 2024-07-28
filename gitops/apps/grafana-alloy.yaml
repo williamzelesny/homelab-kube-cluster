@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grafana-agent
+  name: grafana-alloy
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -12,10 +12,10 @@ spec:
   source:
     repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
     targetRevision: main
-    path: manifests/workloads/observability/grafana-agent-operator
+    path: manifests/workloads/observability/grafana-alloy
   destination:
     server: https://kubernetes.default.svc
-    namespace: grafana-agent-operator
+    namespace: grafana-alloy
   syncPolicy:
     automated:
       selfHeal: true
