@@ -1,5 +1,5 @@
 helmCharts:
-  - name: grafana-alloy
+  - name: alloy
     repo: https://grafana.github.io/helm-charts
     version: 0.5.1
     releaseName: alloy
