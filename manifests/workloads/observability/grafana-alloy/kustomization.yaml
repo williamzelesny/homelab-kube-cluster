@@ -4,5 +4,6 @@ helmCharts:
     version: 0.5.1
     releaseName: alloy
     namespace: grafana-alloy
+    valuesFile: values.yaml
 
 namespace: grafana-alloy
