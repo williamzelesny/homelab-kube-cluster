@@ -64,15 +64,11 @@ config:
               key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
               fields: ["streams", "movies", "tv", "albums"]
 
-    - My Second Group:
-        - My Second Service:
-            href: http://localhost/
-            description: Homepage is the best
-
-    - My Third Group:
-        - My Third Service:
-            href: http://localhost/
-            description: Homepage is 😎
+    - Containers:
+      - Longhorn:
+          icon: longhorn.svg
+          href: "http://10.0.3.23/#/dashboard"
+          description: k8s storage
   widgets:
     - resources:
         # change backend to 'kubernetes' to use Kubernetes integration. Requires RBAC.
