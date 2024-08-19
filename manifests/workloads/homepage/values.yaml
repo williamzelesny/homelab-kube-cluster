@@ -61,7 +61,7 @@ config:
             widget:
               type: plex
               url: http://10.0.3.22:32400/
-              key: {% raw %}"{{PLEX_TOKEN}}"{% endraw %}
+              key: PLEX_TOKEN
 
     - My Second Group:
         - My Second Service:
@@ -100,6 +100,13 @@ config:
     mode: cluster
   docker:
   settings:
+
+env:
+  - name: PLEX_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: homepage-doppler-secret
+        key: PLEX_TOKEN
 
 persistence:
   logs:
