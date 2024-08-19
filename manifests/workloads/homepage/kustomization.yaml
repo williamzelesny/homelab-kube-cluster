@@ -8,6 +8,11 @@ helmCharts:
 namespace: homepage
 
 patches:
+  - path: deployment.yaml
+    target:
+      kind: Deployment
+      name: homepage
+
   - path: homepage-service.yaml
     target:
       kind: Service
