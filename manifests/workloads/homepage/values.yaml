@@ -61,7 +61,7 @@ config:
             widget:
               type: plex
               url: http://10.0.3.22:32400/
-              key: {{PLEX_TOKEN}}
+              key: {{HOMEPAGE_VAR_PLEX_TOKEN}}
 
     - My Second Group:
         - My Second Service:
@@ -102,7 +102,7 @@ config:
   settings:
 
 env:
-  - name: PLEX_TOKEN
+  - name: HOMEPAGE_VAR_PLEX_TOKEN
     valueFrom:
       secretKeyRef:
         name: homepage-doppler-secret
