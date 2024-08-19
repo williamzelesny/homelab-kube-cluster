@@ -60,7 +60,7 @@ config:
         - Plex:
             widget:
               type: plex
-              url: http://10.0.3.22:32400/
+              url: http://10.0.3.22:32400
               key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
 
     - My Second Group:
