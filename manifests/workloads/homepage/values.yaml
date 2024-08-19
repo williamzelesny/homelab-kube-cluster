@@ -106,7 +106,7 @@ env:
     valueFrom:
       secretKeyRef:
         name: homepage-doppler-secret
-        key: PLEX_TOKEN
+        key: $PLEX_TOKEN
 
 persistence:
   logs:
