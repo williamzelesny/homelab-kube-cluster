@@ -12,3 +12,8 @@ patches:
     target:
       kind: Service
       name: homepage
+
+  - path: homepage-doppler-secret.yaml
+    target:
+      kind: Secret
+      name: homepage-doppler-secret
