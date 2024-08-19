@@ -61,7 +61,7 @@ config:
             widget:
               type: plex
               url: http://10.0.3.22:32400/
-              key: {% raw %}"{{HOMEPAGE_VAR_PLEX_TOKEN}}"{% endraw %}
+              key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
 
     - My Second Group:
         - My Second Service:
