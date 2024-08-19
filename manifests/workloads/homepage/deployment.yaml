@@ -1,9 +1,8 @@
-spec:
-    spec:
-      containers:
-        env:
-          - name: PLEX_TOKEN
-            valueFrom:
-              secretKeyRef:
-                name: homepage-doppler-secret
-                key: PLEX_TOKEN
+- op: add #action
+  path: /spec/spec/containers/env #resouirce we want to change
+  value: | #value we want to use for patching 
+    - name: PLEX_TOKEN
+      valueFrom:
+        secretKeyRef:
+          name: homepage-doppler-secret
+          key: PLEX_TOKEN
