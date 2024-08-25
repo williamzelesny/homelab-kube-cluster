@@ -6,7 +6,6 @@ resources:
   - gpu-operator-app.yaml
 #  - grafana-app.yaml
   - grafana-alloy.yaml
-  - heimdall-app.yaml
   - homepage-app.yaml
   - home-assistant-app.yaml
   - longhorn.yaml
