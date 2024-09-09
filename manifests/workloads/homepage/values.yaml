@@ -108,11 +108,11 @@ env:
       secretKeyRef:
         name: homepage-doppler-secret
         key: PLEX_TOKEN
-  - name: HOMEPAGE_VAR_OVERSEERR_API_TOKEN
+  - name: HOMEPAGE_VAR_OVERSEERR_API_KEY
     valueFrom:
       secretKeyRef:
         name: homepage-doppler-secret
-        key: OVERSEERR_API_TOKEN
+        key: OVERSEERR_API_KEY
 
 persistence:
   logs:
