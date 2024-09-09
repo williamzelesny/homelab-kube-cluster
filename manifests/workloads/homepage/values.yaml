@@ -63,7 +63,11 @@ config:
               url: http://10.0.3.22:32400
               key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
               fields: ["streams", "movies", "tv", "albums"]
-
+        - Overseerr:
+            widget:
+              type: overseerr
+              url: "https://overseerr.zelesny.com/"
+              key: OVERSEERR_API_KEY
     - Containers:
       - Longhorn:
           icon: longhorn.svg
@@ -104,6 +108,11 @@ env:
       secretKeyRef:
         name: homepage-doppler-secret
         key: PLEX_TOKEN
+  - name: OVERSEERR_API_TOKEN
+    valueFrom:
+      secretKeyRef:
+        name: homepage-doppler-secret
+        key: OVERSEERR_API_TOKEN
 
 persistence:
   logs:
