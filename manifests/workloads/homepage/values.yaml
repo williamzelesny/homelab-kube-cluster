@@ -74,6 +74,12 @@ config:
               url: http://10.0.3.21:7878
               key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
               enableQueue: true
+        - NZBget:
+            widget:
+              type: nzbget
+              url: http://10.0.3.28:6789
+              username: "{{HOMEPAGE_VAR_NZBGET_USERNAME}}"
+              password: "{{HOMEPAGE_VAR_NZBGET_PASSWORD}}"
     - Containers:
       - Longhorn:
           icon: longhorn.svg
@@ -124,6 +130,16 @@ env:
       secretKeyRef:
         name: homepage-doppler-secret
         key: RADARR_API_KEY
+  - name: HOMEPAGE_VAR_NZBGET_USERNAME
+    valueFrom:
+      secretKeyRef:
+        name: homepage-doppler-secret
+        key: NZBGET_USERNAME
+  - name: HOMEPAGE_VAR_NZBGET_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: homepage-doppler-secret
+        key: NZBGET_PASSWORD
 
 persistence:
   logs:
