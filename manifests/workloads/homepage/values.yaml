@@ -68,6 +68,12 @@ config:
               type: overseerr
               url: "https://overseerr.zelesny.com/"
               key: "{{HOMEPAGE_VAR_OVERSEERR_API_KEY}}"
+        - Radarr:
+            widget:
+              type: radarr
+              url: http://10.0.3.21:7878
+              key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
+          enableQueue: true
     - Containers:
       - Longhorn:
           icon: longhorn.svg
@@ -113,6 +119,11 @@ env:
       secretKeyRef:
         name: homepage-doppler-secret
         key: OVERSEERR_API_KEY
+  - name: HOMEPAGE_VAR_RADARR_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: homepage-doppler-secret
+        key: RADARR_API_KEY
 
 persistence:
   logs:

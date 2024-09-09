@@ -19,3 +19,8 @@ spec:
                 secretKeyRef:
                   name: homepage-doppler-secret
                   key: OVERSEERR_API_KEY
+            - name: RADARR_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-doppler-secret
+                  key: RADARR_API_KEY
