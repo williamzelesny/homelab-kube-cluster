@@ -73,7 +73,7 @@ config:
               type: radarr
               url: http://10.0.3.21:7878
               key: "{{HOMEPAGE_VAR_RADARR_API_KEY}}"
-          enableQueue: true
+              enableQueue: true
     - Containers:
       - Longhorn:
           icon: longhorn.svg
