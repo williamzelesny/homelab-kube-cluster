@@ -14,3 +14,8 @@ spec:
                 secretKeyRef:
                   name: homepage-doppler-secret
                   key: PLEX_TOKEN
+            - name: OVERSEERR_API_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: homepage-doppler-secret
+                  key: OVERSEERR_API_TOKEN
