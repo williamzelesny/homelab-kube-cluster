@@ -2,6 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 global:
+  # -- Toleration for nodes allowed to run user-deployed components such as Longhorn Manager, Longhorn UI, and Longhorn Driver Deployer.
+  tolerations: []
+  # -- Node selector for nodes allowed to run user-deployed components such as Longhorn Manager, Longhorn UI, and Longhorn Driver Deployer.
+  nodeSelector: {}
   cattle:
     # -- Default system registry.
     systemDefaultRegistry: ""
@@ -34,75 +38,75 @@ image:
     engine:
       # -- Repository for the Longhorn Engine image.
       repository: longhornio/longhorn-engine
-      # -- Specify Longhorn engine image tag
-      tag: v1.6.1
+      # -- Tag for the Longhorn Engine image.
+      tag: master-head
     manager:
       # -- Repository for the Longhorn Manager image.
       repository: longhornio/longhorn-manager
-      # -- Specify Longhorn manager image tag
-      tag: v1.6.1
+      # -- Tag for the Longhorn Manager image.
+      tag: master-head
     ui:
       # -- Repository for the Longhorn UI image.
       repository: longhornio/longhorn-ui
-      # -- Specify Longhorn ui image tag
-      tag: v1.6.1
+      # -- Tag for the Longhorn UI image.
+      tag: master-head
     instanceManager:
       # -- Repository for the Longhorn Instance Manager image.
       repository: longhornio/longhorn-instance-manager
-      # -- Specify Longhorn instance manager image tag
-      tag: v1.6.1
+      # -- Tag for the Longhorn Instance Manager image.
+      tag: master-head
     shareManager:
       # -- Repository for the Longhorn Share Manager image.
       repository: longhornio/longhorn-share-manager
-      # -- Specify Longhorn share manager image tag
-      tag: v1.6.1
+      # -- Tag for the Longhorn Share Manager image.
+      tag: master-head
     backingImageManager:
       # -- Repository for the Backing Image Manager image. When unspecified, Longhorn uses the default value.
       repository: longhornio/backing-image-manager
-      # -- Specify Longhorn backing image manager image tag
-      tag: v1.6.1
+      # -- Tag for the Backing Image Manager image. When unspecified, Longhorn uses the default value.
+      tag: master-head
     supportBundleKit:
       # -- Repository for the Longhorn Support Bundle Manager image.
       repository: longhornio/support-bundle-kit
       # -- Tag for the Longhorn Support Bundle Manager image.
-      tag: v0.0.36
+      tag: v0.0.45
   csi:
     attacher:
       # -- Repository for the CSI attacher image. When unspecified, Longhorn uses the default value.
       repository: longhornio/csi-attacher
       # -- Tag for the CSI attacher image. When unspecified, Longhorn uses the default value.
-      tag: v4.4.2
+      tag: v4.7.0
     provisioner:
       # -- Repository for the CSI Provisioner image. When unspecified, Longhorn uses the default value.
       repository: longhornio/csi-provisioner
       # -- Tag for the CSI Provisioner image. When unspecified, Longhorn uses the default value.
-      tag: v3.6.2
+      tag: v5.1.0
     nodeDriverRegistrar:
       # -- Repository for the CSI Node Driver Registrar image. When unspecified, Longhorn uses the default value.
       repository: longhornio/csi-node-driver-registrar
       # -- Tag for the CSI Node Driver Registrar image. When unspecified, Longhorn uses the default value.
-      tag: v2.9.2
+      tag: v2.12.0
     resizer:
       # -- Repository for the CSI Resizer image. When unspecified, Longhorn uses the default value.
       repository: longhornio/csi-resizer
       # -- Tag for the CSI Resizer image. When unspecified, Longhorn uses the default value.
-      tag: v1.9.2
+      tag: v1.12.0
     snapshotter:
       # -- Repository for the CSI Snapshotter image. When unspecified, Longhorn uses the default value.
       repository: longhornio/csi-snapshotter
       # -- Tag for the CSI Snapshotter image. When unspecified, Longhorn uses the default value.
-      tag: v6.3.2
+      tag: v8.1.0
     livenessProbe:
       # -- Repository for the CSI liveness probe image. When unspecified, Longhorn uses the default value.
       repository: longhornio/livenessprobe
       # -- Tag for the CSI liveness probe image. When unspecified, Longhorn uses the default value.
-      tag: v2.12.0
+      tag: v2.14.0
   openshift:
     oauthProxy:
-      # -- Repository for the OAuth Proxy image. This setting applies only to OpenShift users.
-      repository: quay.io/openshift/origin-oauth-proxy
-      # -- Tag for the OAuth Proxy image. This setting applies only to OpenShift users. Specify OCP/OKD version 4.1 or later. The latest stable version is 4.14.
-      tag: 4.14
+      # -- Repository for the OAuth Proxy image. Specify the upstream image (for example, "quay.io/openshift/origin-oauth-proxy"). This setting applies only to OpenShift users.
+      repository: ""
+      # -- Tag for the OAuth Proxy image. Specify OCP/OKD version 4.1 or later (including version 4.15, which is available at quay.io/openshift/origin-oauth-proxy:4.15). This setting applies only to OpenShift users.
+      tag: ""
   # -- Image pull policy that applies to all user-deployed Longhorn components, such as Longhorn Manager, Longhorn driver, and Longhorn UI.
   pullPolicy: IfNotPresent
 
@@ -133,6 +137,8 @@ persistence:
   reclaimPolicy: Delete
   # -- Setting that allows you to enable live migration of a Longhorn volume from one node to another.
   migratable: false
+  # -- Setting that disables the revision counter and thereby prevents Longhorn from tracking all write operations to a volume. When salvaging a volume, Longhorn uses properties of the volume-head-xxx.img file (the last file size and the last time the file was modified) to select the replica to be used for volume recovery.
+  disableRevisionCounter: "true"
   # -- Set NFS mount options for Longhorn StorageClass for RWX volumes
   nfsOptions: ""
   recurringJobSelector:
@@ -154,6 +160,11 @@ persistence:
     dataSourceParameters: ~
     # -- Expected SHA-512 checksum of a backing image used in a Longhorn StorageClass.
     expectedChecksum: ~
+  defaultDiskSelector:
+    # -- Setting that allows you to enable the disk selector for the default Longhorn StorageClass.
+    enable: false
+    # -- Disk selector for the default Longhorn StorageClass. Longhorn uses only disks with the specified tags for storing volume data. (Examples: "nvme,sata")
+    selector: ""
   defaultNodeSelector:
     # -- Setting that allows you to enable the node selector for the default Longhorn StorageClass.
     enable: false
@@ -161,6 +172,8 @@ persistence:
     selector: ""
   # -- Setting that allows you to enable automatic snapshot removal during filesystem trim for a Longhorn StorageClass. (Options: "ignored", "enabled", "disabled")
   removeSnapshotsDuringFilesystemTrim: ignored
+  # -- Setting that allows you to specify the data engine version for the default Longhorn StorageClass. (Options: "v1", "v2")
+  dataEngine: v1
 
 preUpgradeChecker:
   # -- Setting that allows Longhorn to perform pre-upgrade checks. Disable this setting when installing Longhorn using Argo CD or other GitOps solutions.
@@ -207,12 +220,14 @@ defaultSettings:
   upgradeChecker: ~
   # -- Default number of replicas for volumes created using the Longhorn UI. For Kubernetes configuration, modify the `numberOfReplicas` field in the StorageClass. The default value is "3".
   defaultReplicaCount: ~
-  # -- Default Longhorn StorageClass. "storageClassName" is assigned to PVs and PVCs that are created for an existing Longhorn volume. "storageClassName" can also be used as a label, so it is possible to use a Longhorn StorageClass to bind a workload to an existing PV without creating a Kubernetes StorageClass object. The default value is "longhorn-static".
+  # -- Default name of Longhorn static StorageClass. "storageClassName" is assigned to PVs and PVCs that are created for an existing Longhorn volume. "storageClassName" can also be used as a label, so it is possible to use a Longhorn StorageClass to bind a workload to an existing PV without creating a Kubernetes StorageClass object. "storageClassName" needs to be an existing StorageClass. The default value is "longhorn-static".
   defaultLonghornStaticStorageClass: ~
   # -- Number of seconds that Longhorn waits before checking the backupstore for new backups. The default value is "300". When the value is "0", polling is disabled.
   backupstorePollInterval: ~
   # -- Number of minutes that Longhorn keeps a failed backup resource. When the value is "0", automatic deletion is disabled.
   failedBackupTTL: ~
+  # -- Number of minutes that Longhorn allows for the backup execution. The default value is "1".
+  backupExecutionTimeout: ~
   # -- Setting that restores recurring jobs from a backup volume on a backup target and creates recurring jobs if none exist during backup restoration.
   restoreVolumeRecurringJobs: ~
   # -- Maximum number of successful recurring backup and snapshot jobs to be retained. When the value is "0", a history of successful recurring jobs is not retained.
@@ -224,6 +239,7 @@ defaultSettings:
   # -- Maximum number of failed support bundles that can exist in the cluster. When the value is "0", Longhorn automatically purges all failed support bundles.
   supportBundleFailedHistoryLimit: ~
   # -- Taint or toleration for system-managed Longhorn components.
+  # Specify values using a semicolon-separated list in `kubectl taint` syntax (Example: key1=value1:effect; key2=value2:effect).
   taintToleration: ~
   # -- Node selector for system-managed Longhorn components.
   systemManagedComponentsNodeSelector: ~
@@ -254,7 +270,7 @@ defaultSettings:
   # -- Maximum number of volumes that can be concurrently restored on each node using a backup. When the value is "0", restoration of volumes using a backup is disabled.
   concurrentVolumeBackupRestorePerNodeLimit: ~
   # -- Setting that disables the revision counter and thereby prevents Longhorn from tracking all write operations to a volume. When salvaging a volume, Longhorn uses properties of the "volume-head-xxx.img" file (the last file size and the last time the file was modified) to select the replica to be used for volume recovery. This setting applies only to volumes created using the Longhorn UI.
-  disableRevisionCounter: ~
+  disableRevisionCounter: "true"
   # -- Image pull policy for system-managed pods, such as Instance Manager, engine images, and CSI Driver. Changes to the image pull policy are applied only after the system-managed pods restart.
   systemManagedPodsImagePullPolicy: ~
   # -- Setting that allows you to create and attach a volume without having all replicas scheduled at the time of creation.
@@ -293,6 +309,8 @@ defaultSettings:
   fastReplicaRebuildEnabled: ~
   # -- Number of seconds that an HTTP client waits for a response from a File Sync server before considering the connection to have failed.
   replicaFileSyncHttpClientTimeout: ~
+  # -- Number of seconds that Longhorn allows for the completion of replica rebuilding and snapshot cloning operations.
+  longGRPCTimeOut: ~
   # -- Log levels that indicate the type and severity of logs in Longhorn Manager. The default value is "Info". (Options: "Panic", "Fatal", "Error", "Warn", "Info", "Debug", "Trace")
   logLevel: ~
   # -- Setting that allows you to specify a backup compression method.
@@ -307,10 +325,10 @@ defaultSettings:
   v2DataEngine: ~
   # -- Setting that allows you to configure maximum huge page size (in MiB) for the V2 Data Engine.
   v2DataEngineHugepageLimit: ~
-  # -- Setting that allows rebuilding of offline replicas for volumes using the V2 Data Engine.
-  offlineReplicaRebuilding: ~
   # -- Number of millicpus on each node to be reserved for each Instance Manager pod when the V2 Data Engine is enabled. The default value is "1250".
   v2DataEngineGuaranteedInstanceManagerCPU: ~
+  # -- CPU cores on which the Storage Performance Development Kit (SPDK) target daemon should run. The SPDK target daemon is located in each Instance Manager pod. Ensure that the number of cores is less than or equal to the guaranteed Instance Manager CPUs for the V2 Data Engine. The default value is "0x1".
+  v2DataEngineCPUMask: ~
   # -- Setting that allows scheduling of empty node selector volumes to any node.
   allowEmptyNodeSelectorVolume: ~
   # -- Setting that allows scheduling of empty disk selector volumes to any disk.
@@ -321,6 +339,16 @@ defaultSettings:
   disableSnapshotPurge: ~
   # -- Maximum snapshot count for a volume. The value should be between 2 to 250
   snapshotMaxCount: ~
+  # -- Setting that allows you to configure the log level of the SPDK target daemon (spdk_tgt) of the V2 Data Engine.
+  v2DataEngineLogLevel: ~
+  # -- Setting that allows you to configure the log flags of the SPDK target daemon (spdk_tgt) of the V2 Data Engine.
+  v2DataEngineLogFlags: ~
+  # -- Setting that freezes the filesystem on the root partition before a snapshot is created.
+  freezeFilesystemForSnapshot: ~
+  # -- Setting that automatically cleans up the snapshot when the backup is deleted.
+  autoCleanupSnapshotWhenDeleteBackup: ~
+  # -- Setting that allows Longhorn to detect node failure and immediately migrate affected RWX volumes.
+  rwxVolumeFastFailover: ~
 
 privateRegistry:
   # -- Setting that allows you to create a private registry secret.
@@ -340,7 +368,7 @@ longhornManager:
     format: plain
   # -- PriorityClass for Longhorn Manager.
   priorityClass: *defaultPriorityClassNameRef
-  # -- Toleration for Longhorn Manager on nodes allowed to run Longhorn Manager.
+  # -- Toleration for Longhorn Manager on nodes allowed to run Longhorn components.
   tolerations: []
   ## If you want to set tolerations for Longhorn Manager DaemonSet, delete the `[]` in the line above
   ## and uncomment this example block
@@ -422,6 +450,9 @@ ingress:
   # -- Default ingress path. You can access the Longhorn UI by following the full ingress path {{host}}+{{path}}.
   path: /
 
+  # -- Ingress path type. To maintain backward compatibility, the default value is "ImplementationSpecific".
+  pathType: ImplementationSpecific
+
   ## If you're using kube-lego, you will want to add:
   ## kubernetes.io/tls-acme: true
   ##
@@ -466,6 +497,22 @@ metrics:
   serviceMonitor:
     # -- Setting that allows the creation of a Prometheus ServiceMonitor resource for Longhorn Manager components.
     enabled: false
+    # -- Additional labels for the Prometheus ServiceMonitor resource.
+    additionalLabels: {}
+    # -- Annotations for the Prometheus ServiceMonitor resource.
+    annotations: {}
+    # -- Interval at which Prometheus scrapes the metrics from the target.
+    interval: ""
+    # -- Timeout after which Prometheus considers the scrape to be failed.
+    scrapeTimeout: ""
+    # -- Configures the relabeling rules to apply the target’s metadata labels. See the [Prometheus Operator
+    # documentation](https://prometheus-operator.dev/docs/api-reference/api/#monitoring.coreos.com/v1.Endpoint) for
+    # formatting details.
+    relabelings: []
+    # -- Configures the relabeling rules to apply to the samples before ingestion. See the [Prometheus Operator
+    # documentation](https://prometheus-operator.dev/docs/api-reference/api/#monitoring.coreos.com/v1.Endpoint) for
+    # formatting details.
+    metricRelabelings: []
 
 ## openshift settings
 openshift:
