@@ -31,7 +31,7 @@ spec:
           value: "all"
         - name: NVIDIA_DRIVER_CAPABILITIES
           value: "compute,video,utility"
-        image: plexinc/pms-docker:latest@sha256:b4ae06f46e82951dcf0240e92e31d7b61ae2d713f6bd6322a5a200346433293d
+        image: plexinc/pms-docker:latest@sha256:19746abbf989b6be7b5798149567ef4c498a6a848b47f53d0dd948078b32eb0a
         imagePullPolicy: Always
         name: plex
         resources:
