@@ -21,7 +21,7 @@ spec:
     spec:
       automountServiceAccountToken: true
       containers:
-      - image: registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.14.0@sha256:37d841299325c23b56e5951176ce8ef317d537447c0f1b2d2437dddbb1f51165
+      - image: registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.15.0@sha256:db384bf43222b066c378e77027a675d4cd9911107adba46c2922b3a55e10d6fb
         livenessProbe:
           httpGet:
             path: /healthz
