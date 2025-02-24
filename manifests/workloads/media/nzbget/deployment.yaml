@@ -24,7 +24,7 @@ spec:
           value: "1000"
         - name: PGID
           value: "1000"
-        image: nzbgetcom/nzbget:v24.5@sha256:2e2ab6973721a13df56f857c8c9a2838d10d4b72f08b395c242a55fdd9db4397
+        image: nzbgetcom/nzbget:v24.6@sha256:799261e0d0e8770c8504ca298e6bd90ea7b10b962dce12fe2cc71c933d638ec2
         imagePullPolicy: Always
         name: nzbget
         resources: {}
