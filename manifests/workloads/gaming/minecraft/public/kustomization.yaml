@@ -4,3 +4,4 @@ resources:
 - claim.yaml
 - service.yaml
 - ingress.yaml
+- allowlist-configmap.yaml

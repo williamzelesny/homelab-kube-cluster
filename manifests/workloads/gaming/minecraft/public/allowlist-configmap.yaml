@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: minecraft-public-allowlist
+data:
+  allowlist.json: |
+    [{"ignoresPlayerLimit":false,"name":"xampdx85"},{"ignoresPlayerLimit":false,"name":"GregoryGregory5"},{"ignoresPlayerLimit":false,"name":"AlexanderAlex4"},{"ignoresPlayerLimit":false,"name":"AppleAutobot"}] 
