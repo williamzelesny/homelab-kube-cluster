@@ -13,11 +13,13 @@ data:
       },
       {
         "ignoresPlayerLimit": false,
-        "name": "WYOdACHILGUY"
+        "name": "WYOdACHILGUY",
+        "xuid": "2535434248604615"
       },
       {
         "ignoresPlayerLimit": false,
-        "name": "AstroX092501"
+        "name": "AstroX092501",
+        "xuid": "2535472840364746"  
       },
       {
         "ignoresPlayerLimit": false,
