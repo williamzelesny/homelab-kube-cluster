@@ -27,13 +27,22 @@ spec:
           value: "LATEST"
         - name: DIFFICULTY
           value: "normal"
-        - name: PVP
-          value: "false"
         - name: ALLOW_LIST
           value: "true"
         image: itzg/minecraft-bedrock-server:latest@sha256:f75083d7c7f8c111b332da06bd3daffabe2f24f41e8b36b3b3592ce1a1b4d36a
         imagePullPolicy: Always
         name: minecraft-public
+        lifecycle:
+          postStart:
+            exec:
+              command:
+              - /bin/sh
+              - -c
+              - |
+                # Wait for server to start
+                sleep 90
+                # Disable PvP
+                /usr/local/bin/send-command gamerule pvp false
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
