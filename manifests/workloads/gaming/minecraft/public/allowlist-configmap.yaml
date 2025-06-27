@@ -7,20 +7,21 @@ data:
   allowlist.json: |
     [
       {
-        "ignoresPlayerLimit": false,
+        "ignoresPlayerLimit": true,
         "name": "xampdx85",
         "xuid": "2535411125743235"
       },
       {
         "ignoresPlayerLimit": false,
-        "name": "GregoryGregory5"
+        "name": "WYOdACHILGUY"
       },
       {
         "ignoresPlayerLimit": false,
-        "name": "AlexanderAlex4"
+        "name": "AstroX092501"
       },
       {
         "ignoresPlayerLimit": false,
-        "name": "AppleAutobot"
+        "name": "AppleAutobot",
+        "xuid": "2533274903608960"
       }
     ] 
