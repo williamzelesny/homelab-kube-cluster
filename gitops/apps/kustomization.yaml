@@ -16,6 +16,7 @@ resources:
   - overseerr-app.yaml
   - plex-app.yaml
   - radarr-app.yaml
+  - reloader-app.yaml
   - sonarr-app.yaml
 #  - system-upgrade-app.yaml
   - tautulli-app.yaml

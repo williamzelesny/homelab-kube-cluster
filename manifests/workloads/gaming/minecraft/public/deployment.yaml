@@ -5,6 +5,8 @@ metadata:
   labels:
     app: minecraft-public
   name: minecraft-public
+  annotations:
+    reloader.stakater.com/auto: "true"
 spec:
   progressDeadlineSeconds: 600
   replicas: 1

@@ -1,24 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gaming
+  name: reloader
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   project: default
   source:
-    repoURL: https://github.com/williamzelesny/homelab-kube-cluster.git
-    targetRevision: main
-    path: manifests/workloads/gaming
+    repoURL: https://stakater.github.io/stakater-charts
+    targetRevision: v1.0.88
+    chart: reloader
   destination:
     server: https://kubernetes.default.svc
-    namespace: gaming
+    namespace: reloader
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
     syncOptions:
-    - CreateNamespace=true
+      - CreateNamespace=true 
