@@ -52,6 +52,9 @@ spec:
         - mountPath: /data/allowlist.json
           name: allowlist-config
           subPath: allowlist.json
+        - mountPath: /data/permissions.json
+          name: permissions-config
+          subPath: permissions.json
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
@@ -64,3 +67,6 @@ spec:
       - name: allowlist-config
         configMap:
           name: minecraft-public-allowlist
+      - name: permissions-config
+        configMap:
+          name: minecraft-public-permissions
