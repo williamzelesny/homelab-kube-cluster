@@ -77,7 +77,7 @@ spec:
           type: ''
       initContainers:
         - name: validate-gpu-readiness
-          image: alpine:3.21
+          image: alpine:3.22
           command:
             - sh
             - '-c'
