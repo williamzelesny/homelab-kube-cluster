@@ -31,7 +31,7 @@ spec:
           value: "all"
         - name: NVIDIA_DRIVER_CAPABILITIES
           value: "compute,video,utility"
-        image: plexinc/pms-docker:latest@sha256:a13f35ef4719603e65ce867df9056bf7f99993510b64aa7f91e94e4741482870
+        image: plexinc/pms-docker:latest@sha256:498445d9d65499916a4da7941279cc58d751f4196a159c75b4d2c1b5c664660a
         imagePullPolicy: Always
         name: plex
         resources:
@@ -77,7 +77,7 @@ spec:
           type: ''
       initContainers:
         - name: validate-gpu-readiness
-          image: alpine:3.21
+          image: alpine:3.22
           command:
             - sh
             - '-c'

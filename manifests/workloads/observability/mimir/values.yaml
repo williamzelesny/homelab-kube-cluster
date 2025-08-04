@@ -2275,7 +2275,7 @@ memcached:
     # -- Memcached Docker image repository
     repository: memcached
     # -- Memcached Docker image tag
-    tag: 1.6.38-alpine
+    tag: 1.6.39-alpine
     # -- Memcached Docker image pull policy
     pullPolicy: IfNotPresent
 
@@ -2298,7 +2298,7 @@ memcachedExporter:
 
   image:
     repository: prom/memcached-exporter
-    tag: v0.15.2
+    tag: v0.15.3
     pullPolicy: IfNotPresent
 
   resources:
