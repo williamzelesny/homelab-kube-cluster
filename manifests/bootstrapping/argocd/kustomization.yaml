@@ -5,6 +5,7 @@ resources:
 - argocd-middleware-v3.yaml
 - argocd-ingress.yaml
 - argocd-ingress-http.yaml
+- argocd-ingress-debug.yaml
 
 patchesStrategicMerge:
 - argocd-server-service.yaml
