@@ -2,10 +2,9 @@ resources:
 - namespace.yaml
 - github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.14.15
 - argocd-cert.yaml
-- argocd-gateway.yaml
-- argocd-httproute.yaml
-- argocd-httproute-redirect.yaml
-- argocd-grpcroute.yaml
+- argocd-middleware-v3.yaml
+- argocd-ingress.yaml
+- argocd-ingress-http.yaml
 
 patchesStrategicMerge:
 - argocd-server-service.yaml

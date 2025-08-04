@@ -18,4 +18,5 @@ spec:
     - type: RequestRedirect
       requestRedirect:
         scheme: https
-        statusCode: 301 
+        statusCode: 301
+        port: 443 

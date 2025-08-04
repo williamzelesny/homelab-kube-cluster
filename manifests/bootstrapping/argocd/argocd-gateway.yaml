@@ -15,7 +15,7 @@ spec:
       certificateRefs:
       - name: argo-zelesny-cert
         namespace: argocd
+        kind: Secret
   - name: web
     port: 80
-    protocol: HTTP
-    hostname: argo.zelesny.com 
+    protocol: HTTP 
