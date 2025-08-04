@@ -1,0 +1,21 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: Gateway
+metadata:
+  name: argocd-gateway
+  namespace: argocd
+spec:
+  gatewayClassName: traefik
+  listeners:
+  - name: websecure
+    port: 443
+    protocol: HTTPS
+    hostname: argo.zelesny.com
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: argo-zelesny-cert
+        namespace: argocd
+  - name: web
+    port: 80
+    protocol: HTTP
+    hostname: argo.zelesny.com 
