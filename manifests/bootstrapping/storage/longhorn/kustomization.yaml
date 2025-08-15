@@ -1,5 +1,5 @@
 resources:
-  - https://raw.githubusercontent.com/longhorn/longhorn/v1.7.3/deploy/longhorn.yaml
+  - https://raw.githubusercontent.com/longhorn/longhorn/v1.8.1/deploy/longhorn.yaml
 #  - slow-storage-class.yaml
 
 patches:
@@ -7,7 +7,7 @@ patches:
     target:
       kind: Service
       name: longhorn-frontend
-  - path: remove-nodeport-patch.yaml
+  - path: remove-nodeport-patch.yamls
     target:
       kind: Service
       name: longhorn-frontend
