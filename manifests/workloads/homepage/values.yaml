@@ -63,6 +63,14 @@ config:
               url: http://10.0.3.22:32400
               key: "{{HOMEPAGE_VAR_PLEX_TOKEN}}"
               fields: ["streams", "movies", "tv", "albums"]
+        - Tautulli:
+            widget:
+              type: tautulli
+              url: http://10.0.3.19:8181/
+              key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
+              enableUser: true
+              showEpisodeNumber: true
+              expandOneStreamToTwoRows: false
         - Overseerr:
             widget:
               type: overseerr
@@ -80,14 +88,6 @@ config:
               url: http://10.0.3.28:6789
               username: "{{HOMEPAGE_VAR_NZBGET_USERNAME}}"
               password: "{{HOMEPAGE_VAR_NZBGET_PASSWORD}}"
-        - Tautulli:
-            widget:
-              type: tautulli
-              url: http://10.0.3.19:8181/
-              key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
-              enableUser: true
-              showEpisodeNumber: true
-              expandOneStreamToTwoRows: false
     - Containers:
       - Longhorn:
           icon: longhorn.svg
