@@ -80,6 +80,14 @@ config:
               url: http://10.0.3.28:6789
               username: "{{HOMEPAGE_VAR_NZBGET_USERNAME}}"
               password: "{{HOMEPAGE_VAR_NZBGET_PASSWORD}}"
+        - Tautulli:
+            widget:
+              type: tautulli
+              url: http://10.0.3.19:8181/
+              key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
+              enableUser: true
+              showEpisodeNumber: true
+              expandOneStreamToTwoRows: false
     - Containers:
       - Longhorn:
           icon: longhorn.svg
@@ -108,6 +116,7 @@ config:
           cpu: true
           memory: true
           showLabel: true
+    
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
     mode: cluster
@@ -142,6 +151,11 @@ env:
       secretKeyRef:
         name: homepage-doppler-secret
         key: NZBGET_PASSWORD
+  - name: HOMEPAGE_VAR_TAUTULLI_API_KEY
+    valueFrom:
+      secretKeyRef:
+        name: homepage-doppler-secret
+        key: TAUTULLI_API_KEY
 
 persistence:
   logs:
