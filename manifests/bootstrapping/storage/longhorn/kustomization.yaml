@@ -1,5 +1,5 @@
 resources:
-  - https://raw.githubusercontent.com/longhorn/longhorn/v1.8.1/deploy/longhorn.yaml
+  - https://raw.githubusercontent.com/longhorn/longhorn/v1.9.1/deploy/longhorn.yaml
 #  - slow-storage-class.yaml
 
 patches:
