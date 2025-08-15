@@ -7,7 +7,7 @@ patches:
     target:
       kind: Service
       name: longhorn-frontend
-  - path: remove-nodeport-patch.yamls
+  - path: remove-nodeport-patch.yaml
     target:
       kind: Service
       name: longhorn-frontend
