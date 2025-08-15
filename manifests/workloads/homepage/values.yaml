@@ -115,6 +115,8 @@ config:
   settings:
 
 env:
+  - name: HOMEPAGE_ALLOWED_HOSTS
+    value: "10.0.3.26:3000"
   - name: HOMEPAGE_VAR_PLEX_TOKEN
     valueFrom:
       secretKeyRef:
