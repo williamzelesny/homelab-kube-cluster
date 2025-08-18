@@ -97,6 +97,14 @@ config:
           icon: overseerr.svg
           href: "https://overseerr.zelesny.com/"
           description: movie requests
+      - Radarr:
+          icon: radarr.svg
+          href: "http://10.0.3.21:7878"
+          description: movie downloader
+      - Sonarr:
+          icon: sonarr.svg
+          href: "http://10.0.3.20:8989"
+          description: tv downloader
       - NZBget:
           icon: nzbget.svg
           href: "http://10.0.3.28:6789"
