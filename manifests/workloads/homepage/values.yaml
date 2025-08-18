@@ -93,6 +93,10 @@ config:
           icon: plex.svg
           href: "http://10.0.3.22:32400/web/index.html#!/"
           description: media streaming
+      - Overseerr:
+          icon: overseerr.svg
+          href: "https://overseerr.zelesny.com/"
+          description: movie requests
       - NZBget:
           icon: nzbget.svg
           href: "http://10.0.3.28:6789"
