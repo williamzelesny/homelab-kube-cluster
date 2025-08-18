@@ -93,6 +93,10 @@ config:
           icon: plex.svg
           href: "http://10.0.3.22:32400/web/index.html#!/"
           description: media streaming
+      - NZBget:
+          icon: nzbget.svg
+          href: "http://10.0.3.28:6789"
+          description: nzb downloader
       - Longhorn:
           icon: longhorn.svg
           href: "http://10.0.3.23/#/dashboard"
