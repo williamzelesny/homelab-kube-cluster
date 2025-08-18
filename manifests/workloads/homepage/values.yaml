@@ -89,14 +89,14 @@ config:
               username: "{{HOMEPAGE_VAR_NZBGET_USERNAME}}"
               password: "{{HOMEPAGE_VAR_NZBGET_PASSWORD}}"
     - Containers:
-      - Longhorn:
-          icon: longhorn.svg
-          href: "http://10.0.3.23/#/dashboard"
-          description: k8s storage
       - Plex:
           icon: plex.svg
           href: "http://10.0.3.22:32400/web/index.html#!/"
           description: media streaming
+      - Longhorn:
+          icon: longhorn.svg
+          href: "http://10.0.3.23/#/dashboard"
+          description: k8s storage
   widgets:
     - resources:
         # change backend to 'kubernetes' to use Kubernetes integration. Requires RBAC.
