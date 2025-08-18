@@ -93,6 +93,10 @@ config:
           icon: longhorn.svg
           href: "http://10.0.3.23/#/dashboard"
           description: k8s storage
+      - Plex:
+          icon: plex.svg
+          href: "http://10.0.3.22:32400/web/index.html#!/"
+          description: media streaming
   widgets:
     - resources:
         # change backend to 'kubernetes' to use Kubernetes integration. Requires RBAC.
