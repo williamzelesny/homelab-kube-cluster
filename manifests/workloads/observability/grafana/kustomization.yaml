@@ -3,3 +3,6 @@ resources:
 - deployment.yaml
 - claim.yaml
 - service.yaml
+- configmap.yaml
+- datasources.yaml
+- rbac.yaml
