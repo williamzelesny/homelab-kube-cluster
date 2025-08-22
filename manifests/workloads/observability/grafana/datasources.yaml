@@ -11,7 +11,7 @@ data:
       - name: Prometheus
         type: prometheus
         access: proxy
-        url: http://prometheus:9090
+        url: http://prometheus.observability.svc.cluster.local:9090
         isDefault: true
         editable: true
         jsonData:
@@ -23,7 +23,7 @@ data:
       - name: Grafana Alloy
         type: prometheus
         access: proxy
-        url: http://grafana-alloy:12345
+        url: http://alloy.grafana-alloy.svc.cluster.local:12345
         isDefault: false
         editable: true
         jsonData:
@@ -34,7 +34,7 @@ data:
       - name: Node Exporter
         type: prometheus
         access: proxy
-        url: http://node-exporter:9100
+        url: http://node-exporter.observability.svc.cluster.local:9100
         isDefault: false
         editable: true
         jsonData:
