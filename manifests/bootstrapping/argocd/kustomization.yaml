@@ -1,6 +1,6 @@
 resources:
 - namespace.yaml
-- github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.14.19
+- github.com/argoproj/argo-cd/manifests/cluster-install?ref=v3.1.7
 - argocd-cert.yaml
 - argocd-middleware-v3.yaml
 - argocd-ingress.yaml
