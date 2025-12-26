@@ -19,6 +19,18 @@ spec:
       labels:
         app: sonarr
     spec:
+      initContainers:
+      - name: nfs-mount-check
+        image: busybox:latest
+        command: ['sh', '-c']
+        args:
+        - |
+          ls -la /mnt/nfs/downloads && ls -la /mnt/nfs/videos/TV && echo "NFS mounts verified"
+        volumeMounts:
+        - mountPath: /mnt/nfs/downloads
+          name: downloads-data
+        - mountPath: /mnt/nfs/videos/TV
+          name: tv-data
       containers:
       - env:
         - name: PGID
@@ -49,9 +61,9 @@ spec:
           claimName: sonarr-config
       - hostPath:
           path: /mnt/nfs/downloads
-          type: ""
+          type: Directory
         name: downloads-data
       - hostPath:
           path: /mnt/nfs/videos/TV
-          type: ""
+          type: Directory
         name: tv-data
