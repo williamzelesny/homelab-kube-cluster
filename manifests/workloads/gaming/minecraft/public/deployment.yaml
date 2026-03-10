@@ -31,7 +31,7 @@ spec:
           value: "normal"
         - name: ALLOW_LIST
           value: "true"
-        image: itzg/minecraft-bedrock-server:latest@sha256:a1f527cbd8db7ee9b825eb8cfe84ff64d588a91d96cd9d0c1d90196b1d8996e3
+        image: itzg/minecraft-bedrock-server:latest@sha256:877ec44f8f479f9052969c46eaa7575e47a5548c9f216e711b41a2898ef0df98
         imagePullPolicy: Always
         name: minecraft-public
         lifecycle:
